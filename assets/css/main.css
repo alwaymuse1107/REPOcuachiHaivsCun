@@ -1753,33 +1753,22 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
-.clients .swiper-slide img {
-  transition: 0.3s;
-  opacity: 0.5;
+.clients .client-logo {
+max-height: 50px;
+width: auto;
+object-fit: contain;
+filter: grayscale(30%) brightness(100%);
+opacity: 0.5;
+transition: transform 0.3s ease;
+cursor: pointer;
 }
 
-.clients .swiper-slide img:hover {
-  opacity: 1;
-}
-
-.clients .swiper-wrapper {
-  height: auto;
-}
-
-.clients .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+.clients .client-logo:hover,
+.clients .client-logo:focus,
+.clients .client-logo:active {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 /*--------------------------------------------------------------
@@ -1926,6 +1915,50 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.fullwidth-cta {
+width: 100%;
+padding: 80px 20px;
+background-color: #ffffff;
+justify-content: center;
+display: flex;
+}
+
+.fullwidth-cta .inner-cta {
+background: #ffffff;
+box-shadow: 0 0 40px rgba(0, 102, 255, 0.15);
+padding: 40px 50px;
+width: 100%;
+}
+
+.cta-title {
+font-size: 32px;
+font-weight: 700;
+color: #0B102D;
+margin-bottom: 10px;
+}
+
+.cta-subtitle {
+font-size: 16px;
+color: #6c757d;
+margin-bottom: 0;
+}
+
+.btn-modern {
+background: #1877ff;
+color: #fff;
+padding: 12px 26px;
+font-weight: 600;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+display: inline-block;
+}
+
+.btn-modern:hover {
+background-color: #0f5edd;
+transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
@@ -2765,3 +2798,4 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
