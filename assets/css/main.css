@@ -12,13 +12,15 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #012970; /* Color for headings, subheadings and title throughout the website */
@@ -29,7 +31,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #012970;  /* The default color of the main navmenu links */
+  --nav-color: #012970; /* The default color of the main navmenu links */
   --nav-hover-color: #4154f1; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -263,7 +265,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -302,11 +304,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -318,11 +320,74 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
     visibility: visible;
+  }
+
+  /* Sưitch */
+  .lang-switch-container {
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: sans-serif;
+  }
+
+  .lang-label {
+    font-family: var(--nav-font);
+    color: var(--nav-color);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .lang-label.inactive {
+    display: none;
+    color: #bbb;
+    font-weight: normal;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent-color);
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(22px);
   }
 }
 
@@ -421,7 +486,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -448,81 +513,70 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
-}
 
-/* Listing Dropdown - Desktop */
-@media (min-width: 1200px) {
-  .navmenu .listing-dropdown {
-    position: static;
+  /* Sưitch */
+  .lang-switch-container {
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: sans-serif;
   }
 
-  .navmenu .listing-dropdown ul {
-    margin: 0;
-    padding: 10px;
-    background: var(--nav-dropdown-background-color);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  .lang-label {
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .lang-label.inactive {
+    display: none;
+    color: #bbb;
+    font-weight: normal;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
     position: absolute;
-    top: 130%;
+    cursor: pointer;
+    top: 0;
     left: 0;
     right: 0;
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
+    bottom: 0;
+    background-color: var(--accent-color);
+    transition: 0.4s;
+    border-radius: 34px;
   }
 
-  .navmenu .listing-dropdown ul li {
-    flex: 1;
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
   }
 
-  .navmenu .listing-dropdown ul li a,
-  .navmenu .listing-dropdown ul li:hover>a {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: var(--nav-dropdown-color);
-    background-color: var(--nav-dropdown-background-color);
-  }
-
-  .navmenu .listing-dropdown ul li a:hover,
-  .navmenu .listing-dropdown ul li .active,
-  .navmenu .listing-dropdown ul li .active:hover {
-    color: var(--nav-dropdown-hover-color);
-    background-color: var(--nav-dropdown-background-color);
-  }
-
-  .navmenu .listing-dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-}
-
-/* Listing Dropdown - Mobile */
-@media (max-width: 1199px) {
-  .navmenu .listing-dropdown ul {
-    position: static;
-    display: none;
-    z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
-    background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .navmenu .listing-dropdown ul ul {
-    background-color: rgba(33, 37, 41, 0.1);
-  }
-
-  .navmenu .listing-dropdown>.dropdown-active {
-    display: block;
-    background-color: rgba(33, 37, 41, 0.03);
+  input:checked + .slider:before {
+    transform: translateX(22px);
   }
 }
 
@@ -540,7 +594,8 @@ h6 {
 .footer .footer-newsletter {
   background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
   border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
-  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--accent-color), transparent 85%);
   padding: 50px 0;
 }
 
@@ -553,7 +608,11 @@ h6 {
   margin-bottom: 15px;
   padding: 6px 8px;
   position: relative;
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -565,19 +624,23 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email] {
+.footer .footer-newsletter .newsletter-form input[type="email"] {
   border: 0;
   padding: 4px;
   width: 100%;
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   color: var(--default-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+.footer .footer-newsletter .newsletter-form input[type="email"]:focus-visible {
   outline: none;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit] {
+.footer .footer-newsletter .newsletter-form input[type="submit"] {
   border: 0;
   font-size: 16px;
   padding: 0 20px;
@@ -588,7 +651,7 @@ h6 {
   border-radius: 0 4px 4px 0;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+.footer .footer-newsletter .newsletter-form input[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -674,7 +737,8 @@ h6 {
 .footer .copyright {
   padding-top: 25px;
   padding-bottom: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -739,7 +803,8 @@ h6 {
 
 .page-title .heading {
   padding: 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title .heading h1 {
@@ -761,11 +826,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -785,7 +850,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 56px;
@@ -1379,7 +1443,8 @@ section,
 .faq .faq-container .faq-item {
   position: relative;
   padding: 20px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
   overflow: hidden;
 }
 
@@ -1754,21 +1819,21 @@ section,
 # Clients Section
 --------------------------------------------------------------*/
 .clients .client-logo {
-max-height: 50px;
-width: auto;
-object-fit: contain;
-filter: grayscale(15%) brightness(100%);
-opacity: 0.5;
-transition: transform 0.3s ease;
-cursor: pointer;
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(15%) brightness(100%);
+  opacity: 0.5;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .clients .client-logo:hover,
 .clients .client-logo:focus,
 .clients .client-logo:active {
-    filter: grayscale(0%) brightness(100%);
-    opacity: 1;
-    transform: scale(1.05);
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /*--------------------------------------------------------------
@@ -1880,31 +1945,35 @@ cursor: pointer;
   height: 100%;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: var(--accent-color);
   color: var(--contrast-color);
   border: 0;
@@ -1913,38 +1982,38 @@ cursor: pointer;
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .fullwidth-cta {
-width: 100%;
-padding: 80px 20px;
-background-color: #ffffff;
-display: flex;
-justify-content: center;
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
 }
 
 .fullwidth-cta .inner-cta {
-background: #ffffff;
-border-radius: 20px;
-box-shadow: 0 0px 40px rgba(0, 102, 255, 0.15);
-padding: 40px 50px;
-width: 100%;
-max-width: 1140px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0px 40px rgba(0, 102, 255, 0.15);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 1140px;
 }
 
 .cta-title {
-font-size: 28px;
-font-weight: 700;
-color: #0B102D;
-margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0b102d;
+  margin-bottom: 10px;
 }
 
 .cta-subtitle {
-font-size: 16px;
-color: #6c757d;
-margin-bottom: 0;
+  font-size: 16px;
+  color: #6c757d;
+  margin-bottom: 0;
 }
 
 .btn-modern {
@@ -1958,8 +2027,8 @@ margin-bottom: 0;
 }
 
 .btn-modern:hover {
-background-color: #CC4448;
-transform: translateY(-2px);
+  background-color: #cc4448;
+  transform: translateY(-2px);
 }
 
 /*--------------------------------------------------------------
@@ -1974,14 +2043,20 @@ transform: translateY(-2px);
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
 
@@ -1996,7 +2071,8 @@ transform: translateY(-2px);
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -2005,7 +2081,7 @@ transform: translateY(-2px);
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -2033,14 +2109,15 @@ transform: translateY(-2px);
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.service-details .service-box+.service-box {
+.service-details .service-box + .service-box {
   margin-top: 30px;
 }
 
 .service-details .service-box h4 {
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
@@ -2089,7 +2166,8 @@ transform: translateY(-2px);
   align-items: center;
   padding: 10px 0;
   transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .service-details .download-catalog a:first-child {
@@ -2211,7 +2289,7 @@ transform: translateY(-2px);
   margin: 0;
 }
 
-.blog-posts .meta-top ul li+li {
+.blog-posts .meta-top ul li + li {
   padding-left: 20px;
 }
 
@@ -2370,7 +2448,7 @@ transform: translateY(-2px);
   margin: 0;
 }
 
-.blog-details .meta-top ul li+li {
+.blog-details .meta-top ul li + li {
   padding-left: 20px;
 }
 
@@ -2390,7 +2468,8 @@ transform: translateY(-2px);
 
 .blog-details .meta-bottom {
   padding-top: 10px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .blog-details .meta-bottom i {
@@ -2429,7 +2508,7 @@ transform: translateY(-2px);
   display: inline-block;
 }
 
-.blog-details .meta-bottom .tags li+li::before {
+.blog-details .meta-bottom .tags li + li::before {
   padding-right: 6px;
   color: var(--default-color);
   content: ",";
@@ -2658,7 +2737,7 @@ transform: translateY(-2px);
   transition: 0.3s;
 }
 
-.search-widget form input[type=text] {
+.search-widget form input[type="text"] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
@@ -2667,7 +2746,7 @@ transform: translateY(-2px);
   color: var(--default-color);
 }
 
-.search-widget form input[type=text]:focus {
+.search-widget form input[type="text"]:focus {
   outline: none;
 }
 
@@ -2799,4 +2878,3 @@ transform: translateY(-2px);
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
-
