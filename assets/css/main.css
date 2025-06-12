@@ -1205,6 +1205,10 @@ section,
   font-weight: 700;
 }
 
+.service-item p {
+  font-size: 14px; /* Hoặc nhỏ hơn nếu bạn muốn, ví dụ 13px */
+}
+
 .services .service-item .read-more {
   display: inline-flex;
   align-items: center;
