@@ -1838,9 +1838,31 @@ section,
 .clients .client-logo:active {
   filter: grayscale(0%) brightness(100%);
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.5);
 }
 
+.larger-logo {
+  max-width: 120px;  /* Điều chỉnh kích thước theo mong muốn */
+  transform: scale(2.5);  /* Tăng kích thước logo */
+  filter: brightness(0) saturate(100%) contrast(130%);
+}
+
+.clients .larger-logo:hover,
+.clients .larger-logo:focus,
+.clients .larger-logo:active {
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+  transform: scale(3.2);
+}
+
+.divider {
+  width: 100px;
+  height: 3px;
+  background-color: #BF9000; /* hoặc #BF9000 nếu bạn muốn dùng màu vàng gold */
+  border: none;
+  margin: 10px auto 30px auto; /* canh giữa và tạo khoảng cách */
+  opacity: 0.8;
+}
 /*--------------------------------------------------------------
 # Recent Posts Section
 --------------------------------------------------------------*/
