@@ -1005,7 +1005,8 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .content {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  background-color: color-mix(in srgb, #cc4448, transparent 95%);
+  border-radius: 15px;
   padding: 40px;
 }
 
@@ -1028,10 +1029,10 @@ section,
 
 .about .content .btn-read-more {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: #cc4448;
   line-height: 0;
-  padding: 15px 40px;
-  border-radius: 4px;
+  padding: 10px 25px;
+  border-radius: 20px;
   transition: 0.5s;
   box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
 }
