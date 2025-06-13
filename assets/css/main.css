@@ -19,9 +19,8 @@
   --nav-font: "Poppins", sans-serif;
 }
 
-
 #navmenu a {
-  color: #0B102D !important;
+  color: #0b102d !important;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -278,7 +277,7 @@ h6 {
 
   .navmenu .dropdown ul {
     margin: 0;
-    padding: 10px ;
+    padding: 10px;
     background: var(--nav-dropdown-background-color);
     display: block;
     position: absolute;
@@ -343,14 +342,14 @@ h6 {
 
   .lang-label {
     font-family: var(--nav-font);
-    color: #0B102D;
+    color: #0b102d;
     cursor: pointer;
     transition: color 0.3s;
   }
 
   .lang-label.inactive {
     display: none;
-    color: #0B102D;
+    color: #0b102d;
     font-weight: normal;
   }
 
@@ -759,9 +758,9 @@ h6 {
 # Scroll Top Button
 --------------------------------------------------------------*/
 #scroll-top {
-  background-color: #CC4448; /* màu nền đỏ của bạn */
+  background-color: #cc4448; /* màu nền đỏ của bạn */
   border: 1px solid #aa2e35; /* viền đậm hơn một chút */
-  border-radius: 20px;        /* bo góc nhẹ */
+  border-radius: 20px; /* bo góc nhẹ */
   width: 40px;
   height: 40px;
   position: fixed;
@@ -910,9 +909,10 @@ section,
 
 .hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 45px;
   font-weight: 700;
   line-height: 56px;
+  color: #0b102d;
 }
 
 .hero p {
@@ -920,6 +920,45 @@ section,
   margin: 5px 0 30px 0;
   font-size: 20px;
   font-weight: 400;
+}
+
+.our-values-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 90%;
+  margin: auto;
+  height: 450px;
+}
+
+.value-text,
+.value-image {
+  position: absolute;
+  opacity: 0; /* bắt đầu ẩn */
+  height: 100%;
+  display: flex;
+  pointer-events: none;
+}
+
+.value-text {
+  left: 0;
+}
+
+.value-text h2 {
+  font-size: 2rem;
+  color: #cc4448;
+  font-weight: 600;
+}
+
+.value-image {
+  padding-right: 50px;
+  right: 0;
+  justify-content: right;
+}
+
+.value-image img {
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .hero .btn-get-started {
@@ -952,29 +991,6 @@ section,
 
 .hero .btn-get-started:hover i {
   transform: translateX(5px);
-}
-
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  color: var(--default-color);
-  font-weight: 600;
-}
-
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
 .hero .animated {
@@ -1228,105 +1244,105 @@ section,
 }
 
 .services .service-item.item-cyan {
-  border-bottom: 3px solid #CC4448;
+  border-bottom: 3px solid #cc4448;
 }
 
 .services .service-item.item-cyan .icon {
-  color: #CC4448;
+  color: #cc4448;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-cyan .read-more {
-  color: #CC4448;
+  color: #cc4448;
 }
 
 .services .service-item.item-cyan:hover {
-  background: #CC4448;
+  background: #cc4448;
 }
 
 .services .service-item.item-orange {
-  border-bottom: 3px solid #0B102D;
+  border-bottom: 3px solid #0b102d;
 }
 
 .services .service-item.item-orange .icon {
-  color: #0B102D;
+  color: #0b102d;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-orange .read-more {
-  color: #0B102D;
+  color: #0b102d;
 }
 
 .services .service-item.item-orange:hover {
-  background: #0B102D;
+  background: #0b102d;
 }
 
 .services .service-item.item-teal {
-  border-bottom: 3px solid #CC4448;
+  border-bottom: 3px solid #cc4448;
 }
 
 .services .service-item.item-teal .icon {
-  color: #CC4448;
+  color: #cc4448;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-teal .read-more {
-  color: #CC4448;
+  color: #cc4448;
 }
 
 .services .service-item.item-teal:hover {
-  background: #CC4448;
+  background: #cc4448;
 }
 
 .services .service-item.item-red {
-  border-bottom: 3px solid #0B102D;
+  border-bottom: 3px solid #0b102d;
 }
 
 .services .service-item.item-red .icon {
-  color: #0B102D;
+  color: #0b102d;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-red .read-more {
-  color: #0B102D;
+  color: #0b102d;
 }
 
 .services .service-item.item-red:hover {
-  background: #0B102D;
+  background: #0b102d;
 }
 
 .services .service-item.item-indigo {
-  border-bottom: 3px solid #CC4448;
+  border-bottom: 3px solid #cc4448;
 }
 
 .services .service-item.item-indigo .icon {
-  color: #CC4448;
+  color: #cc4448;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-indigo .read-more {
-  color: #CC4448;
+  color: #cc4448;
 }
 
 .services .service-item.item-indigo:hover {
-  background: #CC4448;
+  background: #cc4448;
 }
 
 .services .service-item.item-pink {
-  border-bottom: 3px solid #0B102D;
+  border-bottom: 3px solid #0b102d;
 }
 
 .services .service-item.item-pink .icon {
-  color: #0B102D;
+  color: #0b102d;
   background: rgba(191, 144, 0, 0.1);
 }
 
 .services .service-item.item-pink .read-more {
-  color: #0B102D;
+  color: #0b102d;
 }
 
 .services .service-item.item-pink:hover {
-  background: #0B102D;
+  background: #0b102d;
 }
 
 .services .service-item:hover h3,
@@ -1845,8 +1861,8 @@ section,
 }
 
 .larger-logo {
-  max-width: 120px;  /* Điều chỉnh kích thước theo mong muốn */
-  transform: scale(2.5);  /* Tăng kích thước logo */
+  max-width: 120px; /* Điều chỉnh kích thước theo mong muốn */
+  transform: scale(2.5); /* Tăng kích thước logo */
   filter: brightness(0) saturate(100%) contrast(130%);
 }
 
@@ -1861,7 +1877,7 @@ section,
 .divider {
   width: 100px;
   height: 3px;
-  background-color: #BF9000; /* hoặc #BF9000 nếu bạn muốn dùng màu vàng gold */
+  background-color: #bf9000; /* hoặc #BF9000 nếu bạn muốn dùng màu vàng gold */
   border: none;
   margin: 10px auto 30px auto; /* canh giữa và tạo khoảng cách */
   opacity: 0.8;

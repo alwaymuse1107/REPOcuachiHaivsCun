@@ -250,4 +250,35 @@
       window.location.href = "index.html";
     }
   }
+
+  // Đảm bảo DOM đã load
+  document.addEventListener("DOMContentLoaded", () => {
+    const texts = gsap.utils.toArray(".value-text");
+    const images = gsap.utils.toArray(".value-image");
+
+    // Ẩn toàn bộ phần tử ban đầu
+    gsap.set([...texts, ...images], { opacity: 0 });
+
+    const tl = gsap.timeline({ repeat: -1 });
+
+    for (let i = 0; i < texts.length; i++) {
+      // Hiện chữ và ảnh cùng lúc
+      tl.to([texts[i], images[i]], {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      });
+
+      // Sau 1.5s thì ẩn đi
+      tl.to(
+        [texts[i], images[i]],
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.in",
+        },
+        "+=1,5"
+      );
+    }
+  });
 })();
