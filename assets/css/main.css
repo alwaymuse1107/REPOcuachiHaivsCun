@@ -19,6 +19,11 @@
   --nav-font: "Poppins", sans-serif;
 }
 
+
+#navmenu a {
+  color: #0B102D !important;
+}
+
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
@@ -273,7 +278,7 @@ h6 {
 
   .navmenu .dropdown ul {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px ;
     background: var(--nav-dropdown-background-color);
     display: block;
     position: absolute;
@@ -338,14 +343,14 @@ h6 {
 
   .lang-label {
     font-family: var(--nav-font);
-    color: var(--nav-color);
+    color: #0B102D;
     cursor: pointer;
     transition: color 0.3s;
   }
 
   .lang-label.inactive {
     display: none;
-    color: #bbb;
+    color: #0B102D;
     font-weight: normal;
   }
 
@@ -753,18 +758,16 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
-.scroll-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-  background-color: var(--accent-color);
+#scroll-top {
+  background-color: #CC4448; /* màu nền đỏ của bạn */
+  border: 1px solid #aa2e35; /* viền đậm hơn một chút */
+  border-radius: 20px;        /* bo góc nhẹ */
   width: 40px;
   height: 40px;
-  border-radius: 4px;
-  transition: all 0.4s;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
 }
 
 .scroll-top i {

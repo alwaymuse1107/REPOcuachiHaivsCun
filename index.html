@@ -51,7 +51,7 @@
         <ul>
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#services">Services</a></li> 
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -84,14 +84,16 @@
           id="langToggle"
           onchange="switchLanguage(this.checked)"
         />
-        <span class="slider" style="background-color: #BF9000; color: white;"></span>
+ <span class="slider" style="background-color: #CC4448; color: white; opacity: 0.7;"></span>
       </label>
       <span id="label-vn" class="lang-label">VN</span>
       <span id="label-en" class="lang-label inactive">EN</span>
     </div>
 
-      <a class="btn-getstarted flex-md-shrink-0" href="index.html#about" style="background-color: #CC4448; color: white;">Contact Us</a>
-
+     <a class="btn-getstarted flex-md-shrink-0" 
+   href="index.html#about" 
+   style="background-color: #CC4448; color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none;">
+   Contact Us</a>
     </div>
   </header>
 
@@ -103,9 +105,11 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h1 data-aos="fade-up" style="font-size: 40px; margin-bottom: 1cm;">From Numbers to Knowledge<br>From Insight to Impact</h1>
+            <h1 data-aos="fade-up" style="font-size: 40px; margin-bottom: 1cm; color: #0B102D;">
+  From Numbers to Knowledge<br>From Insight to Impact</h1>
             <div class="d-flex flex-column flex-md-row" data-aos="fade-up" data-aos-delay="200">
-              <a href="#about" class="btn-get-started" style="background-color: #CC4448; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Get Started <i class="bi bi-arrow-right"></i></a>
+              <a href="#about" class="btn-get-started" style="background-color: #CC4448; color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none;">
+  Get Started <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out">
@@ -297,7 +301,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item item-cyan position-relative">
-              <i class="bi bi-activity icon"></i>
+              <i class="bi bi-graph-up-arrow icon"></i>
               <h3>DATA ANALYSIS</h3>
               <p>We delve into your data, uncover patterns, and <br> provide meaningful insights that guide <br> your strategic decisions.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -306,7 +310,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item item-orange position-relative">
-              <i class="bi bi-broadcast icon"></i>
+              <i class="bi bi-pie-chart icon"></i>
               <h3>DATA VISUALIZATION</h3>
               <p>We create stunning and interactive visualizations that enable you to see the data in a new light and identify trends and outliers at a glance.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -315,7 +319,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item item-teal position-relative">
-              <i class="bi bi-easel icon"></i>
+              <i class="bi bi-search icon"></i>
               <h3>PREDICTIVE ANALYSIS</h3>
               <p>With our predictive analytics models, you can anticipate market trends, customer behavior, and more, enabling you to stay one step ahead of the competition.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -324,7 +328,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-item item-red position-relative">
-              <i class="bi bi-bounding-box-circles icon"></i>
+              <i class="bi bi-database-down icon"></i>
               <h3>DATA INTEGRATION</h3>
               <p>We can help you integrate data from various sources, ensuring that you have a holistic view of your business.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -333,7 +337,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-item item-indigo position-relative">
-              <i class="bi bi-calendar4-week icon"></i>
+              <i class="bi bi-shield-check icon"></i>
               <h3>DATA SECURITY</h3>
               <p>Our experts ensure that your data is protected against breaches, while also complying with all relevant regulations and industry standards.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -342,7 +346,7 @@
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item item-pink position-relative">
-              <i class="bi bi-chat-square-text icon"></i>
+              <i class="bi bi-card-checklist icon"></i>
               <h3>OTHER SERVICES</h3>
               <p>In collaboration with our sister company, Programware, we provide full-service research solutions including survey design, programming, fielding and analysis.</p>
               <a href="#" class="read-more stretched-link"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
@@ -351,13 +355,8 @@
         </div>
       </div>
     </section><!-- /Services Section -->
-
-    <!-- Team Section -->
-    <section id="team" class="team section">
     <!-- Clients Section -->
     <section id="clients" class="clients section">
-
-      <!-- Clients Section -->
       <div class="container section-title" data-aos="fade-up">
 <p style="color: #0B102D;">We honored to work with best clients<br></p>
    <hr class="divider">
@@ -381,12 +380,7 @@
       <img src="assets/img/clients/lessens logo.png" class="img-fluid client-logo larger-logo" alt="Client 5">
       </div>
       </div>
-      <!-- Thêm bao nhiêu client tùy bạn -->
       </div>
-      </div>
-
-      </div>
-
     </section><!-- /Clients Section -->
   </main>
 
@@ -402,60 +396,64 @@
             <h2 class="cta-title mb-2">Get Started Today!</h2>
             <p class="cta-subtitle mb-0">Let us know who you are</p>
           </div>
-          
           <a href="#contact" class="btn btn-modern mt-3 mt-lg-0">CONTACT US</a>
           </div>
-
         </div>
         </div>
         </section>
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="d-flex align-items-center">
-<span class="sitename" style="color: #CC4448; font-weight: bold;">Analytix Intelligence</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p class="mt-3"><strong>Toronto:</strong> <span>7560 Airport Rd Suite 14, Mississauga, ON L4T 3H4</span></p>
-            <p class="mt-3"><strong>Ho Chi Minh City:</strong> <span>The 678 Tower, 67 Hoang Van Thai Suite 1601A, Tan Phu Ward, District 7</span></p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 (855) 437-7295</span></p>
-            <p><strong>Email:</strong> <span>information@analytixintelligence.com</span></p>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12">
-          <h4>Follow Us</h4>
-          <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin" style="color: #CC4448;"></i></a>
-          </div>
-        </div>
-
+   <div class="container footer-top">
+  <div class="row gy-4">
+    <!-- Cột 1: About -->
+    <div class="col-lg-4 col-md-6 footer-about">
+      <a href="index.html" class="d-flex align-items-center">
+        <span class="sitename" style="color: #CC4448; font-weight: bold; margin-top: -0.3cm;"">Analytix Intelligence</span>
+      </a>
+      <div class="footer-contact" style="margin-top: 0cm;">
+        <p class="mt-3"><strong>Toronto:</strong> <span>7560 Airport Rd Suite 14, Mississauga, ON L4T 3H4</span></p>
+        <p class="mt-3"><strong>Ho Chi Minh City:</strong> <span>The 678 Tower, 67 Hoang Van Thai Suite 1601A, Tan Phu Ward, District 7</span></p>
+        <p class="mt-3"><strong>Phone:</strong> <span>+1 (855) 437-7295</span></p>
+        <p><strong>Email:</strong> <span>information@analytixintelligence.com</span></p>
       </div>
     </div>
+
+    <!-- Cột 2: Useful Links -->
+    <div class="col-lg-2 col-md-3 footer-links">
+   <h4 style="color: #CC4448;">Useful Links</h4>
+      <ul>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột 3: Our Services -->
+    <div class="col-lg-2 col-md-3 footer-links">
+     <h4 style="color: #CC4448;">Our Services</h4>
+      <ul>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+      </ul>
+    </div>
+
+    <!-- Cột 4: Follow Us -->
+    <div class="col-lg-2 col-md-12">
+      <h4 style="color: #CC4448;">Follow Us</h4>
+      <div class="social-links d-flex">
+        <a href=""><i class="bi bi-instagram" style="color: #CC4448;"></i></a>
+        <a href=""><i class="bi bi-linkedin" style="color: #CC4448;"></i></a>
+      </div>
+    </div>
+
+    <!-- Cột 5: Logo riêng -->
+    <div class="col-lg-2 col-md-12 d-flex align-items-start justify-content-center">
+      <img src="assets/img/aiqfulllogo.png" alt="Logo" style="height: 200px;">
+    </div>
+  </div>
+</div>
 
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Analytix Intelligence</strong> <span>All Rights Reserved</span></p>
