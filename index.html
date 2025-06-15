@@ -78,20 +78,20 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <div class="lang-switch-container">
+      <div class="lang-switch-container ">
       <label class="switch" >
         <input
           type="checkbox"
           id="langToggle"
           onchange="switchLanguage(this.checked)"
         />
- <span class="slider" style="background-color: #CC4448; color: white; opacity: 0.7;"></span>
+      <span class="slider" style="background-color: #CC4448; color: white; opacity: 0.7;"></span>
       </label>
       <span id="label-vn" class="lang-label">VN</span>
       <span id="label-en" class="lang-label inactive">EN</span>
     </div>
 
-     <a class="btn-getstarted flex-md-shrink-0" 
+     <a class="btn-getstarted " 
    href="contact.html" 
    style="background-color: #CC4448; color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none;">
    Contact Us</a>
@@ -101,40 +101,42 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="our-values-wrapper">
- <div class="container">
-  <div class="row align-items-center our-values-wrapper">
-    <!-- Cột bên trái -->
-    <div class="col-lg-7">
-      <h1>From Numbers to Knowledge<br>From Insight to Impact</h1>
+   <section id="hero" class="hero section py-5">
+  <div class="container">
+    <div class="row">
 
-      <!-- Khối chữ động -->
-      <div class="position-relative" style="height: 50px;">
-        <div class="value-text"><h2>Respect</h2></div>
-        <div class="value-text"><h2>Inclusiveness</h2></div>
-        <div class="value-text"><h2>Empathy</h2></div>
-        <div class="value-text"><h2>Learning</h2></div>
-        <div class="value-text"><h2>Collaboration</h2></div>
-        <div class="value-text"><h2>Passion</h2></div>
+      <!-- Cột trái: Tiêu đề + Text động -->
+      <div class="col-lg-6">
+        <h1 class="mb-4">
+          From Numbers to Knowledge<br>
+          From Insight to Impact
+        </h1>
+        <div class="position-relative" style="height: 50px;">
+          <div class="value-text"><h2>Respect</h2></div>
+          <div class="value-text"><h2>Inclusiveness</h2></div>
+          <div class="value-text"><h2>Empathy</h2></div>
+          <div class="value-text"><h2>Learning</h2></div>
+          <div class="value-text"><h2>Collaboration</h2></div>
+          <div class="value-text"><h2>Passion</h2></div>
+        </div>
       </div>
-    </div>
 
-    <!-- Cột bên phải -->
-    <div class="col-lg-5 position-relative" style="height: 300px;">
-      <div class="value-image"><img src="/assets/img/Respect.png" alt=""></div>
-      <div class="value-image"><img src="/assets/img/Collaboration.png" alt=""></div>
-      <div class="value-image"><img src="/assets/img/Collaboration.png" alt=""></div>
-      <div class="value-image"><img src="/assets/img/Learning.png" alt=""></div>
-      <div class="value-image"><img src="/assets/img/Collaboration.png" alt=""></div>
-      <div class="value-image"><img src="/assets/img/Passion.png" alt=""></div>
+      <!-- Cột phải: Ảnh to lệch phải -->
+      <div class="col-lg-6">
+        <div class="position-relative" style="height: 400px;">
+          <div class="value-image"><img src="/assets/img/Respect.png" alt="" /></div>
+          <div class="value-image"><img src="/assets/img/Inclusiveness.png" alt="" /></div>
+          <div class="value-image"><img src="/assets/img/Empathy.png" alt="" /></div>
+          <div class="value-image"><img src="/assets/img/Learning.png" alt="" /></div>
+          <div class="value-image"><img src="/assets/img/Collaboration.png" alt="" /></div>
+          <div class="value-image"><img src="/assets/img/Passion.png" alt="" /></div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
+</section>
 
-    </div>
-
-    </section><!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">

@@ -191,10 +191,6 @@ h6 {
 }
 
 @media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
-
   .header .btn-getstarted {
     order: 2;
     margin: 0 15px 0 0;
@@ -523,7 +519,7 @@ h6 {
 
   /* Sưitch */
   .lang-switch-container {
-    padding-left: 24px;
+    padding-right: 1.23%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -898,6 +894,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
+  margin-top: 48px;
   min-height: 100vh;
   position: relative;
   padding: 80px 0 60px 0;
@@ -936,7 +933,6 @@ section,
   position: absolute;
   opacity: 0; /* bắt đầu ẩn */
   height: 100%;
-  display: flex;
   pointer-events: none;
 }
 
@@ -957,7 +953,9 @@ section,
 }
 
 .value-image img {
-  max-height: 100%;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
   object-fit: contain;
 }
 
