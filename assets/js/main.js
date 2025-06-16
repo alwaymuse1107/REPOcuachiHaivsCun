@@ -275,17 +275,90 @@
   });
 })();
 
-const myLatLng = [43.7140825,-79.6569542]; // Có thể thay bằng vị trí khác
+document.addEventListener("DOMContentLoaded", function () {
+  const myLatLng = [43.7140825, -79.6569542];
 
-// Tạo bản đồ và đặt vị trí trung tâm
-const map = L.map('map').setView(myLatLng, 15); // Zoom cấp 15
+  // Chỉ tạo map khi chắc chắn #map đã có kích thước chính xác
+  function createMap() {
+    const map = L.map('map').setView(myLatLng, 15);
 
-// Thêm layer OpenStreetMap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-// Thêm đánh dấu và popup
-L.marker(myLatLng).addTo(map)
-  .bindPopup('<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON')
-  .openPopup();
+    L.marker(myLatLng).addTo(map)
+      .bindPopup('<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON')
+      .openPopup();
+
+    // Dùng observer để gọi invalidateSize khi #map hiển thị
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            map.invalidateSize();
+          }, 300);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+    observer.observe(document.getElementById('map'));
+  }
+
+  // Gọi sau khi trang load hoàn toàn
+  window.addEventListener("load", function () {
+    // Đợi thêm 300ms cho AOS layout xong
+    setTimeout(() => {
+      createMap();
+    }, 600);
+  }); 
+});
+
+// Khởi tạo map
+// Khởi tạo map
+const map = L.map('map').setView([43.7140825, -79.6569542], 15);
+
+// Các tile layers
+const lightTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap & CartoDB'
+});
+
+const darkTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap & CartoDB'
+});
+
+// Ban đầu là light
+lightTile.addTo(map);
+
+const emojiIcon = L.divIcon({
+  html: '📍',
+  className: 'custom-emoji-marker',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30]
+});
+
+// Marker
+L.marker([43.7140825, -79.6569542], { icon: emojiIcon })
+  .addTo(map)
+  .on('click', () => {
+    window.open('https://www.google.com/maps?q=43.7140825,-79.6569542', '_blank');
+  });
+
+// Bắt toggle switch
+const toggle = document.getElementById('themeToggle');
+
+toggle.addEventListener('change', function () {
+  if (this.checked) {
+    map.removeLayer(lightTile);
+    darkTile.addTo(map);
+  } else {
+    map.removeLayer(darkTile);
+    lightTile.addTo(map);
+  }
+});
+
+
+
+
+
+

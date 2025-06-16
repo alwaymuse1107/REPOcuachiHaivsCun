@@ -130,8 +130,7 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about section">
-
+    <section id="about" class="about section" style="padding-bottom: 10px; margin-bottom: 0;">
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
 
@@ -161,71 +160,7 @@
 
     <!-- Values Section -->
     <section id="values" class="values section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-<p style="color: #CC4448;">OUR VALUES<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        
-        <div class="row gy-4">
-
-<div class="row">
-  <!-- Card 1 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card">
-      <img src="assets/img/Respect.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Respect</h3>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card">
-      <img src="assets/img/values-2.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Inclusiveness</h3>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card">
-      <img src="assets/img/Empathy.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Empathy</h3>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <!-- Card 4 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card">
-<img src="assets/img/Learning.png" class="img-fluid">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Learning</h3>
-    </div>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card">
-      <img src="assets/img/Collaboration.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Collaboration</h3>
-    </div>
-  </div>
-
-  <!-- Card 6 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card">
-      <img src="assets/img/Passion.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Passion</h3>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-    </section><!-- /Values Section -->
-
-<section id="services" class="services">
+<section id="services" class="services" style="padding-top: 10px; margin-top: 0;">
 <div class="container section-title" data-aos="fade-up">
         <p> Our Services<br></p>
       </div><!-- End Section Title -->
@@ -290,6 +225,13 @@
         </div>
       </div>
     </section><!-- /Services Section -->
+
+        <section id="clients" class="clients section">
+      <div class="container section-title" data-aos="fade-up">
+<p style="color: #0B102D;">Why Choose Us<br></p>
+   <hr class="divider">
+      </div>
+      </section>
     <!-- Clients Section -->
     <section id="clients" class="clients section">
       <div class="container section-title" data-aos="fade-up">
@@ -318,36 +260,44 @@
       </div>
     </section><!-- /Clients Section -->
   </main>
-
   <footer id="footer" class="footer">
 
-      <section class="fullwidth-cta py-5" style="background: #f9fbff;">
-      <div class="inner-cta mx-auto px-4 py-4 text-center text-lg-start rounded-4" 
-          style="max-width: 700px; background: #fff; box-shadow: 0 20px 60px rgba(0, 123, 255, 0.1);">
-        
-        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-5 gap-4 gap-3 gap-1">
-          
-          <div>
-            <h2 class="cta-title mb-2">Get Started Today!</h2>
-            <p class="cta-subtitle mb-0">Let us know who you are</p>
-          </div>
-          <a href="#contact" class="btn btn-modern mt-3 mt-lg-0">CONTACT US</a>
-          </div>
-        </div>
-        </div>
-        </section>
+<section id="map-section" class="py-5" style="background: #f9fbff;">
+  <div class="container text-center position-relative">
+    <h2 class="mb-4" style="color: #CC4448;">Our Location</h2>
 
-  <section id="map-section" class="py-5" style="background: #f9fbff;">
-    <div class="container text-center">
-      <h2 class="mb-4" style="color: #CC4448;">Our Location</h2>
-      <div id="map"></div>
-    </div>
-  </section>
+    <!-- Theme filter dropdown (nút gọn bên phải map) -->
+<div class="map-theme-toggle">
+  <label class="map-switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="map-slider"></span>
+  </label>
+</div>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Your custom JS file -->
-  <script src="map.js"></script>
+    <!-- Map container -->
+    <div id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
+  </div>
+</section>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+  .map-theme-selector {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    z-index: 1000;
+    width: 100px;
+  }
+
+  .map-theme-selector select {
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+</style>
 
    <div class="container footer-top">
   <div class="row gy-4">
