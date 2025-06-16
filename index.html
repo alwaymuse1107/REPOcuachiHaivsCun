@@ -51,28 +51,19 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li> 
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><i class="bi bi-graph-up-arrow icon"></i><a href="#"></i>Data Analysis</a></li>
+              <li><i class="bi bi-pie-chart icon"></i><a href="#"></i>Data Visualization</a></li>
+              <li><i class="bi bi-search icon"></i><a href="#"></i>Predictive Analysis</a></li>
+              <li><i class="bi bi-database-down icon"></i><a href="#"></i>Data Integration</a></li>
+              <li><i class="bi bi-shield-check icon"></i><a href="#"></i>Data Security</a></li>
+              <li><i class="bi bi-card-checklist icon"></i><a href="#"></i>Other Services</a></li>
             </ul>
           </li>
+          <li><a href="#team">Why Choose Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -123,7 +114,7 @@
 
       <!-- Cột phải: Ảnh to lệch phải -->
       <div class="col-lg-6">
-        <div class="position-relative" style="height: 400px;">
+        <div class="position-relative" style="height: 400px; transform: translateX(-1.5cm);">
           <div class="value-image"><img src="/assets/img/Respect.png" alt="" /></div>
           <div class="value-image"><img src="/assets/img/Inclusiveness.png" alt="" /></div>
           <div class="value-image"><img src="/assets/img/Empathy.png" alt="" /></div>
@@ -346,6 +337,18 @@
         </div>
         </section>
 
+  <section id="map-section" class="py-5" style="background: #f9fbff;">
+    <div class="container text-center">
+      <h2 class="mb-4" style="color: #CC4448;">Our Location</h2>
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Your custom JS file -->
+  <script src="map.js"></script>
+
    <div class="container footer-top">
   <div class="row gy-4">
     <!-- Cột 1: About -->
@@ -363,23 +366,21 @@
 
     <!-- Cột 2: Useful Links -->
     <div class="col-lg-2 col-md-3 footer-links">
-   <h4 style="color: #CC4448;">Useful Links</h4>
+   <h4 style="color: #CC4448;">EXPLORE</h4>
       <ul>
         <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Why Choose Us</a></li>
       </ul>
     </div>
 
     <!-- Cột 3: Our Services -->
     <div class="col-lg-2 col-md-3 footer-links">
-     <h4 style="color: #CC4448;">Our Services</h4>
+    <h4 style="visibility: hidden;">EXPLORE</h4>
       <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Our Services</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+        <li><i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a></li>
       </ul>
     </div>
 

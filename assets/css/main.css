@@ -288,7 +288,10 @@ h6 {
   }
 
   .navmenu .dropdown ul li {
-    min-width: 200px;
+  display: flex;
+  align-items: center;      /* căn icon và text theo chiều dọc */
+  gap: 10px;                /* khoảng cách giữa icon và text */
+  padding: 10px 20px;
   }
 
   .navmenu .dropdown ul a {
@@ -750,6 +753,7 @@ h6 {
   font-size: 13px;
 }
 
+
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
@@ -900,8 +904,9 @@ section,
   padding: 80px 0 60px 0;
   display: flex;
   align-items: center;
-  background: url(../img/hero-bg.png) top center no-repeat;
+  background: url(../img/background.png) no-repeat center top;
   background-size: cover;
+  margin: 0;
 }
 
 .hero h1 {

@@ -1,11 +1,3 @@
-/**
- * Template Name: FlexStart
- * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
- * Updated: Nov 01 2024 with Bootstrap v5.3.3
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-
 (function () {
   "use strict";
 
@@ -282,3 +274,18 @@
     }
   });
 })();
+
+const myLatLng = [43.7140825,-79.6569542]; // Có thể thay bằng vị trí khác
+
+// Tạo bản đồ và đặt vị trí trung tâm
+const map = L.map('map').setView(myLatLng, 15); // Zoom cấp 15
+
+// Thêm layer OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// Thêm đánh dấu và popup
+L.marker(myLatLng).addTo(map)
+  .bindPopup('<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON')
+  .openPopup();
