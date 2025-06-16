@@ -248,30 +248,33 @@
     const texts = gsap.utils.toArray(".value-text");
     const images = gsap.utils.toArray(".value-image");
 
-    // Ẩn toàn bộ phần tử ban đầu
-    gsap.set([...texts, ...images], { opacity: 0 });
+    // Đặt mặc định ban đầu: ẩn và dịch sang trái
+    gsap.set([...texts, ...images], {
+      opacity: 0,
+      x: -100,
+      position: "absolute",
+    });
 
     const tl = gsap.timeline({ repeat: -1 });
 
-    for (let i = 0; i < texts.length; i++) {
-      // Hiện chữ và ảnh cùng lúc
-      tl.to([texts[i], images[i]], {
+    texts.forEach((text, i) => {
+      const image = images[i];
+      tl.to([text, image], {
         opacity: 1,
-        duration: 1,
+        x: 0,
+        duration: 0.8,
         ease: "power2.out",
-      });
-
-      // Sau 1.5s thì ẩn đi
-      tl.to(
-        [texts[i], images[i]],
+      }).to(
+        [text, image],
         {
           opacity: 0,
-          duration: 1,
+          x: 100,
+          duration: 0.8,
           ease: "power2.in",
         },
-        "+=1,5"
+        "+=1.5"
       );
-    }
+    });
   });
 })();
 
@@ -280,29 +283,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Chỉ tạo map khi chắc chắn #map đã có kích thước chính xác
   function createMap() {
-    const map = L.map('map').setView(myLatLng, 15);
+    const map = L.map("map").setView(myLatLng, 15);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
 
-    L.marker(myLatLng).addTo(map)
-      .bindPopup('<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON')
+    L.marker(myLatLng)
+      .addTo(map)
+      .bindPopup("<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON")
       .openPopup();
 
     // Dùng observer để gọi invalidateSize khi #map hiển thị
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            map.invalidateSize();
-          }, 300);
-        }
-      });
-    }, {
-      threshold: 0.3
-    });
-    observer.observe(document.getElementById('map'));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              map.invalidateSize();
+            }, 300);
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+    observer.observe(document.getElementById("map"));
   }
 
   // Gọi sau khi trang load hoàn toàn
@@ -311,43 +318,52 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       createMap();
     }, 600);
-  }); 
+  });
 });
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map('map').setView([43.7140825, -79.6569542], 15);
+const map = L.map("map").setView([43.7140825, -79.6569542], 15);
 
 // Các tile layers
-const lightTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap & CartoDB'
-});
+const lightTile = L.tileLayer(
+  "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
+  {
+    attribution: "&copy; OpenStreetMap & CartoDB",
+  }
+);
 
-const darkTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap & CartoDB'
-});
+const darkTile = L.tileLayer(
+  "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+  {
+    attribution: "&copy; OpenStreetMap & CartoDB",
+  }
+);
 
 // Ban đầu là light
 lightTile.addTo(map);
 
 const emojiIcon = L.divIcon({
-  html: '📍',
-  className: 'custom-emoji-marker',
+  html: "📍",
+  className: "custom-emoji-marker",
   iconSize: [30, 30],
-  iconAnchor: [15, 30]
+  iconAnchor: [15, 30],
 });
 
 // Marker
 L.marker([43.7140825, -79.6569542], { icon: emojiIcon })
   .addTo(map)
-  .on('click', () => {
-    window.open('https://www.google.com/maps?q=43.7140825,-79.6569542', '_blank');
+  .on("click", () => {
+    window.open(
+      "https://www.google.com/maps?q=43.7140825,-79.6569542",
+      "_blank"
+    );
   });
 
 // Bắt toggle switch
-const toggle = document.getElementById('themeToggle');
+const toggle = document.getElementById("themeToggle");
 
-toggle.addEventListener('change', function () {
+toggle.addEventListener("change", function () {
   if (this.checked) {
     map.removeLayer(lightTile);
     darkTile.addTo(map);
@@ -356,9 +372,3 @@ toggle.addEventListener('change', function () {
     lightTile.addTo(map);
   }
 });
-
-
-
-
-
-

@@ -94,14 +94,16 @@
     <!-- Hero Section -->
    <section id="hero" class="hero section py-5">
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
 
-      <!-- Cột trái: Tiêu đề + Text động -->
+      <!-- Cột trái: Tiêu đề + Text động + Nút -->
       <div class="col-lg-6">
         <h1 class="mb-4">
           From Numbers to Knowledge<br>
           From Insight to Impact
         </h1>
+
+        <!-- Text động -->
         <div class="position-relative" style="height: 50px;">
           <div class="value-text"><h2>Respect</h2></div>
           <div class="value-text"><h2>Inclusiveness</h2></div>
@@ -110,23 +112,29 @@
           <div class="value-text"><h2>Collaboration</h2></div>
           <div class="value-text"><h2>Passion</h2></div>
         </div>
+
+        <!-- Nút "Contact Us" bên dưới -->
+        <a href="#contact" class="btn btn-primary mt-4 px-4 py-2 rounded-pill" style="background-color: #CC4448; border: none;">
+          Get started!
+        </a>
       </div>
 
-      <!-- Cột phải: Ảnh to lệch phải -->
+      <!-- Cột phải: Ảnh động lệch phải -->
       <div class="col-lg-6">
-        <div class="position-relative" style="height: 400px; transform: translateX(-1.5cm);">
-          <div class="value-image"><img src="/assets/img/Respect.png" alt="" /></div>
-          <div class="value-image"><img src="/assets/img/Inclusiveness.png" alt="" /></div>
-          <div class="value-image"><img src="/assets/img/Empathy.png" alt="" /></div>
-          <div class="value-image"><img src="/assets/img/Learning.png" alt="" /></div>
-          <div class="value-image"><img src="/assets/img/Collaboration.png" alt="" /></div>
-          <div class="value-image"><img src="/assets/img/Passion.png" alt="" /></div>
+        <div class="position-relative" style="height: 400px; transform: translateX(-30px);">
+          <div class="value-image"><img src="/assets/img/Respect.png" alt="" class="img-fluid" /></div>
+          <div class="value-image"><img src="/assets/img/Inclusiveness.png" alt="" class="img-fluid" /></div>
+          <div class="value-image"><img src="/assets/img/Empathy.png" alt="" class="img-fluid" /></div>
+          <div class="value-image"><img src="/assets/img/Learning.png" alt="" class="img-fluid" /></div>
+          <div class="value-image"><img src="/assets/img/Collaboration.png" alt="" class="img-fluid" /></div>
+          <div class="value-image"><img src="/assets/img/Passion.png" alt="" class="img-fluid" /></div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
     <!-- About Section -->
@@ -231,6 +239,7 @@
 <p style="color: #0B102D;">Why Choose Us<br></p>
    <hr class="divider">
       </div>
+
       </section>
     <!-- Clients Section -->
     <section id="clients" class="clients section">
@@ -259,6 +268,36 @@
       </div>
       </div>
     </section><!-- /Clients Section -->
+    <section id="contact" class="py-5">
+  <div class="container">
+    <!-- Hàng bản đồ + form -->
+    <div class="row gy-4">
+    <!-- đay là chỗ bản đồ -->
+      <div class="col-lg-6">
+        <form>
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="text-end mt-3">
+            <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
   </main>
   <footer id="footer" class="footer">
 
@@ -282,22 +321,6 @@
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<style>
-  .map-theme-selector {
-    position: absolute;
-    top: 60px;
-    right: 30px;
-    z-index: 1000;
-    width: 100px;
-  }
-
-  .map-theme-selector select {
-    font-size: 14px;
-    padding: 2px 6px;
-    border-radius: 5px;
-  }
-</style>
 
    <div class="container footer-top">
   <div class="row gy-4">
