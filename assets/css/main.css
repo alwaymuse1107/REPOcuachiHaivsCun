@@ -2942,9 +2942,10 @@ section,
 }
 
 #map {
-  height: 400px;
-  width: 100%;
-  display: block;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 #mapThemeSelect {
@@ -3017,3 +3018,4 @@ input:checked + .map-slider::before {
   text-align: center;
   line-height: 1;
 }
+

@@ -281,36 +281,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const myLatLng = [43.7140825, -79.6569542];
 
-  // Chỉ tạo map khi chắc chắn #map đã có kích thước chính xác
-  function createMap() {
-    const map = L.map("map").setView(myLatLng, 15);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap contributors",
-    }).addTo(map);
-
-    L.marker(myLatLng)
-      .addTo(map)
-      .bindPopup("<strong>7560 Airport Rd Suite 14</strong><br>Mississauga, ON")
-      .openPopup();
-
-    // Dùng observer để gọi invalidateSize khi #map hiển thị
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              map.invalidateSize();
-            }, 300);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-    observer.observe(document.getElementById("map"));
-  }
+  let map, lightTile, darkTile;
 
   // Gọi sau khi trang load hoàn toàn
   window.addEventListener("load", function () {
@@ -372,3 +343,4 @@ toggle.addEventListener("change", function () {
     lightTile.addTo(map);
   }
 });
+
