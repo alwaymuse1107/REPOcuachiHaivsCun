@@ -355,12 +355,13 @@
       </div>
     </section><!-- /Clients Section -->
 
-  <section id="map-section" class="py-5" style="background: #ffffff;">
+  <section id="contact" class="contact" style="background: #ffffff;">
   <div class="container">
 
       <div class="row gy-4 align-items-start">
-           <div class="col-lg-6">
+           <div class="col-lg-6" style="position: relative;">
     <!-- Theme filter dropdown (nút gọn bên phải map) -->
+    <div id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
 <div class="map-theme-toggle">
   <label class="map-switch">
     <input type="checkbox" id="themeToggle">
@@ -368,7 +369,6 @@
   </label>
 </div>
     <!-- Map container -->
-    <div id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
   </div>
 
 <!-- Leaflet CSS -->
@@ -377,25 +377,39 @@
 
     <!-- đay là chỗ bản đồ -->
       <div class="col-lg-6 d-flex align-items-center" style="height: 400px">
-      <form class="w-100">
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-          </div>
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" placeholder="Company" required>
-          </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill">Send Message</button>
-          </div>
-        </form>
+        
+<form class="w-100">
+<p style="color: #CC4448; font-size: 24px; text-align: center;margin-bottom: 50px; font-weight: bold;">
+  Start your journey with us!<br></p>
+  <div class="row gy-3">
+    <!-- Your Name và Your Email -->
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="col-md-6">
+      <input type="email" class="form-control" placeholder="Your Email" required>
+    </div>
+
+    <!-- Company -->
+    <div class="col-12">
+      <input type="text" class="form-control" placeholder="Company" required>
+    </div>
+
+    <!-- Message -->
+    <div class="col-12">
+      <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+    </div>
+
+    <!-- Nút Send Message -->
+    <div class="col-12 text-center mt-3">
+      <button type="submit" class="btn px-4 py-2 rounded-pill"
+              style="background-color: #CC4448; color: white; border: none;">
+        Send Message
+      </button>
+    </div>
+  </div>
+</form>
+
       </div>
     </div>
   </div><!-- End container -->
@@ -443,14 +457,15 @@
     <div class="col-lg-2 col-md-12">
       <h4 style="color: #CC4448;">Follow Us</h4>
       <div class="social-links d-flex">
-        <a href=""><i class="bi bi-instagram" style="color: #CC4448;"></i></a>
-        <a href=""><i class="bi bi-linkedin" style="color: #CC4448;"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a>
       </div>
     </div>
 
     <!-- Cột 5: Logo riêng -->
     <div class="col-lg-2 col-md-12 d-flex align-items-start justify-content-center">
-      <img src="assets/img/aiqfulllogo.png" alt="Logo" style="height: 200px;">
+      <img src="assets/img/aiqfulllogo.png" alt="Logo" style="height: 210px;margin-left: -2.5cm;">
     </div>
   </div>
 </section>

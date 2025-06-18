@@ -279,7 +279,7 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const myLatLng = [43.7140825, -79.6569542];
+  const myLatLng = [10.731252, 106.724299];
 
   let map, lightTile, darkTile;
 
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map("map").setView([43.7140825, -79.6569542], 15);
+const map = L.map("map").setView([10.731252, 106.724299], 20.25);
 
 // Các tile layers
 const lightTile = L.tileLayer(
@@ -314,19 +314,18 @@ const darkTile = L.tileLayer(
 // Ban đầu là light
 lightTile.addTo(map);
 
-const emojiIcon = L.divIcon({
-  html: "📍",
-  className: "custom-emoji-marker",
-  iconSize: [30, 30],
-  iconAnchor: [15, 30],
+const customIcon = L.icon({
+  iconUrl:'assets/img/image.png', // bạn có thể thay bằng icon của bạn
+  iconSize: [55, 55],   // chỉnh size cho phù hợp
+  iconAnchor: [20, 50], // điểm gốc của icon (nằm chính xác tại tọa độ)
 });
 
 // Marker
-L.marker([43.7140825, -79.6569542], { icon: emojiIcon })
+L.marker([10.731252, 106.724299], { icon: customIcon })
   .addTo(map)
   .on("click", () => {
     window.open(
-      "https://www.google.com/maps?q=43.7140825,-79.6569542",
+      "https://www.google.com/maps/@10.7312519,106.7242479,21z?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D",
       "_blank"
     );
   });
