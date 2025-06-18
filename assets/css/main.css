@@ -583,7 +583,6 @@ h6 {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -591,7 +590,6 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
-  padding-bottom: 50px;
   position: relative;
 }
 
@@ -659,10 +657,6 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.footer .footer-top {
-  padding-top: 50px;
-}
-
 .footer .social-links a {
   display: flex;
   align-items: center;
@@ -673,14 +667,14 @@ h6 {
   background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
   font-size: 16px;
-  color: #CC4448;
+  color: #cc4448;
   margin-right: 10px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
   color: white; /* ← Đây là dòng mới thêm vào */
-  background-color: #CC4448;
+  background-color: #cc4448;
 }
 
 .footer h4 {
@@ -704,7 +698,7 @@ h6 {
   margin-right: 3px;
   font-size: 12px;
   line-height: 0;
-  color: #CC4448;
+  color: #cc4448;
 }
 
 .footer .footer-links ul li {
@@ -724,7 +718,7 @@ h6 {
 }
 
 .footer .footer-links ul a:hover {
-  color: #CC4448;
+  color: #cc4448;
 }
 
 .footer .footer-about a {
@@ -846,7 +840,8 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  padding-top: 60px;
   scroll-margin-top: 98px;
   overflow: clip;
 }
@@ -1027,7 +1022,7 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about .content {
-  background-color: color-mix(in srgb, #0B102D, transparent 95%);
+  background-color: color-mix(in srgb, #0b102d, transparent 95%);
   border-radius: 15px;
   padding: 40px;
 }
@@ -1051,7 +1046,7 @@ section,
 
 .about .content .btn-read-more {
   color: var(--contrast-color);
-  background: #0B102D;
+  background: #0b102d;
   line-height: 0;
   padding: 10px 25px;
   border-radius: 20px;
@@ -3012,5 +3007,3 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
-
-
