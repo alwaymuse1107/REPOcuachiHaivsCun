@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.checked = true;
     labelVN.classList.remove("inactive");
     labelEN.classList.add("inactive");
+    
   } else {
     toggle.checked = false;
     labelEN.classList.remove("inactive");

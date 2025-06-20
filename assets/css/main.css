@@ -331,6 +331,7 @@ h6 {
   }
 
   /* Sưitch */
+  
   .lang-switch-container {
     padding-left: 24px;
     display: flex;
@@ -373,8 +374,10 @@ h6 {
     right: 0;
     bottom: 0;
     background-color: var(--accent-color);
-    transition: 0.4s;
+    transition: background-color 0.3s ease;
     border-radius: 34px;
+     color: white;
+  opacity: 0.7;
   }
 
   .slider:before {
@@ -1848,17 +1851,21 @@ section,
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 900px; 
   height: auto; 
   margin: 0 auto;
-  padding: 20px 0;  /*
+  padding: 20px 0; 
+  display: flex;
+  justify-content: space-between; /* Các logo sẽ được phân bổ đều */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  flex-wrap: wrap;  /*
    chiều cao vùng chứa */
 }
 
 .client-logos-track {
   display: flex;
   align-items: center;
-  animation: slide-left 20s linear infinite;
+  animation: slide-left 30s linear infinite;
   width: max-content;
 }
 
