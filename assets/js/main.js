@@ -314,11 +314,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map('map').setView([10.731142, 106.724358], 13); 
+const map = L.map("map").setView([10.731142, 106.724358], 20.25);
 
 // Các tile layers
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 const darkTile = L.tileLayer(
@@ -340,10 +341,13 @@ const customIcon = L.icon({
 // Marker
 L.marker([10.731142, 106.724358], { icon: customIcon })
   .addTo(map)
+  .bindPopup("<b>Đây là vị trí của bạn!</b>")
   .on("click", () => {
-    // Mở Google Maps khi người dùng click vào marker
-    window.open("https://www.google.com/maps/search/?api=1&query=10.731142,106.724358", "_blank");
-});
+    window.open(
+      "https://www.google.com/maps/search/?api=1&query=10.731142,106.724358",
+      "_blank"
+    );
+  });
 
 // Bắt toggle switch
 const toggle = document.getElementById("themeToggle");
