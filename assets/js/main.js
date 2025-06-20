@@ -221,27 +221,44 @@
       }
     });
   }
-  window.addEventListener("load", navmenuScrollspy);
-  document.addEventListener("scroll", navmenuScrollspy);
 
+  window.addEventListener("load", function () {
   const toggle = document.getElementById("langToggle");
   const labelVN = document.getElementById("label-vn");
   const labelEN = document.getElementById("label-en");
 
-  // Nếu đang ở trang English thì bật toggle sẵn (dựa vào URL)
-  if (window.location.href.includes("index-en")) {
+  // Set trạng thái toggle theo URL
+  if (window.location.href.includes("index-vn")) {
     toggle.checked = true;
-    labelVN.classList.add("inactive");
+    labelVN.classList.remove("inactive");
+    labelEN.classList.add("inactive");
+  } else {
+    toggle.checked = false;
     labelEN.classList.remove("inactive");
+    labelVN.classList.add("inactive");
   }
 
-  function switchLanguage(isEnglish) {
-    if (isEnglish) {
+  toggle.onchange = function () {
+    const isVN = toggle.checked;
+
+  if (isVN) {
+    labelVN.classList.remove("inactive");
+    labelEN.classList.add("inactive");
+
+    // 👉 Delay nhỏ để DOM cập nhật trước khi rời trang
+    setTimeout(() => {
+      window.location.href = "index-vn.html";
+    }, 800);
+  } else {
+    labelEN.classList.remove("inactive");
+    labelVN.classList.add("inactive");
+
+    setTimeout(() => {
       window.location.href = "index-en.html";
-    } else {
-      window.location.href = "index.html";
-    }
+    }, 800);
   }
+};
+});
 
   // Đảm bảo DOM đã load
   document.addEventListener("DOMContentLoaded", () => {
@@ -279,7 +296,7 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const myLatLng = [10.731252, 106.724299];
+  const myLatLng = [10.731142, 106.724358];
 
   let map, lightTile, darkTile;
 
@@ -294,13 +311,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map("map").setView([10.731252, 106.724299], 20.25);
+const map = L.map("map").setView([10.731142, 106.724358], 20.25);
 
 // Các tile layers
 const lightTile = L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
   {
     attribution: "&copy; OpenStreetMap & CartoDB",
+    mãxZoom: 19,
   }
 );
 
@@ -321,11 +339,11 @@ const customIcon = L.icon({
 });
 
 // Marker
-L.marker([10.731252, 106.724299], { icon: customIcon })
+L.marker([10.731142, 106.724358], { icon: customIcon })
   .addTo(map)
   .on("click", () => {
     window.open(
-      "https://www.google.com/maps/@10.7312519,106.7242479,21z?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D",
+      "https://www.google.com/maps/search/?api=1&query=10.731142,106.724358",
       "_blank"
     );
   });
@@ -343,3 +361,6 @@ toggle.addEventListener("change", function () {
   }
 });
 
+
+  const track = document.getElementById('logoTrack');
+  track.innerHTML += track.innerHTML; // 👈 Nhân đôi nội dung

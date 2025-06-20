@@ -1214,7 +1214,6 @@ section,
   margin-bottom: 25px;
   display: inline-block;
   line-height: 0;
-  transition: 0.3s;
 }
 
 .services .service-item h3 {
@@ -1840,6 +1839,29 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
+.section-title {
+  margin-bottom: 10px !important; /* 👈 thêm !important để ép Bootstrap ghi đè */
+  padding-bottom: 0 !important;
+}
+
+.client-logos-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: auto; 
+  margin: 0 auto;
+  padding: 20px 0;  /*
+   chiều cao vùng chứa */
+}
+
+.client-logos-track {
+  display: flex;
+  align-items: center;
+  animation: slide-left 20s linear infinite;
+  width: max-content;
+}
+
 .clients .client-logo {
   max-height: 50px;
   width: auto;
@@ -1859,8 +1881,8 @@ section,
 }
 
 .larger-logo {
-  max-width: 120px; /* Điều chỉnh kích thước theo mong muốn */
-  transform: scale(2.5); /* Tăng kích thước logo */
+  height: 60px; /* Điều chỉnh kích thước theo mong muốn */
+  transform: scale(1.8); /* Tăng kích thước logo */
   filter: brightness(0) saturate(100%) contrast(130%);
 }
 
@@ -1869,7 +1891,32 @@ section,
 .clients .larger-logo:active {
   filter: grayscale(0%) brightness(100%);
   opacity: 1;
-  transform: scale(3.2);
+  transform: scale(2.0);
+}
+
+.client-logo {
+  height: 60px;
+  margin: 0 40px;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.client-logos-wrapper:hover .client-logos-track {
+  animation-play-state: paused;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .divider {
