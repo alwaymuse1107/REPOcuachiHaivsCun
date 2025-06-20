@@ -314,16 +314,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map("map").setView([10.731142, 106.724358], 20.25);
+const map = L.map('map').setView([10.731142, 106.724358], 13); 
 
 // Các tile layers
-const lightTile = L.tileLayer(
-  "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png",
-  {
-    attribution: "&copy; OpenStreetMap & CartoDB",
-    mãxZoom: 19,
-  }
-);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 const darkTile = L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
@@ -345,11 +341,9 @@ const customIcon = L.icon({
 L.marker([10.731142, 106.724358], { icon: customIcon })
   .addTo(map)
   .on("click", () => {
-    window.open(
-      "https://www.google.com/maps/search/?api=1&query=10.731142,106.724358",
-      "_blank"
-    );
-  });
+    // Mở Google Maps khi người dùng click vào marker
+    window.open("https://www.google.com/maps/search/?api=1&query=10.731142,106.724358", "_blank");
+});
 
 // Bắt toggle switch
 const toggle = document.getElementById("themeToggle");
