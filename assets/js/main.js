@@ -222,12 +222,12 @@
     });
   }
 
-  window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("langToggle");
   const labelVN = document.getElementById("label-vn");
   const labelEN = document.getElementById("label-en");
 
-  // Set trạng thái toggle theo URL
+  // Set trạng thái toggle và nhãn ngôn ngữ theo URL khi tải trang
   if (window.location.href.includes("index-vn")) {
     toggle.checked = true;
     labelVN.classList.remove("inactive");
@@ -238,26 +238,28 @@
     labelVN.classList.add("inactive");
   }
 
+  // Cập nhật khi toggle thay đổi
   toggle.onchange = function () {
     const isVN = toggle.checked;
 
-  if (isVN) {
-    labelVN.classList.remove("inactive");
-    labelEN.classList.add("inactive");
+    // Sử dụng class để thay đổi nhãn mà không gây hiện cả hai
+    if (isVN) {
+      labelVN.classList.remove("inactive");
+      labelEN.classList.add("inactive");
+    } else {
+      labelEN.classList.remove("inactive");
+      labelVN.classList.add("inactive");
+    }
 
-    // 👉 Delay nhỏ để DOM cập nhật trước khi rời trang
+    // Chuyển hướng trang sau một thời gian delay để tránh nhảy quá nhanh
     setTimeout(() => {
-      window.location.href = "index-vn.html";
-    }, 800);
-  } else {
-    labelEN.classList.remove("inactive");
-    labelVN.classList.add("inactive");
-
-    setTimeout(() => {
-      window.location.href = "index-en.html";
-    }, 800);
-  }
-};
+      if (isVN) {
+        window.location.href = "index-vn.html"; // Chuyển sang trang tiếng Việt
+      } else {
+        window.location.href = "index-en.html"; // Chuyển sang trang tiếng Anh
+      }
+    }, 300);  // Điều chỉnh thời gian delay nếu cần
+  };
 });
 
   // Đảm bảo DOM đã load
