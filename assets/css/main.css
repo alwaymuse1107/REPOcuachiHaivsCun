@@ -63,6 +63,11 @@
   scroll-behavior: smooth;
 }
 
+button:hover, a:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1); /* Phóng to */
+  filter: brightness(1.2); /* Làm sáng */
+}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -905,6 +910,8 @@ section,
   background: url(../img/background.png) no-repeat center top;
   background-size: cover;
   margin: 0;
+   border: none; /* Ensure no borders around hero section */
+  outline: none;
 }
 
 .hero h1 {
@@ -1199,35 +1206,50 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Services Section (Updated for Blue Box Style with Corner Borders)
+--------------------------------------------------------------*/
 .services .service-item {
-  background-color: var(--surface-color);
+  background-color: #fff;
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
   height: 100%;
   padding: 60px 30px;
   text-align: center;
   transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 10px; /* Slightly round the corners */
+  position: relative;
+  border: 2px solid transparent; /* Make space for the border */
+  background-clip: padding-box; /* Ensure border does not overlap the background */
 }
 
+/* Icon Style */
 .services .service-item .icon {
   font-size: 36px;
-  padding: 20px 20px;
-  border-radius: 4px;
+  padding: 20px;
+  border-radius: 50%;
   position: relative;
   margin-bottom: 25px;
   display: inline-block;
   line-height: 0;
+  background-color: #f0f0f0;
+  color: #0093d3; /* Match the blue theme */
 }
 
+/* Title */
 .services .service-item h3 {
   font-size: 24px;
   font-weight: 700;
+  color: #0b102d;
+  margin-bottom: 20px;
 }
 
-.service-item p {
-  font-size: 14px; /* Hoặc nhỏ hơn nếu bạn muốn, ví dụ 13px */
+/* Description */
+.services .service-item p {
+  font-size: 14px;
+  color: #666;
 }
 
+/* Read More Button */
 .services .service-item .read-more {
   display: inline-flex;
   align-items: center;
@@ -1235,124 +1257,63 @@ section,
   font-weight: 600;
   font-size: 16px;
   padding: 8px 20px;
+  color: #0093d3;
+  border: 1px solid #0093d3;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.services .service-item .read-more i {
-  line-height: 0;
-  margin-left: 5px;
-  font-size: 18px;
+.services .service-item .read-more:hover {
+  background-color: #0093d3;
+  color: #fff;
 }
 
-.services .service-item.item-cyan {
-  border-bottom: 3px solid #cc4448;
+/* Corner Border Effect */
+.services .service-item::before,
+.services .service-item::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #0093d3;
+  transition: 0.3s;
 }
 
-.services .service-item.item-cyan .icon {
-  color: #cc4448;
-  background: rgba(191, 144, 0, 0.1);
+.services .service-item::before {
+  top: -15px;
+  left: -15px; /* Top-left corner */
+  border-radius: 15px;
 }
 
-.services .service-item.item-cyan .read-more {
-  color: #cc4448;
+.services .service-item::after {
+  bottom: -15px;
+  right: -15px; /* Bottom-right corner */
+  border-radius: 15px;
 }
 
-.services .service-item.item-cyan:hover {
-  background: #cc4448;
-}
-
-.services .service-item.item-orange {
-  border-bottom: 3px solid #0b102d;
-}
-
-.services .service-item.item-orange .icon {
-  color: #0b102d;
-  background: rgba(191, 144, 0, 0.1);
-}
-
-.services .service-item.item-orange .read-more {
-  color: #0b102d;
-}
-
-.services .service-item.item-orange:hover {
-  background: #0b102d;
-}
-
-.services .service-item.item-teal {
-  border-bottom: 3px solid #cc4448;
-}
-
-.services .service-item.item-teal .icon {
-  color: #cc4448;
-  background: rgba(191, 144, 0, 0.1);
-}
-
-.services .service-item.item-teal .read-more {
-  color: #cc4448;
-}
-
-.services .service-item.item-teal:hover {
-  background: #cc4448;
-}
-
-.services .service-item.item-red {
-  border-bottom: 3px solid #0b102d;
-}
-
-.services .service-item.item-red .icon {
-  color: #0b102d;
-  background: rgba(191, 144, 0, 0.1);
-}
-
-.services .service-item.item-red .read-more {
-  color: #0b102d;
-}
-
-.services .service-item.item-red:hover {
-  background: #0b102d;
-}
-
-.services .service-item.item-indigo {
-  border-bottom: 3px solid #cc4448;
-}
-
-.services .service-item.item-indigo .icon {
-  color: #cc4448;
-  background: rgba(191, 144, 0, 0.1);
-}
-
-.services .service-item.item-indigo .read-more {
-  color: #cc4448;
-}
-
-.services .service-item.item-indigo:hover {
-  background: #cc4448;
-}
-
-.services .service-item.item-pink {
-  border-bottom: 3px solid #0b102d;
-}
-
-.services .service-item.item-pink .icon {
-  color: #0b102d;
-  background: rgba(191, 144, 0, 0.1);
-}
-
-.services .service-item.item-pink .read-more {
-  color: #0b102d;
-}
-
-.services .service-item.item-pink:hover {
-  background: #0b102d;
+/* Hover effect: Adding border lines and color change */
+.services .service-item:hover::before,
+.services .service-item:hover::after {
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
 }
 
 .services .service-item:hover h3,
 .services .service-item:hover p,
 .services .service-item:hover .read-more {
-  color: #fff;
+  color: white; /* Change color to white when hovered */
 }
 
 .services .service-item:hover .icon {
-  background: #fff;
+  background-color: #fff;
+  color: #0093d3;
+}
+
+.services .service-item:hover {
+  background-color: #0093d3;
+  color: white;
+  border-color: #0093d3; /* Add border color for better effect */
 }
 
 /*--------------------------------------------------------------
@@ -1842,6 +1803,7 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
+
 .section-title {
   margin-bottom: 10px !important; /* 👈 thêm !important để ép Bootstrap ghi đè */
   padding-bottom: 0 !important;
@@ -1851,12 +1813,11 @@ section,
   overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 900px; 
   height: auto; 
   margin: 0 auto;
   padding: 20px 0; 
   display: flex;
-  justify-content: space-between; /* Các logo sẽ được phân bổ đều */
+  justify-content: space-evenly; /* Các logo sẽ được phân bổ đều */
   align-items: center; /* Căn giữa theo chiều dọc */
   flex-wrap: wrap;  /*
    chiều cao vùng chứa */
@@ -1865,12 +1826,13 @@ section,
 .client-logos-track {
   display: flex;
   align-items: center;
-  animation: slide-left 30s linear infinite;
+  justify-content: space-evenly; 
+  animation: slide-left 50s linear infinite;
   width: max-content;
 }
 
 .clients .client-logo {
-  max-height: 50px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   filter: grayscale(15%) brightness(100%);
@@ -1888,8 +1850,8 @@ section,
 }
 
 .larger-logo {
-  height: 60px; /* Điều chỉnh kích thước theo mong muốn */
-  transform: scale(1.8); /* Tăng kích thước logo */
+  height: 70px; /* Điều chỉnh kích thước theo mong muốn */
+  transform: scale(1.6); /* Tăng kích thước logo */
   filter: brightness(0) saturate(100%) contrast(130%);
 }
 
@@ -1902,9 +1864,9 @@ section,
 }
 
 .client-logo {
-  height: 60px;
+  height: 70px;
   margin: 0 40px;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -3060,4 +3022,61 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+/* Custom cursor style */
+.custom-cursor {
+  position: absolute; /* Con trỏ cố định khi cuộn trang */
+  width: 120px; /* Đường kính con trỏ */
+  height: 120px;
+  background-image: url(/assets/img/otistest.png); /* Đặt đường dẫn hình ảnh */
+  background-size: contain; /* Đảm bảo hình ảnh vừa với kích thước */
+  background-repeat: no-repeat;
+  border-radius: 50%; /* Tạo hình tròn */
+  transform: translate(-50%, -50%); /* Để con trỏ nằm chính xác ở vị trí chuột */
+  animation: flyAround 3s ease-in-out infinite, wobble 1s ease-in-out infinite;  /* Thêm hiệu ứng bay */
+  pointer-events: none /* Thêm hiệu ứng chuyển động mượt mà */
+}
+
+/* Hiệu ứng bay cho con gián */
+@keyframes flyAround {
+  0% {
+    transform: translate(-50%, -50%) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) translateX(150px) rotate(30deg); /* Bay sang phải */
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(0) rotate(0deg); /* Quay lại vị trí ban đầu */
+  }
+  75% {
+    transform: translate(-50%, -50%) translateX(-150px) rotate(-30deg); /* Bay sang trái */
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(0) rotate(0deg); /* Quay lại vị trí ban đầu */
+  }
+}
+
+/* Hiệu ứng lắc lư vui nhộn */
+@keyframes wobble {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(10deg); /* Xoay nhẹ một chút */
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); /* Trở lại vị trí ban đầu */
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-10deg); /* Xoay nhẹ theo hướng ngược lại */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); /* Quay lại vị trí ban đầu */
+  }
+}
+
+/* Move the custom cursor */
+body {
+  cursor: default; /* Đảm bảo con trỏ mặc định không bị ẩn */
 }

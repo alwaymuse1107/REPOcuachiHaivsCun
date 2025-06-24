@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const myLatLng = [10.731142, 106.724358];
+  const myLatLng = [10.731364, 106.724216];
 
   let map, lightTile, darkTile;
 
@@ -314,10 +314,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Khởi tạo map
 // Khởi tạo map
-const map = L.map("map").setView([10.731142, 106.724358], 20.25);
+const map = L.map("map").setView([10.731364, 106.724216], 20.25);
 
 // Các tile layers
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const lightTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
@@ -332,19 +332,21 @@ const darkTile = L.tileLayer(
 // Ban đầu là light
 lightTile.addTo(map);
 
-const customIcon = L.icon({
-  iconUrl:'assets/img/image.png', // bạn có thể thay bằng icon của bạn
-  iconSize: [55, 55],   // chỉnh size cho phù hợp
-  iconAnchor: [20, 50], // điểm gốc của icon (nằm chính xác tại tọa độ)
+const customIcon = L.divIcon({
+  className: 'custom-div-icon',
+  html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>',  // Icon từ Font Awesome
+  iconSize: [30, 30],  // Kích thước của icon
+  iconSize: [30, 30],  // Kích thước của icon
+  iconAnchor: [15, 30], // Điểm neo của icon
 });
 
-// Marker
-L.marker([10.731142, 106.724358], { icon: customIcon })
+// Thêm marker vào bản đồ
+L.marker([10.731364, 106.724216], { icon: customIcon })
   .addTo(map)
   .bindPopup("<b>Đây là vị trí của bạn!</b>")
   .on("click", () => {
     window.open(
-      "https://www.google.com/maps/search/?api=1&query=10.731142,106.724358",
+      "https://www.google.com/maps/search/The+678+Tower+67+Hoang+Van+Thai+Suite+1601A+Tan+Phu+Ward+District+7/@10.7313138,106.7240387,21z?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
       "_blank"
     );
   });
@@ -365,3 +367,22 @@ toggle.addEventListener("change", function () {
 
   const track = document.getElementById('logoTrack');
   track.innerHTML += track.innerHTML; // 👈 Nhân đôi nội dung
+
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+let lastX = 0, lastY = 0;
+
+// Listen to mouse move events and update the cursor's position
+document.addEventListener('mousemove', (e) => {
+  lastX = e.pageX;
+  lastY = e.pageY;
+
+  // Update the cursor's position with requestAnimationFrame for smoothness
+  requestAnimationFrame(() => {
+    cursor.style.left = `${lastX}px`;
+    cursor.style.top = `${lastY}px`;
+  });
+});
+
