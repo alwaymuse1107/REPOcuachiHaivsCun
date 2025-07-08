@@ -1206,104 +1206,96 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Services Section (Updated for Blue Line Corner Effect)
---------------------------------------------------------------*/
-.services .service-item {
-position: relative;
-background-color: #0B102D;
-color: white;
-border: 1px solid #cc4448;
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 60px 30px;
-  overflow: hidden;
-  height: 100%;
-  text-align: center;  /* Để cắt phần thừa */
-}
-/* Góc trên trái */
-.services .service-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  border-top: 2px solid #cc4448;
-  border-left: 2px solid #cc4448;
+.flip-card {
+  perspective: 1000px;
 }
 
-/* Góc trên phải */
-.services .service-item::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  border-top: 2px solid #cc4448;
-  border-right: 2px solid #cc4448;
-}
-
-/* Góc dưới trái */
-.services .service-item .corner-bl,
-.services .service-item .corner-br {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-}
-
-/* Góc dưới trái */
-.services .service-item .corner-bl {
-  bottom: 0;
-  left: 0;
-  border-bottom: 2px solid #cc4448;
-  border-left: 2px solid #cc4448;
-}
-
-/* Góc dưới phải */
-.services .service-item .corner-br {
-  bottom: 0;
-  right: 0;
-  border-bottom: 2px solid #cc4448;
-  border-right: 2px solid #cc4448;
-}
-
-/* Icon Style */
-.services .service-item .icon {
-  font-size: 36px;
-  padding: 10px 20px;
-  border-radius: 15px; /* Rounded corners for the line */
+.flip-inner {
   position: relative;
-  margin-bottom: 25px;
-  display: inline-block;
-  line-height: 0;
-  background-color: transparent;
-   box-shadow: 0 0 10px #cc4448;
-  color: #cc4448; /* Blue color for the icon */
-  border: 2px solid #cc4448; /* Line around the icon */
+  width: 100%;
+  height: 260px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
 }
 
-/* Title */
-.services .service-item h3 {
-  font-size: 20px;
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg) skewY(1deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 30px 20px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-front {
+  z-index: 2;
+}
+
+.flip-front i.icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.flip-front h3 {
+  font-size: 25px;
   font-weight: 700;
+  color: #002b5b;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: #0B102D;
   color: #ffffff;
-  margin-bottom: 20px;
 }
 
-.services .service-item a {
-  font-size: 15px;
-  font-weight: 700;
-  color: #cc4448;;
+.flip-back p {
+  font-size: 19px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  padding: 0 10px;
 }
 
-
-.services .service-item p {
-  font-size: 14px; /* mặc định thường là 16px */
-  line-height: 1.6;
+.read-more {
+  color: #e53935;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  position: relative;
 }
+
+.read-more i {
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+  transform: translateX(5px);
+}
+
+.read-more:hover {
+  letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+
+/* Giữ màu icon từng card */
+.item-cyan .icon { color: #cc4448; }
+.item-orange .icon { color: #cc4448; }
+.item-teal .icon { color: #cc4448; }
+.item-red .icon { color: #cc4448; }
+.item-indigo .icon { color: #cc4448; }
+.item-pink .icon { color: #cc4448; }
 
 /*--------------------------------------------------------------
 # Pricing Section

@@ -386,3 +386,20 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
+  function toggleCard(btn) {
+    const cardBody = btn.closest('.service-card').querySelector('.card-body');
+    const icon = btn.querySelector('i');
+    const isActive = cardBody.classList.contains('active');
+
+    // Đóng tất cả các card nếu bạn muốn accordion behavior
+    // document.querySelectorAll('.card-body').forEach(el => el.classList.remove('active'));
+    // document.querySelectorAll('.toggle-btn i').forEach(i => {
+    //   i.classList.remove('bi-chevron-up');
+    //   i.classList.add('bi-chevron-down');
+    // });
+
+    // Toggle riêng card hiện tại
+    cardBody.classList.toggle('active');
+    icon.classList.toggle('bi-chevron-down');
+    icon.classList.toggle('bi-chevron-up');
+  }
