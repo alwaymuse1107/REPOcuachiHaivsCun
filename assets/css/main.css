@@ -94,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
+  color:#c94243;
   font-family: var(--heading-font);
 }
 
@@ -3061,3 +3061,61 @@ section,
 body {
   cursor: default; /* Đảm bảo con trỏ mặc định không bị ẩn */
 }
+
+#clients {
+  position: relative;
+  background: url('assets/img/Why Choose Us Background.jpeg') no-repeat center top;
+  background-size: cover;
+  padding-top: 150px; /* chỉnh cho tiêu đề chạm đúng viền trên */
+  overflow: hidden;
+}
+
+#clients .section-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+}
+
+
+.who-we-are {
+  background-color: #f2f2f5;
+  padding: 60px 0;
+}
+
+
+.who-we-are__text {
+  font-size: 30px;        /* Kích thước chữ */
+  color: #1a1f3e;         /* Màu chữ */
+  text-align: center;    /* Căn đều hai bên */
+  max-width: 1200px;
+  margin: 0 auto;         /* Giữa khung nếu cần */
+  line-height: 1.6;
+}
+
+.who-we-are__text {
+  text-align-last: center;
+}
+
+
+.who-we-are__title {
+  font-size: 50px;
+  color: #0B102D;
+  margin-top: 3cm ;
+  margin-bottom: 1cm;
+  font-weight: bold;
+}
+
+.img-zoom {
+  transition: transform 0.2s ease;  /* tốc độ chuyển mượt */
+  transform-origin: center center;  /* thu/phóng từ chính giữa */
+}
+
+.img-zoom:hover {
+  transform: scale(0.95);           /* thu nhỏ còn 95% */
+}
+
+
