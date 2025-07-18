@@ -3079,3 +3079,28 @@ section,
 body {
   cursor: default; /* Đảm bảo con trỏ mặc định không bị ẩn */
 }
+
+/* Section nền xám nhạt, padding dọc */
+#who-we-are {
+  background-color: #f2f2f5;
+  padding: 80px 0;
+}
+
+/* Tiêu đề */
+.who-we-are__title {
+  font-size: 50px;
+  color: #1a1f3e;
+  margin-bottom: 1cm;
+  margin-top: 2cm;
+  font-weight: bold;
+}
+
+/* Đoạn text */
+.who-we-are__text {
+  font-size: 30px;
+  line-height: 1.6;
+  color: #1a1f3e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
