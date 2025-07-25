@@ -2245,52 +2245,81 @@ section,
 # Service Details Section
 --------------------------------------------------------------*/
 .analysis-section {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 15px;
-  margin: 40px auto;
+  justify-content: flex-start;
+  align-items: center;
   max-width: 1200px;
+  margin: 80px auto;
+  padding: 20 20px;
 }
 
 .analysis-text-box {
-  flex-basis: 40%;
-  background-color: #f5f5f5; /* nền sáng giống bản gốc */
-  padding: 25px;
+  width: 700px;
+  height: 500px;
+  background-color: #f5f5f5;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;  /* căn trái nội dung */
+  text-align: left;  
+  z-index: 1;
 }
 
 .analysis-text-box h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #000;
+  width: 500px;
+  text-align: justify;
+  padding-bottom: 20px;
 }
 
 .analysis-text-box p {
-  line-height: 1.6;
-  color: #333;
+  width: 500px;
+  text-align: justify;
 }
 
 .analysis-image-box {
-  flex-basis: 60%;
-  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0%, -50%);
+  height: 450px;
+  width: 600px;
+  z-index: 2;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 50px;
 }
 
 .analysis-image-box img {
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.analysis-section.reverse {
+  flex-direction: row-reverse;
+    justify-content: flex-start; 
+}
+
+.analysis-section.reverse .analysis-text-box {
+  margin-left: 15px;  /* Khoảng cách giữa hình và chữ */
+  margin-right: 0;    /* Đảm bảo không có khoảng dư bên phải */
+  align-items: flex-end;
+  text-align: left;
+}
+
+.analysis-section.reverse .analysis-image-box {
+  right: auto;    /* Bỏ right */
+  left: 0;        /* Ảnh sang trái */
+}
+
+.analysis-section.reverse .analysis-text-box h2{
+  text-align: right;             /* Chữ trong h2 căn phải */
+}
+
 
 /*--------------------------------------------------------------
 # Starter Section Section
