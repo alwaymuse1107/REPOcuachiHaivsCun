@@ -403,3 +403,9 @@ document.addEventListener('mousemove', (e) => {
     icon.classList.toggle('bi-chevron-down');
     icon.classList.toggle('bi-chevron-up');
   }
+
+document.getElementById("scroll-down").addEventListener("click", function () {
+  document.querySelector("#contact").scrollIntoView({
+    behavior: "smooth"
+  });
+});
