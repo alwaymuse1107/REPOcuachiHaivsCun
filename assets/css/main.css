@@ -95,7 +95,7 @@ h3,
 h4,
 h5,
 h6 {
-  color:#c94243;
+  color: #c94243;
   font-family: var(--heading-font);
 }
 
@@ -1798,7 +1798,11 @@ section,
 /*--------------------------------------------------------------
 # Clients Section
 --------------------------------------------------------------*/
-
+#clients {
+  display: flex;
+  padding: auto;
+  justify-content: space-around;
+}
 .section-title {
   margin-bottom: 10px !important; /* 👈 thêm !important để ép Bootstrap ghi đè */
   padding-bottom: 0 !important;
@@ -2248,9 +2252,9 @@ section,
 #service-details {
   background-color: #f2f2f5;
   height: 40vh;
-  display: flex;              /* Sử dụng Flexbox */
-  justify-content: center;    /* Căn giữa ngang */
-  align-items: center;        /* Căn giữa dọc */
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: center; /* Căn giữa ngang */
+  align-items: center; /* Căn giữa dọc */
   text-align: center;
   padding: 0;
   margin: 0;
@@ -2261,7 +2265,7 @@ section,
   font-size: 50px;
   color: #1a1f3e;
   font-weight: bold;
-  margin: 0;  /* Bỏ margin để tránh lệch */
+  margin: 0; /* Bỏ margin để tránh lệch */
 }
 
 .analysis-section {
@@ -2283,8 +2287,8 @@ section,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;  /* căn trái nội dung */
-  text-align: left;  
+  align-items: flex-start; /* căn trái nội dung */
+  text-align: left;
   z-index: 1;
 }
 
@@ -2321,23 +2325,23 @@ section,
 
 .analysis-section.reverse {
   flex-direction: row-reverse;
-    justify-content: flex-start; 
+  justify-content: flex-start;
 }
 
 .analysis-section.reverse .analysis-text-box {
-  margin-left: 15px;  /* Khoảng cách giữa hình và chữ */
-  margin-right: 0;    /* Đảm bảo không có khoảng dư bên phải */
+  margin-left: 15px; /* Khoảng cách giữa hình và chữ */
+  margin-right: 0; /* Đảm bảo không có khoảng dư bên phải */
   align-items: flex-end;
   text-align: left;
 }
 
 .analysis-section.reverse .analysis-image-box {
-  right: auto;    /* Bỏ right */
-  left: 0;        /* Ảnh sang trái */
+  right: auto; /* Bỏ right */
+  left: 0; /* Ảnh sang trái */
 }
 
-.analysis-section.reverse .analysis-text-box h2{
-  text-align: right;             /* Chữ trong h2 căn phải */
+.analysis-section.reverse .analysis-text-box h2 {
+  text-align: right; /* Chữ trong h2 căn phải */
 }
 
 .services-cta {
@@ -2361,7 +2365,7 @@ section,
 
 .services-cta .cta-btn {
   display: inline-block;
-  background-color: #CC4448;
+  background-color: #cc4448;
   color: white;
   text-decoration: none;
   padding: 14px 40px;
@@ -2379,7 +2383,7 @@ section,
   margin: 8px 0; /* Giảm khoảng cách trên và dưới */
   font-size: 35px;
   cursor: pointer;
-  color: #CC4448;
+  color: #cc4448;
   transition: transform 0.3s ease;
   animation: bounce 1.5s infinite; /* hiệu ứng nhảy */
   padding: 20px 20px; /* khoảng cách dưới cùng */
@@ -2392,8 +2396,8 @@ section,
 .scroll-down i {
   display: block;
   font-size: 24px;
-  color: #CC4448;        /* màu đỏ chủ đạo */
-  opacity: 0;            /* bắt đầu ẩn */
+  color: #cc4448; /* màu đỏ chủ đạo */
+  opacity: 0; /* bắt đầu ẩn */
   animation: arrow-blink 1.5s infinite;
 }
 
@@ -2411,13 +2415,26 @@ section,
 
 /* Hiệu ứng nhấp nháy */
 @keyframes arrow-blink {
-  0% { opacity: 0; transform: translateY(0); }
-  50% { opacity: 1; transform: translateY(5px); }
-  100% { opacity: 0; transform: translateY(10px); }
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -3124,10 +3141,16 @@ body {
 /* Section nền xám nhạt, padding dọc */
 #who-we-are {
   background-color: #f2f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
+}
+
+.who-we-are__content {
 }
 
 /* Tiêu đề */
@@ -3150,12 +3173,12 @@ body {
 
 .who-we-are .inner-section {
   background-color: #fff;
-  margin-left: 2.5cm;
-  margin-right: 2.5cm;
-  margin-top: 1.5cm;
-  margin-bottom: 1.5cm;
-  padding: 300px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: auto;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
 }
 
 .vision-section {
@@ -3163,9 +3186,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1.5cm;
-  max-width: 1400px;         /* tăng vùng chứa nội dung */
-  margin: 0 auto;            /* căn giữa section */
-  gap: 50px;                 /* khoảng cách giữa chữ và ảnh */
+  max-width: 1400px; /* tăng vùng chứa nội dung */
+  margin: 0 auto; /* căn giữa section */
+  gap: 50px; /* khoảng cách giữa chữ và ảnh */
 }
 
 .vision-content {
