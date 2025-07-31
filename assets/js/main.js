@@ -409,3 +409,13 @@ document.getElementById("scroll-down").addEventListener("click", function () {
     behavior: "smooth"
   });
 });
+
+  function scrollToService(id, el) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+
+    // Highlight active tab
+    const tabs = document.querySelectorAll('.services-nav .tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    el.classList.add('active');
+  }
+
