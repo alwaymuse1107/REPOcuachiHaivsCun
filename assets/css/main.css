@@ -906,7 +906,7 @@ section,
   margin-top: 48px;
   position: relative;
   padding: 40px 0;
-min-height: unset;
+  min-height: unset;
 
   display: flex;
   align-items: center;
@@ -914,8 +914,6 @@ min-height: unset;
   border: none;
   outline: none;
 }
-
-
 
 .hero h1 {
   margin: 0;
@@ -1801,7 +1799,6 @@ min-height: unset;
 # Clients Section
 --------------------------------------------------------------*/
 #clients {
-  display: flex;
   padding: auto;
   justify-content: space-around;
 }
@@ -2277,8 +2274,8 @@ min-height: unset;
   justify-content: flex-start;
   align-items: center;
   max-width: 1200px;
-  margin: 50px auto 20px auto;  /* Giảm khoảng cách trên */
-  padding: 0 20px;   
+  margin: 50px auto 20px auto; /* Giảm khoảng cách trên */
+  padding: 0 20px;
 }
 
 .analysis-text-box {
@@ -2460,10 +2457,10 @@ min-height: unset;
 }
 
 .services-nav .tab {
-  flex: 1 1 60px; 
+  flex: 1 1 60px;
   max-width: 175px;
   padding: 12px 24px;
-  border: 2px solid #BF9000; /* Viền xanh chủ đạo */
+  border: 2px solid #bf9000; /* Viền xanh chủ đạo */
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
   color: #000;
@@ -2480,13 +2477,13 @@ min-height: unset;
 }
 
 .services-nav .tab:hover {
-  background-color: #BF9000;
+  background-color: #bf9000;
   color: white;
   box-shadow: 0 4px 20px rgba(191, 144, 0, 0.3);
 }
 
 .services-nav .tab.active {
-  background-color: #BF9000;
+  background-color: #bf9000;
   color: white;
   box-shadow: 0 4px 20px rgba(191, 144, 0, 0.3);
 }
@@ -3101,7 +3098,8 @@ body {
 }
 
 /* Section nền xám nhạt, padding dọc */
-#who-we-are {
+#who-we-are,
+#Our-Mission {
   background-color: #f2f2f5;
   display: flex;
   align-items: center;
@@ -3112,19 +3110,32 @@ body {
   overflow: hidden;
 }
 
-.who-we-are__content {
+.Our-Mission__content {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+
+.Our-Mission__left {
+  padding: 5%;
 }
 
 /* Tiêu đề */
+.Our-Mission__title,
 .who-we-are__title {
   font-size: 50px;
   color: #1a1f3e;
-  margin-bottom: 1cm;
-  margin-top: 2cm;
   font-weight: bold;
 }
 
+.Our-Mission__title {
+  margin-bottom: 4%;
+}
+
 /* Đoạn text */
+.Our-Mission__text,
 .who-we-are__text {
   font-size: 30px;
   line-height: 1.6;
@@ -3133,7 +3144,19 @@ body {
   margin: 0 auto;
 }
 
-.who-we-are .inner-section {
+.Our-Mission__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: auto;
+}
+
+.Our-Mission__img {
+  width: 50%;
+  height: auto;
+}
+
+.Our-Mission .inner-section {
   background-color: #fff;
   padding: auto;
 }
@@ -3181,12 +3204,11 @@ body {
   display: block;
 }
 
-
 #our-values-svg-about-us-part {
   background-color: #f2f2f5;
   display: flex;
   justify-content: center;
-  padding: 40px 0;         /* Thêm khoảng cách nếu cần */
-  height: auto;            /* Bỏ giới hạn chiều cao */
-  overflow: visible;       /* Cho phép hiện toàn bộ ảnh */
+  padding: 40px 0; /* Thêm khoảng cách nếu cần */
+  height: auto; /* Bỏ giới hạn chiều cao */
+  overflow: visible; /* Cho phép hiện toàn bộ ảnh */
 }
