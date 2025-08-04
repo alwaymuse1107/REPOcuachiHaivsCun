@@ -1219,7 +1219,7 @@ section,
 }
 
 .flip-card:hover .flip-inner {
-  transform: rotateY(180deg) skewY(1deg);
+  transform: rotateY(180deg);
 }
 
 .flip-front,

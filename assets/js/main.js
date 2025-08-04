@@ -419,3 +419,67 @@ document.getElementById("scroll-down").addEventListener("click", function () {
     el.classList.add('active');
   }
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ====== CẤU HÌNH CHUNG ======
+  const mapConfigs = [
+    {
+      id: "map-vn", // ID thẻ div
+      toggleId: "themeToggle", // ID toggle
+      coords: [10.731364, 106.724216], // HCM
+      zoom: 20.25,
+      popupText: "HCMC Office",
+      mapLink: "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216"
+    },
+    {
+      id: "map-hn",
+      toggleId: "themeToggleHn",
+      coords: [21.0285, 105.8542], // Hà Nội
+      zoom: 18,
+      popupText: "Hanoi Office",
+      mapLink: "https://www.google.com/maps/search/?api=1&query=21.0285,105.8542"
+    }
+  ];
+
+  mapConfigs.forEach(config => {
+    const map = L.map(config.id).setView(config.coords, config.zoom);
+
+    const lightTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const darkTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap & CartoDB',
+    });
+
+    const customIcon = L.divIcon({
+      className: 'custom-div-icon',
+      html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>',
+      iconSize: [30, 30],
+      iconAnchor: [15, 30],
+    });
+
+    // Add marker
+    L.marker(config.coords, { icon: customIcon })
+      .addTo(map)
+      .bindPopup(`<b>${config.popupText}</b>`)
+      .on("click", () => {
+        window.open(config.mapLink, "_blank");
+      });
+
+    // Gán sự kiện toggle đổi theme
+    const toggle = document.getElementById(config.toggleId);
+    if (toggle) {
+      toggle.addEventListener("change", function () {
+        if (this.checked) {
+          map.removeLayer(lightTile);
+          darkTile.addTo(map);
+        } else {
+          map.removeLayer(darkTile);
+          lightTile.addTo(map);
+        }
+      });
+    }
+  });
+});
