@@ -3115,6 +3115,21 @@ body {
   align-items: center;
 }
 
+.key {
+  display: inline-flex;
+  margin: 0 5px;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.highlight {
+  position: absolute;
+  z-index: 10;
+  height: 40px;
+  width: 60px;
+}
+
 /* Section nền xám nhạt, padding dọc */
 #who-we-are,
 #Our-Mission {

@@ -222,46 +222,45 @@
     });
   }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("langToggle");
-  const labelVN = document.getElementById("label-vn");
-  const labelEN = document.getElementById("label-en");
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("langToggle");
+    const labelVN = document.getElementById("label-vn");
+    const labelEN = document.getElementById("label-en");
 
-  // Set trạng thái toggle và nhãn ngôn ngữ theo URL khi tải trang
-  if (window.location.href.includes("index-vn")) {
-    toggle.checked = true;
-    labelVN.classList.remove("inactive");
-    labelEN.classList.add("inactive");
-    
-  } else {
-    toggle.checked = false;
-    labelEN.classList.remove("inactive");
-    labelVN.classList.add("inactive");
-  }
-
-  // Cập nhật khi toggle thay đổi
-  toggle.onchange = function () {
-    const isVN = toggle.checked;
-
-    // Sử dụng class để thay đổi nhãn mà không gây hiện cả hai
-    if (isVN) {
+    // Set trạng thái toggle và nhãn ngôn ngữ theo URL khi tải trang
+    if (window.location.href.includes("index-vn")) {
+      toggle.checked = true;
       labelVN.classList.remove("inactive");
       labelEN.classList.add("inactive");
     } else {
+      toggle.checked = false;
       labelEN.classList.remove("inactive");
       labelVN.classList.add("inactive");
     }
 
-    // Chuyển hướng trang sau một thời gian delay để tránh nhảy quá nhanh
-    setTimeout(() => {
+    // Cập nhật khi toggle thay đổi
+    toggle.onchange = function () {
+      const isVN = toggle.checked;
+
+      // Sử dụng class để thay đổi nhãn mà không gây hiện cả hai
       if (isVN) {
-        window.location.href = "index-vn.html"; // Chuyển sang trang tiếng Việt
+        labelVN.classList.remove("inactive");
+        labelEN.classList.add("inactive");
       } else {
-        window.location.href = "index-en.html"; // Chuyển sang trang tiếng Anh
+        labelEN.classList.remove("inactive");
+        labelVN.classList.add("inactive");
       }
-    }, 300);  // Điều chỉnh thời gian delay nếu cần
-  };
-});
+
+      // Chuyển hướng trang sau một thời gian delay để tránh nhảy quá nhanh
+      setTimeout(() => {
+        if (isVN) {
+          window.location.href = "index-vn.html"; // Chuyển sang trang tiếng Việt
+        } else {
+          window.location.href = "index-en.html"; // Chuyển sang trang tiếng Anh
+        }
+      }, 300); // Điều chỉnh thời gian delay nếu cần
+    };
+  });
 
   // Đảm bảo DOM đã load
   document.addEventListener("DOMContentLoaded", () => {
@@ -317,10 +316,14 @@ document.addEventListener("DOMContentLoaded", function () {
 const map = L.map("map").setView([10.731364, 106.724216], 20.25);
 
 // Các tile layers
-const lightTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+const lightTile = L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }
+).addTo(map);
 
 const darkTile = L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
@@ -333,10 +336,10 @@ const darkTile = L.tileLayer(
 lightTile.addTo(map);
 
 const customIcon = L.divIcon({
-  className: 'custom-div-icon',
-  html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>',  // Icon từ Font Awesome
-  iconSize: [30, 30],  // Kích thước của icon
-  iconSize: [30, 30],  // Kích thước của icon
+  className: "custom-div-icon",
+  html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>', // Icon từ Font Awesome
+  iconSize: [30, 30], // Kích thước của icon
+  iconSize: [30, 30], // Kích thước của icon
   iconAnchor: [15, 30], // Điểm neo của icon
 });
 
@@ -364,18 +367,18 @@ toggle.addEventListener("change", function () {
   }
 });
 
+const track = document.getElementById("logoTrack");
+track.innerHTML += track.innerHTML; // 👈 Nhân đôi nội dung
 
-  const track = document.getElementById('logoTrack');
-  track.innerHTML += track.innerHTML; // 👈 Nhân đôi nội dung
-
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
+const cursor = document.createElement("div");
+cursor.classList.add("custom-cursor");
 document.body.appendChild(cursor);
 
-let lastX = 0, lastY = 0;
+let lastX = 0,
+  lastY = 0;
 
 // Listen to mouse move events and update the cursor's position
-document.addEventListener('mousemove', (e) => {
+document.addEventListener("mousemove", (e) => {
   lastX = e.pageX;
   lastY = e.pageY;
 
@@ -386,39 +389,38 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-  function toggleCard(btn) {
-    const cardBody = btn.closest('.service-card').querySelector('.card-body');
-    const icon = btn.querySelector('i');
-    const isActive = cardBody.classList.contains('active');
+function toggleCard(btn) {
+  const cardBody = btn.closest(".service-card").querySelector(".card-body");
+  const icon = btn.querySelector("i");
+  const isActive = cardBody.classList.contains("active");
 
-    // Đóng tất cả các card nếu bạn muốn accordion behavior
-    // document.querySelectorAll('.card-body').forEach(el => el.classList.remove('active'));
-    // document.querySelectorAll('.toggle-btn i').forEach(i => {
-    //   i.classList.remove('bi-chevron-up');
-    //   i.classList.add('bi-chevron-down');
-    // });
+  // Đóng tất cả các card nếu bạn muốn accordion behavior
+  // document.querySelectorAll('.card-body').forEach(el => el.classList.remove('active'));
+  // document.querySelectorAll('.toggle-btn i').forEach(i => {
+  //   i.classList.remove('bi-chevron-up');
+  //   i.classList.add('bi-chevron-down');
+  // });
 
-    // Toggle riêng card hiện tại
-    cardBody.classList.toggle('active');
-    icon.classList.toggle('bi-chevron-down');
-    icon.classList.toggle('bi-chevron-up');
-  }
+  // Toggle riêng card hiện tại
+  cardBody.classList.toggle("active");
+  icon.classList.toggle("bi-chevron-down");
+  icon.classList.toggle("bi-chevron-up");
+}
 
 document.getElementById("scroll-down").addEventListener("click", function () {
   document.querySelector("#contact").scrollIntoView({
-    behavior: "smooth"
+    behavior: "smooth",
   });
 });
 
-  function scrollToService(id, el) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+function scrollToService(id, el) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 
-    // Highlight active tab
-    const tabs = document.querySelectorAll('.services-nav .tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    el.classList.add('active');
-  }
-
+  // Highlight active tab
+  const tabs = document.querySelectorAll(".services-nav .tab");
+  tabs.forEach((tab) => tab.classList.remove("active"));
+  el.classList.add("active");
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   // ====== CẤU HÌNH CHUNG ======
@@ -429,7 +431,8 @@ document.addEventListener("DOMContentLoaded", function () {
       coords: [10.731364, 106.724216], // HCM
       zoom: 20.25,
       popupText: "HCMC Office",
-      mapLink: "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216"
+      mapLink:
+        "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216",
     },
     {
       id: "map-hn",
@@ -437,24 +440,31 @@ document.addEventListener("DOMContentLoaded", function () {
       coords: [21.0285, 105.8542], // Hà Nội
       zoom: 18,
       popupText: "Hanoi Office",
-      mapLink: "https://www.google.com/maps/search/?api=1&query=21.0285,105.8542"
-    }
+      mapLink:
+        "https://www.google.com/maps/search/?api=1&query=21.0285,105.8542",
+    },
   ];
 
-  mapConfigs.forEach(config => {
+  mapConfigs.forEach((config) => {
     const map = L.map(config.id).setView(config.coords, config.zoom);
 
-    const lightTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
+    const lightTile = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap contributors",
+      }
+    ).addTo(map);
 
-    const darkTile = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap & CartoDB',
-    });
+    const darkTile = L.tileLayer(
+      "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
+      {
+        attribution: "&copy; OpenStreetMap & CartoDB",
+      }
+    );
 
     const customIcon = L.divIcon({
-      className: 'custom-div-icon',
+      className: "custom-div-icon",
       html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>',
       iconSize: [30, 30],
       iconAnchor: [15, 30],
