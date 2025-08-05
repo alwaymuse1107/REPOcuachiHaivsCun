@@ -1,529 +1,921 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home - Analytix Intelligence</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Home - Analytix Intelligence</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="assets/img/AIQPNG.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/AIQPNG.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
+    <!-- =======================================================
   * Template Name: FlexStart
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   * Updated: Nov 01 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index-en.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/AIQPNG.png" alt="">
-        <img src="assets/img/aiqlogotext.png" alt="">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
-          <li><a href="about-us-en.html">About Us</a></li>
-          <li class="dropdown"><a href="service-details.html"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><i class="bi bi-graph-up-arrow icon"></i><a href="#"></i>Data Analysis</a></li>
-              <li><i class="bi bi-pie-chart icon"></i><a href="#"></i>Data Visualization</a></li>
-              <li><i class="bi bi-search icon"></i><a href="#"></i>Predictive Analysis</a></li>
-              <li><i class="bi bi-database-down icon"></i><a href="#"></i>Data Integration</a></li>
-              <li><i class="bi bi-shield-check icon"></i><a href="#"></i>Data Security</a></li>
-              <li><i class="bi bi-card-checklist icon"></i><a href="#"></i>Other Services</a></li>
-            </ul>
-          </li>
-          <li><a href="trolltroll.html">Why Choose Us</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    <div class="lang-switch-container">
-  <label class="switch">
-    <input
-      type="checkbox"
-      id="langToggle"
-      onchange="switchLanguage(this.checked)"
-    />
-    <span class="slider" style="background-color: #CC4448; color: white; opacity: 0.7;"></span>
-  </label>
-  <span id="label-en" class="lang-label">EN</span>
-  <span id="label-vn" class="lang-label">VN</span>
-</div>
-
-     <a class="btn-getstarted " 
-   href="trolltroll.html" 
-   style="background-color: #CC4448; color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none;">
-   Contact Us</a>
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-<section id="hero" class="hero">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <!-- Cột trái: Tiêu đề + Nút -->
-      <div class="col-lg-6">
-        <h1 class="mb-4">
-          From Numbers to Knowledge<br>
-          From Insight to Impact
-        </h1>
-
-        <!-- Nút "Contact Us" bên dưới -->
-        <a href="#contact" class="btn btn-primary mt-4 px-4 py-2 rounded-pill" style="background-color: #CC4448; border: none;">
-          Get started!
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index-en.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/AIQPNG.png" alt="" />
+          <img src="assets/img/aiqlogotext.png" alt="" />
         </a>
-      </div>
 
-      <!-- Cột phải: Video thay cho ảnh động -->
-      <div class="col-lg-6">
-        <div class="position-relative" style="height: 400px; transform: translateX(-30px);">
-          <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-            <source src="assets/video/HomePageBannerVideo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="#hero" class="active">Home<br /></a>
+            </li>
+            <li><a href="about-us-en.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="service-details.html"
+                ><span>Services</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <i class="bi bi-graph-up-arrow icon"></i
+                  ><a href="#">Data Analysis</a>
+                </li>
+                <li>
+                  <i class="bi bi-pie-chart icon"></i
+                  ><a href="#">Data Visualization</a>
+                </li>
+                <li>
+                  <i class="bi bi-search icon"></i
+                  ><a href="#">Predictive Analysis</a>
+                </li>
+                <li>
+                  <i class="bi bi-database-down icon"></i
+                  ><a href="#">Data Integration</a>
+                </li>
+                <li>
+                  <i class="bi bi-shield-check icon"></i
+                  ><a href="#">Data Security</a>
+                </li>
+                <li>
+                  <i class="bi bi-card-checklist icon"></i
+                  ><a href="#">Other Services</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="trolltroll.html">Why Choose Us</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <div class="lang-switch-container">
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="langToggle"
+              onchange="switchLanguage(this.checked)"
+            />
+            <span
+              class="slider"
+              style="background-color: #cc4448; color: white; opacity: 0.7"
+            ></span>
+          </label>
+          <span id="label-en" class="lang-label">EN</span>
+          <span id="label-vn" class="lang-label">VN</span>
         </div>
+
+        <a
+          class="btn-getstarted"
+          href="trolltroll.html"
+          style="
+            background-color: #cc4448;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+          "
+        >
+          Contact Us</a
+        >
       </div>
+    </header>
 
-    </div>
-  </div>
-</section>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Cột trái: Tiêu đề + Nút -->
+            <div class="col-lg-6">
+              <h1 class="mb-4">
+                From Numbers to Knowledge<br />
+                From Insight to Impact
+              </h1>
 
+              <!-- Nút "Contact Us" bên dưới -->
+              <a
+                href="#contact"
+                class="btn btn-primary mt-4 px-4 py-2 rounded-pill"
+                style="background-color: #cc4448; border: none"
+              >
+                Get started!
+              </a>
+            </div>
 
-
-
-    <!-- About Section -->
-    <section id="about" class="about section" style="padding-bottom: 10px; margin-bottom: 0;">
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0 align-items-center">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content" style="padding-top: 80px; padding-bottom: 80px; padding-right: 80px; text-align: justify;">
-            <h2 style="color: #CC4448; font-weight: bold; font-size: 32px; letter-spacing: 1.5px;">ABOUT US</h2>
-              <p style="text-align: justify;">
-                At Analytix Intelligence, we're passionate about helping businesses harness the full potential of their data. We specialize in transforming raw data into actionable insights that drive decision-making, innovation, and growth. Our commitment to cutting-edge technology and industry expertise sets us apart as your data insights partner.
-              </p>
-              <div class="text-center text-lg-start">
-                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Read More</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
+            <!-- Cột phải: Video thay cho ảnh động -->
+            <div class="col-lg-6">
+              <div
+                class="position-relative"
+                style="height: 400px; transform: translateX(-30px)"
+              >
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  style="width: 100%; height: 100%; object-fit: cover"
+                >
+                  <source
+                    src="assets/video/HomePageBannerVideo.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/Abous Us Picture.png" style="border-radius: 20px; margin-left: -10px;" class="img-fluid" alt="">
-          </div>
-
         </div>
-      </div>
-
-    </section><!-- /About Section -->
-
-    <section id="clients" class="clients section">
-    <div class="container section-title" data-aos="fade-up">
-<p style="color: #0B102D;">OUR VALUES<br></p>
-   <hr class="divider">
-      </div>
-          <!-- Values Section -->
-    <section id="values" class="values section">
-      <!-- Section Title -->
-      <div class="container">
-
-        <div class="row gy-4">
-
-<div class="row">
-  <!-- Card 1 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card">
-      <img src="assets/img/Respect.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Respect</h3>
-      <p>Our leaders treat everyone with respect and expect others to do the same.</p>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card">
-      <img src="assets/img/Inclusiveness.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Inclusiveness</h3>
-      <p>We actively pursue diversity; We have created a welcoming and inclusive workplace that employees deeply appreciate.</p>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card">
-      <img src="assets/img/Empathy.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Empathy</h3>
-      <p>We believe that by recognizing and supporting individuals' needs and interests we can each be our best which in turn helps Analytix Intelligence be its best.</p>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <!-- Card 4 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-    <div class="card">
-<img src="assets/img/Learning.png" class="img-fluid">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Learning</h3>
-      <p>We believe that every individual should have the opportunity to learn, grow and contribute to their full potential.</p>
-    </div>
-  </div>
-  <!-- Card 5 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-    <div class="card">
-      <img src="assets/img/Collaboration.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Collaboration</h3>
-      <p>We believe that by working effectively together, individuals and Analytix Intelligence as a whole will be able to accomplish great things.</p>
-    </div>
-  </div>
-
-  <!-- Card 6 -->
-  <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-    <div class="card">
-      <img src="assets/img/Passion.png" class="img-fluid" alt="">
-      <h3 style="font-size: 35px; font-weight: 700; margin-top: 25px;">Passion</h3>
-      <p>We genuinely believe the work we do makes a difference; we are passionate and committed to making Analytix Intelligence a success.</p>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-    </section>
       </section>
 
-          <section id="clients" class="clients section">
-    <div class="container section-title" data-aos="fade-up">
-<p style="color: #0B102D;">WHY CHOOSE US<br></p>
-   <hr class="divider">
-    </div>
-     <img src="assets/img/Why Choose Us Background.jpeg" class="img-fluid" alt="">
-          </section>
-    <!-- Values Section -->
-<!-- Services Section -->
-    <section id="services" class="services section">
+      <!-- About Section -->
+      <section
+        id="about"
+        class="about section"
+        style="padding-bottom: 10px; margin-bottom: 0"
+      >
+        <div class="container" data-aos="fade-up">
+          <div class="row gx-0 align-items-center">
+            <div
+              class="col-lg-6 d-flex flex-column justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="content"
+                style="
+                  padding-top: 80px;
+                  padding-bottom: 80px;
+                  padding-right: 80px;
+                  text-align: justify;
+                "
+              >
+                <h2
+                  style="
+                    color: #cc4448;
+                    font-weight: bold;
+                    font-size: 32px;
+                    letter-spacing: 1.5px;
+                  "
+                >
+                  ABOUT US
+                </h2>
+                <p style="text-align: justify">
+                  At Analytix Intelligence, we're passionate about helping
+                  businesses harness the full potential of their data. We
+                  specialize in transforming raw data into actionable insights
+                  that drive decision-making, innovation, and growth. Our
+                  commitment to cutting-edge technology and industry expertise
+                  sets us apart as your data insights partner.
+                </p>
+                <div class="text-center text-lg-start">
+                  <a
+                    href="#"
+                    class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
+                  >
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <p>Our Services<br></p>
-           <hr class="divider">
-      </div><!-- End Section Title -->
-
-      <div class="container">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<div class="row gy-4 justify-content-center">
-
-  <!-- CARD 1 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-cyan">
-        <div class="flip-front">
-          <i class="bi bi-activity icon"></i>
-          <h3>DATA ANALYSIS</h3>
+            <div
+              class="col-lg-6 d-flex align-items-center"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <img
+                src="assets/img/Abous Us Picture.png"
+                style="border-radius: 20px; margin-left: -10px"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
-        <div class="flip-back">
-          <p>We delve into your data, uncover patterns, and provide meaningful insights that guide your strategic decisions.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+      </section>
+      <!-- /About Section -->
+
+      <section class="clients section">
+        <div class="container section-title" data-aos="fade-up">
+          <p style="color: #0b102d">OUR VALUES<br /></p>
+          <hr class="divider" />
         </div>
-      </div>
-    </div>
-  </div>
+        <!-- Values Section -->
+        <section id="values" class="values section">
+          <!-- Section Title -->
+          <div class="container">
+            <div class="row gy-4">
+              <div class="row">
+                <!-- Card 1 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img
+                      src="assets/img/Respect.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Respect
+                    </h3>
+                    <p>
+                      Our leaders treat everyone with respect and expect others
+                      to do the same.
+                    </p>
+                  </div>
+                </div>
 
-  <!-- CARD 2 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-orange">
-        <div class="flip-front">
-          <i class="bi bi-broadcast icon"></i>
-          <h3>DATA VISUALIZATION</h3>
+                <!-- Card 2 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="card">
+                    <img
+                      src="assets/img/Inclusiveness.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Inclusiveness
+                    </h3>
+                    <p>
+                      We actively pursue diversity; We have created a welcoming
+                      and inclusive workplace that employees deeply appreciate.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                  <div class="card">
+                    <img
+                      src="assets/img/Empathy.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Empathy
+                    </h3>
+                    <p>
+                      We believe that by recognizing and supporting individuals'
+                      needs and interests we can each be our best which in turn
+                      helps Analytix Intelligence be its best.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <!-- Card 4 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card">
+                    <img src="assets/img/Learning.png" class="img-fluid" />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Learning
+                    </h3>
+                    <p>
+                      We believe that every individual should have the
+                      opportunity to learn, grow and contribute to their full
+                      potential.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="card">
+                    <img
+                      src="assets/img/Collaboration.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Collaboration
+                    </h3>
+                    <p>
+                      We believe that by working effectively together,
+                      individuals and Analytix Intelligence as a whole will be
+                      able to accomplish great things.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                  <div class="card">
+                    <img
+                      src="assets/img/Passion.png"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <h3
+                      style="
+                        font-size: 35px;
+                        font-weight: 700;
+                        margin-top: 25px;
+                      "
+                    >
+                      Passion
+                    </h3>
+                    <p>
+                      We genuinely believe the work we do makes a difference; we
+                      are passionate and committed to making Analytix
+                      Intelligence a success.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="clients section">
+        <div class="container section-title" data-aos="fade-up">
+          <p style="color: #0b102d">WHY CHOOSE US<br /></p>
+          <hr class="divider" />
         </div>
-        <div class="flip-back">
-          <p>We create stunning and interactive visualizations that enable you to see the data in a new light and identify trends and outliers at a glance.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+        <img
+          src="assets/img/Why Choose Us Background.jpeg"
+          class="img-fluid"
+          alt=""
+        />
+      </section>
+      <!-- Values Section -->
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <p>Our Services<br /></p>
+          <hr class="divider" />
         </div>
-      </div>
-    </div>
-  </div>
+        <!-- End Section Title -->
 
-  <!-- CARD 3 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-teal">
-        <div class="flip-front">
-          <i class="bi bi-easel icon"></i>
-          <h3>PREDICTIVE ANALYSIS</h3>
+        <div class="container">
+          <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+            rel="stylesheet"
+          />
+          <div class="row gy-4 justify-content-center">
+            <!-- CARD 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-cyan">
+                  <div class="flip-front">
+                    <i class="bi bi-activity icon"></i>
+                    <h3>DATA ANALYSIS</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      We delve into your data, uncover patterns, and provide
+                      meaningful insights that guide your strategic decisions.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-orange">
+                  <div class="flip-front">
+                    <i class="bi bi-broadcast icon"></i>
+                    <h3>DATA VISUALIZATION</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      We create stunning and interactive visualizations that
+                      enable you to see the data in a new light and identify
+                      trends and outliers at a glance.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-teal">
+                  <div class="flip-front">
+                    <i class="bi bi-easel icon"></i>
+                    <h3>PREDICTIVE ANALYSIS</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      With our predictive analytics models, you can anticipate
+                      market trends, customer behavior, and more, enabling you
+                      to stay one step ahead of the competition.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-red">
+                  <div class="flip-front">
+                    <i class="bi bi-bounding-box-circles icon"></i>
+                    <h3>DATA INTEGRATION</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      We can help you integrate data from various sources,
+                      ensuring that you have a holistic view of your business.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-indigo">
+                  <div class="flip-front">
+                    <i class="bi bi-calendar4-week icon"></i>
+                    <h3>DATA SECURITY</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      Our experts ensure that your data is protected against
+                      breaches, while also complying with all relevant
+                      regulations and industry standards.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="flip-card">
+                <div class="flip-inner item-pink">
+                  <div class="flip-front">
+                    <i class="bi bi-chat-square-text icon"></i>
+                    <h3>OTHER SERVICES</h3>
+                  </div>
+                  <div class="flip-back">
+                    <p>
+                      In collaboration with our sister company, Programware, we
+                      provide full-service research solutions including survey
+                      design, programming, fielding and analysis.
+                    </p>
+                    <a href="#" class="read-more"
+                      >Read More <i class="bi bi-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="flip-back">
-          <p>With our predictive analytics models, you can anticipate market trends, customer behavior, and more, enabling you to stay one step ahead of the competition.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Clients Section -->
+      <section class="clients section">
+        <div class="container section-title" data-aos="fade-up">
+          <p style="color: #0b102d">
+            We honored to work with best clients<br />
+          </p>
+          <hr class="divider" />
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CARD 4 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-red">
-        <div class="flip-front">
-          <i class="bi bi-bounding-box-circles icon"></i>
-          <h3>DATA INTEGRATION</h3>
+        <div class="container clients" data-aos="fade-up" data-aos-delay="100">
+          <div class="client-logos-wrapper">
+            <div class="client-logos-track" id="logoTrack">
+              <img
+                src="assets/img/clients/arrow_png.png"
+                alt="Client 1"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/clients/KGS_LOGO.png"
+                alt="Client 2"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/clients/khoinguyen_png.png"
+                alt="Client 3"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/clients/genki_png.png"
+                alt="Client 4"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/clients/lessens logo.png"
+                alt="Client 5"
+                class="client-logo larger-logo"
+              />
+
+              <!-- Nhân đôi để trượt liên tục -->
+              <img
+                src="assets/img/Power Staffing Solutions.png"
+                alt="Client 1"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/Canadian Executive Search Group.webp"
+                alt="Client 2"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/One Point.png"
+                alt="Client 3"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/magnus search.png"
+                alt="Client 4"
+                class="client-logo larger-logo"
+              />
+              <img
+                src="assets/img/Delmarva Temporary Staffing.jpg"
+                alt="Client 5"
+                class="client-logo"
+              />
+
+              <img
+                src="assets/img/scarborough shooting stars.png"
+                alt="Client 1"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/Playground_Logo.png"
+                alt="Client 2"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/redowlboxing.webp"
+                alt="Client 3"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/arrowfacilitymgmt.png"
+                alt="Client 4"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/ABCOGroup.png"
+                alt="Client 5"
+                class="client-logo"
+              />
+
+              <img
+                src="assets/img/evolvingspace.png"
+                alt="Client 1"
+                class="client-logo"
+              />
+              <img
+                src="assets/img/REV.webp"
+                alt="Client 2"
+                class="client-logo"
+              />
+            </div>
+          </div>
         </div>
-        <div class="flip-back">
-          <p>We can help you integrate data from various sources, ensuring that you have a holistic view of your business.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+      </section>
+      <!-- /Clients Section -->
+
+      <section id="contact" class="contact" style="background: #ffffff">
+        <div class="container">
+          <div class="row gy-4 align-items-start">
+            <div
+              class="col-lg-6"
+              style="position: relative"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <!-- Theme filter dropdown (nút gọn bên phải map) -->
+              <div
+                id="map"
+                style="height: 400px; width: 100%; border-radius: 10px"
+              ></div>
+              <div class="map-theme-toggle">
+                <label class="map-switch">
+                  <input type="checkbox" id="themeToggle" />
+                  <span class="map-slider"></span>
+                </label>
+              </div>
+              <!-- Map container -->
+            </div>
+
+            <!-- Leaflet CSS -->
+            <link
+              rel="stylesheet"
+              href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            />
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            <link
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+              rel="stylesheet"
+            />
+
+            <!-- đay là chỗ bản đồ -->
+            <div
+              class="col-lg-6 d-flex align-items-center"
+              style="height: 400px"
+            >
+              <form class="w-100" data-aos="fade-up" data-aos-delay="100">
+                <p
+                  style="
+                    color: #cc4448;
+                    font-size: 24px;
+                    text-align: center;
+                    margin-bottom: 50px;
+                    font-weight: bold;
+                  "
+                >
+                  Start your journey with us!<br />
+                </p>
+                <div class="row gy-3">
+                  <!-- Your Name và Your Email -->
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+
+                  <!-- Company -->
+                  <div class="col-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Company"
+                      required
+                    />
+                  </div>
+
+                  <!-- Message -->
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      rows="5"
+                      placeholder="Message"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <!-- Nút Send Message -->
+                  <div class="col-12 text-center mt-3">
+                    <button
+                      type="submit"
+                      class="btn px-4 py-2 rounded-pill"
+                      style="
+                        background-color: #cc4448;
+                        color: white;
+                        border: none;
+                      "
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <!-- End container -->
+      </section>
+      <!-- đóng row -->
 
-  <!-- CARD 5 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-indigo">
-        <div class="flip-front">
-          <i class="bi bi-calendar4-week icon"></i>
-          <h3>DATA SECURITY</h3>
-        </div>
-        <div class="flip-back">
-          <p>Our experts ensure that your data is protected against breaches, while also complying with all relevant regulations and industry standards.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
+      <footer class="footer">
+        <section class="container footer-top">
+          <div class="row gy-4">
+            <!-- Cột 1: About -->
+            <div class="col-lg-4 col-md-6 footer-about">
+              <a class="d-flex align-items-center">
+                <span
+                  class="sitename"
+                  style="color: #cc4448; font-weight: bold; margin-top: -0.3cm"
+                  >Analytix Intelligence</span
+                >
+              </a>
+              <div class="footer-contact" style="margin-top: 0cm">
+                <p class="mt-3">
+                  <strong>Toronto:</strong>
+                  <span>7560 Airport Rd Suite 14, Mississauga, ON L4T 3H4</span>
+                </p>
+                <p class="mt-3">
+                  <strong>Ho Chi Minh City:</strong>
+                  <span
+                    >The 678 Tower, 67 Hoang Van Thai Suite 1601A, Tan Phu Ward,
+                    District 7</span
+                  >
+                </p>
+                <p class="mt-3">
+                  <strong>Phone:</strong> <span>+1 (855) 437-7295</span>
+                </p>
+                <p>
+                  <strong>Email:</strong>
+                  <span>information@analytixintelligence.com</span>
+                </p>
+              </div>
+            </div>
 
-  <!-- CARD 6 -->
-  <div class="col-lg-4 col-md-6">
-    <div class="flip-card">
-      <div class="flip-inner item-pink">
-        <div class="flip-front">
-          <i class="bi bi-chat-square-text icon"></i>
-          <h3>OTHER SERVICES</h3>
-        </div>
-        <div class="flip-back">
-          <p>In collaboration with our sister company, Programware, we provide full-service research solutions including survey design, programming, fielding and analysis.</p>
-          <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Cột 2: Useful Links -->
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4 style="color: #cc4448">EXPLORE</h4>
+              <ul>
+                <li>
+                  <i class="bi bi-chevron-right"></i> <a href="#">Home</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i> <a href="#">About Us</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="#">Why Choose Us</a>
+                </li>
+              </ul>
+            </div>
 
-</div>
+            <!-- Cột 3: Our Services -->
+            <div class="col-lg-2 col-md-3 footer-links">
+              <h4 style="visibility: hidden">EXPLORE</h4>
+              <ul>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="#">Our Services</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
 
-    </section><!-- /Services Section -->
+            <!-- Cột 4: Follow Us -->
+            <div class="col-lg-2 col-md-12">
+              <h4 style="color: #cc4448">Follow Us</h4>
+              <div class="social-links d-flex">
+                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+              </div>
+            </div>
 
+            <!-- Cột 5: Logo riêng -->
+            <div
+              class="col-lg-2 col-md-12 d-flex align-items-start justify-content-center"
+            >
+              <img
+                src="assets/img/aiqfulllogo.png"
+                alt="Logo"
+                style="height: 180px; margin-left: -2.5cm"
+              />
+            </div>
+          </div>
+          <div class="container copyright text-center mt-4">
+            <p>
+              © <span>Copyright</span>
+              <strong class="px-1 sitename">2025 Analytix Intelligence</strong>
+              <span>All Rights Reserved</span>
+            </p>
+            <div class="credits"></div>
+          </div>
+        </section>
+      </footer>
+    </main>
 
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
-      <div class="container section-title" data-aos="fade-up">
-<p style="color: #0B102D;">We honored to work with best clients<br></p>
-   <hr class="divider">
-      </div>
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-<div class="container clients" data-aos="fade-up" data-aos-delay="100">
-  <div class="client-logos-wrapper">
-    <div class="client-logos-track"  id="logoTrack">
-      <img src="assets/img/clients/arrow_png.png" alt="Client 1" class="client-logo">
-      <img src="assets/img/clients/KGS_LOGO.png" alt="Client 2" class="client-logo">
-      <img src="assets/img/clients/khoinguyen_png.png" alt="Client 3" class="client-logo">
-      <img src="assets/img/clients/genki_png.png" alt="Client 4" class="client-logo">
-      <img src="assets/img/clients/lessens logo.png" alt="Client 5" class="client-logo larger-logo">
+    <!-- Vendor JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-      <!-- Nhân đôi để trượt liên tục -->
-      <img src="assets/img/Power Staffing Solutions.png" alt="Client 1" class="client-logo">
-      <img src="assets/img/Canadian Executive Search Group.webp" alt="Client 2" class="client-logo">
-      <img src="assets/img/One Point.png" alt="Client 3" class="client-logo">
-      <img src="assets/img/magnus search.png" alt="Client 4" class="client-logo larger-logo">
-      <img src="assets/img/Delmarva Temporary Staffing.jpg" alt="Client 5" class="client-logo">
-
-      <img src="assets/img/scarborough shooting stars.png" alt="Client 1" class="client-logo">
-      <img src="assets/img/Playground_Logo.png" alt="Client 2" class="client-logo">
-      <img src="assets/img/redowlboxing.webp" alt="Client 3" class="client-logo">
-      <img src="assets/img/arrowfacilitymgmt.png" alt="Client 4" class="client-logo">
-      <img src="assets/img/ABCOGroup.png" alt="Client 5" class="client-logo">
-
-      <img src="assets/img/evolvingspace.png" alt="Client 1" class="client-logo">
-      <img src="assets/img/REV.webp" alt="Client 2" class="client-logo">
-    </div>
-  </div>
-</div>
-    </section><!-- /Clients Section -->
-
-  <section id="contact" class="contact" style="background: #ffffff;">
-  <div class="container">
-
-      <div class="row gy-4 align-items-start">
-      <div class="col-lg-6" style="position: relative;" data-aos="fade-up" data-aos-delay="100">
-    <!-- Theme filter dropdown (nút gọn bên phải map) -->
-    <div id="map" style="height: 400px; width: 100%; border-radius: 10px;"></div>
-<div class="map-theme-toggle">
-  <label class="map-switch">
-    <input type="checkbox" id="themeToggle">
-    <span class="map-slider"></span>
-  </label>
-</div>
-    <!-- Map container -->
-  </div>
-
-<!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
-    <!-- đay là chỗ bản đồ -->
-      <div class="col-lg-6 d-flex align-items-center" style="height: 400px">
-        
-<form class="w-100" data-aos="fade-up" data-aos-delay="100">
-<p style="color: #CC4448; font-size: 24px; text-align: center;margin-bottom: 50px; font-weight: bold;">
-  Start your journey with us!<br></p>
-  <div class="row gy-3">
-    <!-- Your Name và Your Email -->
-    <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="Your Name" required>
-    </div>
-    <div class="col-md-6">
-      <input type="email" class="form-control" placeholder="Your Email" required>
-    </div>
-
-    <!-- Company -->
-    <div class="col-12">
-      <input type="text" class="form-control" placeholder="Company" required>
-    </div>
-
-    <!-- Message -->
-    <div class="col-12">
-      <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-    </div>
-
-    <!-- Nút Send Message -->
-    <div class="col-12 text-center mt-3">
-      <button type="submit" class="btn px-4 py-2 rounded-pill"
-              style="background-color: #CC4448; color: white; border: none;">
-        Send Message
-      </button>
-    </div>
-  </div>
-</form>
-
-      </div>
-    </div>
-  </div><!-- End container -->
-</section>
-</div><!-- đóng row -->
-</div>
-
-<footer class="footer">
-   <section class="container footer-top">
-  <div class="row gy-4">
-    <!-- Cột 1: About -->
-    <div class="col-lg-4 col-md-6 footer-about">
-      <a class="d-flex align-items-center">
-        <span class="sitename" style="color: #CC4448; font-weight: bold; margin-top: -0.3cm;">Analytix Intelligence</span>
-      </a>
-      <div class="footer-contact" style="margin-top: 0cm;">
-        <p class="mt-3"><strong>Toronto:</strong> <span>7560 Airport Rd Suite 14, Mississauga, ON L4T 3H4</span></p>
-        <p class="mt-3"><strong>Ho Chi Minh City:</strong> <span>The 678 Tower, 67 Hoang Van Thai Suite 1601A, Tan Phu Ward, District 7</span></p>
-        <p class="mt-3"><strong>Phone:</strong> <span>+1 (855) 437-7295</span></p>
-        <p><strong>Email:</strong> <span>information@analytixintelligence.com</span></p>
-      </div>
-    </div>
-
-    <!-- Cột 2: Useful Links -->
-    <div class="col-lg-2 col-md-3 footer-links">
-   <h4 style="color: #CC4448;">EXPLORE</h4>
-      <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Why Choose Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Cột 3: Our Services -->
-    <div class="col-lg-2 col-md-3 footer-links">
-    <h4 style="visibility: hidden;">EXPLORE</h4>
-      <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Our Services</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Cột 4: Follow Us -->
-    <div class="col-lg-2 col-md-12">
-      <h4 style="color: #CC4448;">Follow Us</h4>
-      <div class="social-links d-flex">
-        <a href=""><i class="bi bi-linkedin"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-      </div>
-    </div>
-
-    <!-- Cột 5: Logo riêng -->
-    <div class="col-lg-2 col-md-12 d-flex align-items-start justify-content-center">
-      <img src="assets/img/aiqfulllogo.png" alt="Logo" style="height: 180px;margin-left: -2.5cm;">
-    </div>
-  </div>
-  <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">2025 Analytix Intelligence</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-      </div>
-    </div>
-</section>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
