@@ -938,14 +938,6 @@ section,
   height: 450px;
 }
 
-.value-text,
-.value-image {
-  position: absolute;
-  opacity: 0; /* bắt đầu ẩn */
-  height: 100%;
-  pointer-events: none;
-}
-
 .value-text {
   left: 0;
 }
@@ -1113,6 +1105,14 @@ section,
 
 .values .card:hover img {
   transform: scale(1);
+}
+
+.our-services__img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  object-position: top;
 }
 
 /*--------------------------------------------------------------
@@ -1888,9 +1888,9 @@ section,
 .divider {
   width: 100px;
   height: 3px;
-  background-color: #bf9000; /* hoặc #BF9000 nếu bạn muốn dùng màu vàng gold */
+  background-color: #bf9000;
   border: none;
-  margin: 10px auto 30px auto; /* canh giữa và tạo khoảng cách */
+  margin: 10px auto 30px auto;
   opacity: 0.8;
 }
 
@@ -3162,9 +3162,6 @@ body {
   color: #1a1f3e;
   font-weight: bold;
   margin-bottom: 4%;
-}
-
-.Our-Mission__title {
 }
 
 /* Đoạn text */
