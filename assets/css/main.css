@@ -1268,7 +1268,7 @@ section,
 }
 
 .read-more {
-  color: #e53935;
+  color: #24b3e9;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -2269,14 +2269,38 @@ section,
 
 .analysis-section {
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   max-width: 1200px;
-  margin: 50px auto 20px auto; /* Giảm khoảng cách trên */
+  height: 550px; /* giữ nguyên chiều cao như bạn yêu cầu */
+  margin: 50px auto 20px auto;
   padding: 0 20px;
+  overflow: hidden;
 }
 
+/* TEXT BOX */
+.analysis-text-box,
+.analysis-image-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease;
+}
+
+/* Hiệu ứng sau khi scroll tới */
+.analysis-section.active .analysis-text-box {
+  left: 0;
+  transform: translate(0%, -50%);
+  opacity: 1;
+}
+
+.analysis-section.active .analysis-image-box {
+  right: 0;
+  left: auto;
+  transform: translate(0%, -50%);
+  opacity: 1;
+}
+
+/* TEXT BOX chi tiết */
 .analysis-text-box {
   width: 700px;
   height: 516px;
@@ -2286,14 +2310,14 @@ section,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* căn trái nội dung */
+  align-items: flex-start;
   text-align: left;
   z-index: 1;
 }
 
 .analysis-text-box h2 {
   width: 500px;
-  text-align: justify;
+  text-align: center;
   padding-bottom: 20px;
 }
 
@@ -2302,11 +2326,8 @@ section,
   text-align: justify;
 }
 
+/* IMAGE BOX */
 .analysis-image-box {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(0%, -50%);
   height: 450px;
   width: 600px;
   z-index: 2;
@@ -2322,25 +2343,49 @@ section,
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.analysis-section.reverse {
-  flex-direction: row-reverse;
-  justify-content: flex-start;
-}
+/* ✅ REVERSE (ảnh trái, chữ phải) */
 
+/* ✅ TEXT BOX - Reverse (chữ phải) */
 .analysis-section.reverse .analysis-text-box {
-  margin-left: 15px; /* Khoảng cách giữa hình và chữ */
-  margin-right: 0; /* Đảm bảo không có khoảng dư bên phải */
+  right: 50%;
+  left: auto;
+  transform: translate(50%, -50%);
+  text-align: right;
   align-items: flex-end;
-  text-align: left;
+  transition: all 2s ease;
 }
 
+.analysis-section.reverse.active .analysis-text-box {
+  right: 0;
+  transform: translate(0%, -50%);
+  opacity: 1;
+}
+
+/* ✅ IMAGE BOX - Reverse (ảnh trái) */
 .analysis-section.reverse .analysis-image-box {
-  left: 0; /* Ảnh sang trái */
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  transition: all 2s ease;
+}
+
+.analysis-section.reverse.active .analysis-image-box {
+  left: 0;
+  transform: translate(0%, -50%);
+  opacity: 1;
 }
 
 .analysis-section.reverse .analysis-text-box h2 {
-  text-align: right; /* Chữ trong h2 căn phải */
+  text-align: center;
+  align-items: justify;
 }
+
+.analysis-section.reverse .analysis-text-box p {
+  text-align: justify;
+  align-items: flex-end;
+}
+
+
 
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
@@ -3242,3 +3287,4 @@ body {
 .Our-Value img {
   width: 100%;
 }
+

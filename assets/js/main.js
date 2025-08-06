@@ -298,170 +298,38 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const myLatLng = [10.731364, 106.724216];
-
-  let map, lightTile, darkTile;
-
-  // Gọi sau khi trang load hoàn toàn
-  window.addEventListener("load", function () {
-    // Đợi thêm 300ms cho AOS layout xong
-    setTimeout(() => {
-      createMap();
-    }, 600);
-  });
-});
-
-// Khởi tạo map
-// Khởi tạo map
-const map = L.map("map").setView([10.731364, 106.724216], 20.25);
-
-// Các tile layers
-const lightTile = L.tileLayer(
-  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-  {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }
-).addTo(map);
-
-const darkTile = L.tileLayer(
-  "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
-  {
-    attribution: "&copy; OpenStreetMap & CartoDB",
-  }
-);
-
-// Ban đầu là light
-lightTile.addTo(map);
-
-const customIcon = L.divIcon({
-  className: "custom-div-icon",
-  html: '<i class="fa-solid fa-location-dot" style="font-size: 40px; color: #cc4448;"></i>', // Icon từ Font Awesome
-  iconSize: [30, 30], // Kích thước của icon
-  iconSize: [30, 30], // Kích thước của icon
-  iconAnchor: [15, 30], // Điểm neo của icon
-});
-
-// Thêm marker vào bản đồ
-L.marker([10.731364, 106.724216], { icon: customIcon })
-  .addTo(map)
-  .bindPopup("<b>Đây là vị trí của bạn!</b>")
-  .on("click", () => {
-    window.open(
-      "https://www.google.com/maps/search/The+678+Tower+67+Hoang+Van+Thai+Suite+1601A+Tan+Phu+Ward+District+7/@10.7313138,106.7240387,21z?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
-      "_blank"
-    );
-  });
-
-// Bắt toggle switch
-const toggle = document.getElementById("themeToggle");
-
-toggle.addEventListener("change", function () {
-  if (this.checked) {
-    map.removeLayer(lightTile);
-    darkTile.addTo(map);
-  } else {
-    map.removeLayer(darkTile);
-    lightTile.addTo(map);
-  }
-});
-
-const track = document.getElementById("logoTrack");
-track.innerHTML += track.innerHTML; // 👈 Nhân đôi nội dung
-
-const cursor = document.createElement("div");
-cursor.classList.add("custom-cursor");
-document.body.appendChild(cursor);
-
-let lastX = 0,
-  lastY = 0;
-
-// Listen to mouse move events and update the cursor's position
-document.addEventListener("mousemove", (e) => {
-  lastX = e.pageX;
-  lastY = e.pageY;
-
-  // Update the cursor's position with requestAnimationFrame for smoothness
-  requestAnimationFrame(() => {
-    cursor.style.left = `${lastX}px`;
-    cursor.style.top = `${lastY}px`;
-  });
-});
-
-function toggleCard(btn) {
-  const cardBody = btn.closest(".service-card").querySelector(".card-body");
-  const icon = btn.querySelector("i");
-  const isActive = cardBody.classList.contains("active");
-
-  // Đóng tất cả các card nếu bạn muốn accordion behavior
-  // document.querySelectorAll('.card-body').forEach(el => el.classList.remove('active'));
-  // document.querySelectorAll('.toggle-btn i').forEach(i => {
-  //   i.classList.remove('bi-chevron-up');
-  //   i.classList.add('bi-chevron-down');
-  // });
-
-  // Toggle riêng card hiện tại
-  cardBody.classList.toggle("active");
-  icon.classList.toggle("bi-chevron-down");
-  icon.classList.toggle("bi-chevron-up");
-}
-
-document.getElementById("scroll-down").addEventListener("click", function () {
-  document.querySelector("#contact").scrollIntoView({
-    behavior: "smooth",
-  });
-});
-
-function scrollToService(id, el) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-
-  // Highlight active tab
-  const tabs = document.querySelectorAll(".services-nav .tab");
-  tabs.forEach((tab) => tab.classList.remove("active"));
-  el.classList.add("active");
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  // ====== CẤU HÌNH CHUNG ======
+  // ====== DANH SÁCH CÁC BẢN ĐỒ CẦN KHỞI TẠO ======
   const mapConfigs = [
     {
-      id: "map-vn", // ID thẻ div
-      toggleId: "themeToggle", // ID toggle
-      coords: [10.731364, 106.724216], // HCM
+      id: "map-vn", // ID thẻ div HCM
+      toggleId: "themeToggle", // ID toggle switch HCM
+      coords: [10.731364, 106.724216],
       zoom: 20.25,
       popupText: "HCMC Office",
-      mapLink:
-        "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216",
+      mapLink: "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216",
     },
     {
-      id: "map-hn",
+      id: "map-hn", // Nếu có bản đồ HN
       toggleId: "themeToggleHn",
-      coords: [21.0285, 105.8542], // Hà Nội
+      coords: [43.73057887069977, -79.28014110835474],
       zoom: 18,
       popupText: "Hanoi Office",
-      mapLink:
-        "https://www.google.com/maps/search/?api=1&query=21.0285,105.8542",
+      mapLink: "https://maps.app.goo.gl/jGd5W396iJZsMpHo9",
     },
+    // Thêm maps khác ở đây nếu muốn
   ];
 
+  // ====== KHỞI TẠO TỪNG BẢN ĐỒ ======
   mapConfigs.forEach((config) => {
+    const mapElement = document.getElementById(config.id);
+    if (!mapElement) return;
+
     const map = L.map(config.id).setView(config.coords, config.zoom);
 
-    const lightTile = L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      {
-        maxZoom: 19,
-        attribution: "&copy; OpenStreetMap contributors",
-      }
-    ).addTo(map);
-
-    const darkTile = L.tileLayer(
-      "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
-      {
-        attribution: "&copy; OpenStreetMap & CartoDB",
-      }
-    );
+    const lightTile = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
 
     const customIcon = L.divIcon({
       className: "custom-div-icon",
@@ -470,15 +338,13 @@ document.addEventListener("DOMContentLoaded", function () {
       iconAnchor: [15, 30],
     });
 
-    // Add marker
+    // Thêm marker
     L.marker(config.coords, { icon: customIcon })
       .addTo(map)
       .bindPopup(`<b>${config.popupText}</b>`)
-      .on("click", () => {
-        window.open(config.mapLink, "_blank");
-      });
+      .on("click", () => window.open(config.mapLink, "_blank"));
 
-    // Gán sự kiện toggle đổi theme
+    // Gắn toggle nếu có
     const toggle = document.getElementById(config.toggleId);
     if (toggle) {
       toggle.addEventListener("change", function () {
@@ -492,4 +358,68 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
+  // ====== CUSTOM CURSOR ======
+  const cursor = document.createElement("div");
+  cursor.classList.add("custom-cursor");
+  document.body.appendChild(cursor);
+
+  let lastX = 0, lastY = 0;
+  document.addEventListener("mousemove", (e) => {
+    lastX = e.pageX;
+    lastY = e.pageY;
+    requestAnimationFrame(() => {
+      cursor.style.left = `${lastX}px`;
+      cursor.style.top = `${lastY}px`;
+    });
+  });
+
+  // ====== LOGO SLIDER (TỰ NHÂN ĐÔI) ======
+  const track = document.getElementById("logoTrack");
+  if (track) {
+    track.innerHTML += track.innerHTML;
+  }
+
+  // ====== SCROLL ĐẾN PHẦN LIÊN HỆ ======
+  const scrollBtn = document.getElementById("scroll-down");
+  if (scrollBtn) {
+    scrollBtn.addEventListener("click", function () {
+      document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // ====== HÀM SCROLL SERVICE ======
+  window.scrollToService = function (id, el) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    const tabs = document.querySelectorAll(".services-nav .tab");
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    el.classList.add("active");
+  };
+
+  // ====== ACCORDION SERVICE CARD ======
+  window.toggleCard = function (btn) {
+    const cardBody = btn.closest(".service-card").querySelector(".card-body");
+    const icon = btn.querySelector("i");
+    cardBody.classList.toggle("active");
+    icon.classList.toggle("bi-chevron-down");
+    icon.classList.toggle("bi-chevron-up");
+  };
 });
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".analysis-section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach((section) => observer.observe(section));
+  });
+
+
