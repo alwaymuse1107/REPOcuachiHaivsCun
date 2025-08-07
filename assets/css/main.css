@@ -2386,7 +2386,6 @@ section,
 }
 
 
-
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
   padding: 60px 20px;
@@ -2429,7 +2428,9 @@ section,
   color: #cc4448;
   transition: transform 0.3s ease;
   animation: bounce 1.5s infinite; /* hiệu ứng nhảy */
-  padding: 20px 20px; /* khoảng cách dưới cùng */
+  padding: 20px 10px; /* khoảng cách dưới cùng */
+  margin-top: 10px;   /* Giảm khoảng cách phía trên */
+  margin-bottom: 10px; 
 }
 
 .scroll-down:hover {
@@ -3288,3 +3289,98 @@ body {
   width: 100%;
 }
 
+
+.contact-section {
+   background-color: #0B102D; 
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-box { 
+  background-color: white;
+  padding: 40px;
+  border-radius: 6px;
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  gap: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  flex: 1;
+  font-size: 14px;
+  color: #222;
+  align-items: center;
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: #222;
+}
+
+.contact-info .label {
+  color: #CC4448;
+  font-weight: bold;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form .form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.contact-form button {
+  width: 80px;
+  padding: 10px;
+  background-color: transparent;
+  color: #BF9000;
+  border: 2px solid #BF9000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #BF9000;
+  color: white;
+}
+
+.required {
+  font-weight: normal;
+  font-size: 12px;
+  color: gray;
+  margin-left: 5px;
+}
