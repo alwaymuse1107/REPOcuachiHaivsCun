@@ -39,53 +39,102 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index-en.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+                            <img src="assets/img/AIQPNG.png" alt="" />
+          <img src="assets/img/aiqlogotext.png" alt="" />
+        </a>
 
-      <a href="index-en.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/AIQPNG.png" alt="">
-        <img src="assets/img/aiqlogotext.png" alt="">
-      </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="#hero" class="active">Home<br /></a>
+            </li>
+            <li><a href="about-us-en.html">About Us</a></li>
+            <li class="dropdown">
+              <a href="service-details.html"
+                ><span>Services</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li>
+                  <i class="bi bi-graph-up-arrow icon"></i
+                  ><a href="service-details.html#data-analysis"
+                    >Data Analysis</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-pie-chart icon"></i
+                  ><a href="service-details.html#data-visualization"
+                    >Data Visualization</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-search icon"></i
+                  ><a href="service-details.html#predictive-analytics"
+                    >Predictive Analysis</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-database-down icon"></i
+                  ><a href="service-details.html#data-integration"
+                    >Data Integration</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-shield-check icon"></i
+                  ><a href="service-details.html#data-security"
+                    >Data Security</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-card-checklist icon"></i
+                  ><a href="service-details.html#other-services"
+                    >Other Services</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
-          <li><a href="about-us-en.html">About Us</a></li>
-          <li class="dropdown"><a href="service-details.html"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><i class="bi bi-graph-up-arrow icon"></i><a href="#"></i>Data Analysis</a></li>
-              <li><i class="bi bi-pie-chart icon"></i><a href="#"></i>Data Visualization</a></li>
-              <li><i class="bi bi-search icon"></i><a href="#"></i>Predictive Analysis</a></li>
-              <li><i class="bi bi-database-down icon"></i><a href="#"></i>Data Integration</a></li>
-              <li><i class="bi bi-shield-check icon"></i><a href="#"></i>Data Security</a></li>
-              <li><i class="bi bi-card-checklist icon"></i><a href="#"></i>Other Services</a></li>
-            </ul>
-          </li>
-          <li><a href="trolltroll.html">Why Choose Us</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+        <div class="lang-switch-container">
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="langToggle"
+              onchange="switchLanguage(this.checked)"
+            />
+            <span
+              class="slider"
+              style="background-color: #cc4448; color: white; opacity: 0.7"
+            ></span>
+          </label>
+          <span id="label-en" class="lang-label">EN</span>
+          <span id="label-vn" class="lang-label">VN</span>
+        </div>
 
-    <div class="lang-switch-container">
-  <label class="switch">
-    <input
-      type="checkbox"
-      id="langToggle"
-      onchange="switchLanguage(this.checked)"
-    />
-    <span class="slider" style="background-color: #CC4448; color: white; opacity: 0.7;"></span>
-  </label>
-  <span id="label-en" class="lang-label">EN</span>
-  <span id="label-vn" class="lang-label">VN</span>
-</div>
-
-     <a class="btn-getstarted " 
-   href="trolltroll.html" 
-   style="background-color: #CC4448; color: white; padding: 8px 20px; border-radius: 30px; text-decoration: none;">
-   Contact Us</a>
-    </div>
-  </header>
+        <a
+          class="btn-getstarted"
+          href="trolltroll.html"
+          style="
+            background-color: #cc4448;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+          "
+        >
+          Contact Us</a
+        >
+      </div>
+    </header>
 
   <section id="service-details" class="who-we-are section">
   <div class="container text-center">
