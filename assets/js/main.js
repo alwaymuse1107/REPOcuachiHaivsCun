@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleId: "themeToggleHn",
       coords: [43.73057887069977, -79.28014110835474],
       zoom: 18,
-      popupText: "Hanoi Office",
+      popupText: "SCARBOROUGH Office",
       mapLink: "https://maps.app.goo.gl/jGd5W396iJZsMpHo9",
     },
     // Thêm maps khác ở đây nếu muốn
