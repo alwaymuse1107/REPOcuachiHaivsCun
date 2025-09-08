@@ -157,7 +157,8 @@ h6 {
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  height: 80px;
+  padding: 10px 0;
   transition: all 0.5s;
   z-index: 10;
 }
@@ -1076,6 +1077,10 @@ section,
 /*--------------------------------------------------------------
 # Values Section
 --------------------------------------------------------------*/
+#values {
+  padding-bottom: 30px;
+}
+
 .values .card {
   background-color: var(--surface-color);
   color: var(--default-color);
@@ -1212,6 +1217,10 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+#services {
+  padding-bottom: 30px;
+}
+
 .flip-card {
   perspective: 1000px;
 }
@@ -2992,6 +3001,7 @@ body {
 }
 
 .highlight {
+  display: inline-flex;
   position: absolute;
   z-index: 10;
   height: 40px;
@@ -3105,10 +3115,11 @@ body {
 .Our-Value {
   width: 100%;
   padding-top: 50px;
+  text-align: center;
 }
 
 .Our-Value img {
-  width: 100%;
+  width: 80%;
 }
 
 .contact-section {
