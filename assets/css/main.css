@@ -3207,3 +3207,68 @@ body {
   color: gray;
   margin-left: 5px;
 }
+
+/*--------------------------------------------------------------
+# Privacy Policy
+--------------------------------------------------------------*/
+
+/* Nền toàn trang */
+body {
+  background: #f2f3f5;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Khoảng trống tránh header fixed-top */
+.policy-wrap {
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+/* Card chứa nội dung */
+.policy-card {
+  max-width: 1150px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 48px 56px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Tiêu đề chính */
+.policy-title {
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 24px 0;
+  color: #0d1b2a;
+}
+
+/* Ngày cập nhật */
+.policy-updated {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Văn bản */
+.policy-card p {
+  color: #27303a;
+  line-height: 2;
+  margin-bottom: 16px;
+}
+
+/* Danh sách */
+.policy-card ul {
+  padding-left: 22px;
+  margin-bottom: 0;
+}
+.policy-card li {
+  margin-bottom: 10px;
+  line-height: 2;
+}
+.policy-card li::marker {
+  color: #cc4448; /* chấm đỏ */
+}
+.policy-card p,
+.policy-card li {
+  text-align: justify;
+}
