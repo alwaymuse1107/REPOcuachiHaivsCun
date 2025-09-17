@@ -423,3 +423,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+var valuesSwiper = new Swiper("#values-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: "#values-next",
+    prevEl: "#values-prev",
+  },
+  pagination: {
+    el: "#values-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    }
+  }
+});
+
+
+
+
