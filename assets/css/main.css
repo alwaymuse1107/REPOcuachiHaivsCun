@@ -1077,55 +1077,77 @@ section,
 /*--------------------------------------------------------------
 # Values Section
 --------------------------------------------------------------*/
-#values {
-  padding-bottom: 30px;
+/* Wrapper riêng cho OUR VALUES */
+
+
+#our-values .values-slider {
+  padding: 20px 0;
 }
 
-.values .card {
-  background-color: var(--surface-color);
-  color: var(--default-color);
-  padding: 30px;
-  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.09);
+#our-values .swiper-slide {
+  height: auto;
+}
+
+#our-values .value-card {
+  background: #fff;                  /* nền trắng */
+  border: 1px solid #e5e5e5;         /* viền mảnh */
+  border-radius: 12px;               /* bo góc */
+  padding: 24px 18px;
   text-align: center;
-  transition: 0.3s;
   height: 100%;
-  border: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.values .card img {
-  padding: 30px 50px;
-  transition: 0.5s;
-  transform: scale(1.1);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* căn giữa ngang */
-  text-align: center;
-  height: 260px; /* chiều cao cố định */
-}
-
-.values .card h3 {
-  font-size: 24px;
+#our-values .value-card h3 {
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 18px;
+  color: #cc4448;
+  margin: 20px 0 10px;
 }
 
-.values .card:hover {
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+#our-values .value-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
 }
 
-.values .card:hover img {
-  transform: scale(1);
+#our-values .swiper {
+  padding-bottom: 50px;  /* đẩy pagination xuống thêm */
 }
 
-.our-services__img {
-  width: 48px;
-  height: 55px;
-  margin-bottom: 20px;
-  object-fit: cover;
-  object-position: top;
+/* Navigation riêng */
+#our-values .values-prev,
+#our-values .values-next {
+  background: #fff;
+  border-radius: 60%;
+  width: 30px;
+  height: 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  color: #cc4448;
+}
+#our-values .values-prev:hover,
+#our-values .values-next:hover {
+  background: #cc4448;
+  color: #fff;
 }
 
+/* Pagination */
+#our-values .values-pagination .swiper-pagination-bullet {
+  background: #cc4448;
+  opacity: 0.3;
+}
+#our-values .values-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+#our-values .swiper-slide img{
+  display:block;               /* tránh khoảng trắng dưới img inline */
+  height:160px;                /* đặt CHIỀU CAO CỐ ĐỊNH */
+  width:auto;                  /* giữ tỉ lệ */
+  object-fit:contain;          /* không méo hình */
+  margin:0 auto 18px;          /* căn giữa + khoảng cách dưới ảnh */
+}
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -2216,6 +2238,27 @@ section,
   text-align: justify;
   align-items: flex-end;
 }
+
+/* Giới hạn ảnh trong thẻ flip-front của OUR SERVICES */
+#services .flip-front img.our-services__img {
+  max-width: 160px;     /* chỉnh 140–200 tùy bạn */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Không cho nội dung (ảnh) tràn ra khỏi card */
+#services .flip-front,
+#services .flip-back {
+  overflow: hidden;
+}
+
+/* Cô lập bố cục card để tránh “lép biên” sang section khác (an toàn thêm) */
+#services .flip-card {
+  contain: layout paint;
+}
+
 
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
