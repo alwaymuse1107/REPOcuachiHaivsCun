@@ -434,6 +434,11 @@ var valuesSwiper = new Swiper("#values-swiper", {
     el: "#values-pagination",
     clickable: true,
   },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  loop: true,  // Enable looping
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -446,6 +451,7 @@ var valuesSwiper = new Swiper("#values-swiper", {
     }
   }
 });
+
 
 
 

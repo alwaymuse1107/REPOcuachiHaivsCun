@@ -1113,13 +1113,58 @@ section,
   transform: scale(1);
 }
 
-.our-services__img {
-  width: 48px;
-  height: 55px;
-  margin-bottom: 20px;
-  object-fit: cover;
-  object-position: top;
+#values-swiper .swiper-wrapper {
+  display: flex;
+  justify-content: space-between; /* Ensures cards are spaced evenly */
+  align-items: center; /* Centers cards vertically */
 }
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 33.33%; /* Ensures 3 cards per row (100% / 3 = 33.33%) */
+}
+
+.value-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.value-card img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Make sure arrows are above other content */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust as needed */
+}
+
+.swiper-button-next {
+  right: 10px; /* Adjust as needed */
+}
+
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -1267,7 +1312,7 @@ section,
 }
 
   .flip-back p {
-    font-size: 17.5px;
+    font-size: 14px;
     color: #ffffff;
     margin-bottom: 12px;
     padding: 0 10px;
@@ -1315,6 +1360,28 @@ section,
 }
 .item-pink .icon {
   color: #cc4448;
+}
+
+.flip-front i.icon {
+  font-size: 10px; /* Giảm kích thước icon nếu quá to */
+  margin-bottom: 10px;
+}
+
+.our-services__img {
+  max-width: 60%; /* Đảm bảo hình ảnh không vượt quá kích thước của thẻ */
+  height: 60%; /* Giữ tỷ lệ của ảnh */
+}
+
+#services .services-container,
+#clients .container {
+  width: 100%;
+  max-width: 1200px; /* Or set your desired max-width */
+  margin: 0 auto; /* Centers the content */
+}
+
+/* Optionally add padding and margin adjustments */
+#services .services-container {
+  padding: 20px;
 }
 
 /*--------------------------------------------------------------
