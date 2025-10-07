@@ -57,8 +57,7 @@
         class="container-fluid container-xl position-relative d-flex align-items-center" 
       >
         <a href="index-en.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/AIQPNG.png" alt="" style="height: 50px; width: auto;" />
-        <img src="assets/img/aiqlogotext.png" alt="" style="height: 50px; width: auto; margin-left: 8px;" />
+        <img src="assets/img/Logo_AIQ.png" alt=""/>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -110,25 +109,27 @@
             </li>
             <li><a href="about-us-en.html">Insights</a></li>
             <li><a href="why-choose-us-en.html">Why Us</a></li>
+            <li>
+              <div class="language-selector">
+                <button class="lang-btn" id="langBtn"><i class="bi bi-globe"></i> EN</button>
+              
+                <div class="lang-dropdown" id="langDropdown">
+                  <label class="lang-option">
+                    <input type="radio" name="language" value="en" checked />
+                    <span>English</span>
+                  </label>
+                  <label class="lang-option">
+                    <input type="radio" name="language" value="vn" />
+                    <span>Vietnamese</span>
+                  </label>
+                </div>
+              </div>
+            </li >
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-<div class="language-selector">
-  <button class="lang-btn" id="langBtn">🌐 EN</button>
 
-  <div class="lang-dropdown" id="langDropdown">
-    <label class="lang-option">
-      <input type="radio" name="language" value="en" checked />
-      <span>English</span>
-    </label>
-
-    <label class="lang-option">
-      <input type="radio" name="language" value="vn" />
-      <span>Vietnamese</span>
-    </label>
-  </div>
-</div>
 
       <a href="trolltroll.html" class="btn-contact">Contact</a>
       
@@ -161,7 +162,7 @@
             <div class="col-lg-6">
               <div
                 class="position-relative"
-                style="height: 400px; transform: translateX(-30px)"
+                style="height: 400px"
               >
                 <video
                   autoplay
@@ -284,7 +285,7 @@
       <!-- Slide 4 -->
 <div class="swiper-slide" style="display: flex; justify-content: center; align-items: center; text-align: center;">
     <div class="value-card" style="display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: space-between;">
-          <img src="assets/img/Learning.png" alt="Learning" class="img-fluid"style=" max-width: 80% ; max-height: 80% ;  object-fit: contain">
+          <img src="assets/img/Learning.png" alt="Learning" class="img-fluid" style=" max-width: 80% ; max-height: 80% ;  object-fit: contain">
           <h3 style="padding-bottom: 16px">Learning</h3>
           <p style="padding-bottom: 12px">We believe that every individual should have the opportunity to learn, grow and contribute to their full potential.</p>
         </div>
@@ -724,6 +725,7 @@
                         background-color: #cc4448;
                         color: white;
                         border: none;
+                        margin-bottom: 10px;
                       "
                     >
                       Send Message

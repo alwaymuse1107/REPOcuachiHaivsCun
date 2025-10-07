@@ -166,8 +166,10 @@ h6 {
   z-index: 1000;
 }
 
-.header .logo {
+.header .logo img {
   line-height: 1;
+  height: 98px;
+  width: auto;
 }
 
 .header .logo h1 {
@@ -928,6 +930,12 @@ section,
   font-weight: 400;
 }
 
+@media (max-width: 992px) {
+  .hero {
+    margin-top: 138px;
+  }
+}
+
 .our-values-wrapper {
   position: relative;
   display: flex;
@@ -1090,7 +1098,7 @@ section,
   padding: 30px 50px;
   transition: 0.5s;
   transform: scale(1.1);
-    width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center; /* căn giữa ngang */
@@ -1149,7 +1157,8 @@ p {
   margin-top: 20px;
 }
 
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1163,7 +1172,6 @@ p {
 .swiper-button-next {
   right: 10px; /* Adjust as needed */
 }
-
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -1310,13 +1318,13 @@ p {
   color: #ffffff;
 }
 
-  .flip-back p {
-    font-size: 14px;
-    color: #ffffff;
-    margin-bottom: 12px;
-    padding: 0 10px;
-    text-align: inter-word;
-  }
+.flip-back p {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  padding: 0 10px;
+  text-align: inter-word;
+}
 
 .read-more {
   color: #24b3e9;
@@ -2154,7 +2162,7 @@ p {
   font-weight: bold;
   margin: 0; /* Bỏ margin để tránh lệch */
   padding-top: 60px;
-    text-align: center;
+  text-align: center;
 }
 
 .analysis-section {
@@ -2275,7 +2283,6 @@ p {
   align-items: flex-end;
 }
 
-
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
   padding: 60px 20px;
@@ -2319,8 +2326,8 @@ p {
   transition: transform 0.3s ease;
   animation: bounce 1.5s infinite; /* hiệu ứng nhảy */
   padding: 20px 10px; /* khoảng cách dưới cùng */
-  margin-top: 10px;   /* Giảm khoảng cách phía trên */
-  margin-bottom: 10px; 
+  margin-top: 10px; /* Giảm khoảng cách phía trên */
+  margin-bottom: 10px;
 }
 
 .scroll-down:hover {
@@ -2972,66 +2979,6 @@ p {
   font-size: 14px;
 }
 
-/* Custom cursor style */
-.custom-cursor {
-  position: absolute; /* Con trỏ cố định khi cuộn trang */
-  width: 120px; /* Đường kính con trỏ */
-  height: 120px;
-  background-image: url(/assets/img/otistest.png); /* Đặt đường dẫn hình ảnh */
-  background-size: contain; /* Đảm bảo hình ảnh vừa với kích thước */
-  background-repeat: no-repeat;
-  border-radius: 50%; /* Tạo hình tròn */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Để con trỏ nằm chính xác ở vị trí chuột */
-  animation: flyAround 3s ease-in-out infinite, wobble 1s ease-in-out infinite; /* Thêm hiệu ứng bay */
-  pointer-events: none; /* Thêm hiệu ứng chuyển động mượt mà */
-}
-
-/* Hiệu ứng bay cho con gián */
-@keyframes flyAround {
-  0% {
-    transform: translate(-50%, -50%) translateX(0) rotate(0deg);
-  }
-  25% {
-    transform: translate(-50%, -50%) translateX(150px) rotate(30deg); /* Bay sang phải */
-  }
-  50% {
-    transform: translate(-50%, -50%) translateX(0) rotate(0deg); /* Quay lại vị trí ban đầu */
-  }
-  75% {
-    transform: translate(-50%, -50%) translateX(-150px) rotate(-30deg); /* Bay sang trái */
-  }
-  100% {
-    transform: translate(-50%, -50%) translateX(0) rotate(0deg); /* Quay lại vị trí ban đầu */
-  }
-}
-
-/* Hiệu ứng lắc lư vui nhộn */
-@keyframes wobble {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  25% {
-    transform: translate(-50%, -50%) rotate(10deg); /* Xoay nhẹ một chút */
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(0deg); /* Trở lại vị trí ban đầu */
-  }
-  75% {
-    transform: translate(-50%, -50%) rotate(-10deg); /* Xoay nhẹ theo hướng ngược lại */
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(0deg); /* Quay lại vị trí ban đầu */
-  }
-}
-
-/* Move the custom cursor */
-body {
-  cursor: default; /* Đảm bảo con trỏ mặc định không bị ẩn */
-}
-
 #MVV {
   display: flex;
   justify-content: center;
@@ -3079,6 +3026,12 @@ body {
   overflow: hidden;
 }
 
+#who-we-are {
+  height: auto;
+  margin-top: 98.5px;
+  padding-top: 4%;
+}
+
 .Our-Mission__content {
   background-color: #fff;
   display: flex;
@@ -3094,10 +3047,14 @@ body {
 /* Tiêu đề */
 .Our-Mission__title,
 .who-we-are__title {
-  font-size: 50px;
+  font-size: 45px;
   color: #1a1f3e;
   font-weight: bold;
   margin-bottom: 4%;
+}
+
+.Our-Mission__title {
+  font-size: 25px;
 }
 
 /* Đoạn text */
@@ -3179,15 +3136,14 @@ body {
   width: 100%;
 }
 
-
 .contact-section {
-   background-color: #0B102D; 
+  background-color: #0b102d;
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
-.contact-box { 
+.contact-box {
   background-color: white;
   padding: 40px;
   border-radius: 6px;
@@ -3211,7 +3167,7 @@ body {
 }
 
 .contact-info .label {
-  color: #CC4448;
+  color: #cc4448;
   font-weight: bold;
 }
 
@@ -3256,15 +3212,15 @@ body {
   width: 80px;
   padding: 10px;
   background-color: transparent;
-  color: #BF9000;
-  border: 2px solid #BF9000;
+  color: #bf9000;
+  border: 2px solid #bf9000;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #BF9000;
+  background-color: #bf9000;
   color: white;
 }
 
@@ -3341,13 +3297,13 @@ body {
 }
 
 .btn-contact {
-  margin-left: 16px; 
+  margin: 0px 16px;
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;                   /* gọn nhẹ, tỉ lệ hài hòa */
-  border: 2px solid #cc4448;     /* viền đỏ đồng bộ với hover */
+  padding: 8px 12px; /* gọn nhẹ, tỉ lệ hài hòa */
+  border: 2px solid #cc4448; /* viền đỏ đồng bộ với hover */
   border-radius: 25px;
   color: #cc4448;
   font-size: 15px;
@@ -3392,46 +3348,42 @@ body {
   z-index: 1;
 }
 
-
 .language-selector {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
+  padding: 18px 12px;
 }
 
 /* 🌐 Nút chính */
 .lang-btn {
-  background: linear-gradient(135deg, #4F46E5, #0B102D);
+  background: #cc4448;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   padding: 5px 14px;
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.4);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .lang-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.5);
 }
 
 /* 🔽 Dropdown container */
 .lang-dropdown {
   position: absolute;
-  top: 140%;
+  top: 100%;
   left: 0;
-  background: #0b102d;
+  background: #cc4448;
   color: white;
   border-radius: 16px;
   width: 180px;
   padding: 10px 0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
@@ -3442,13 +3394,12 @@ body {
 .lang-dropdown::before {
   content: "";
   position: absolute;
-  top: -8px;       /* đặt mũi tên phía trên hộp */
-  left: 26px;     /* chỉnh vị trí theo nút EN */
+  top: -8px; /* đặt mũi tên phía trên hộp */
+  left: 26px; /* chỉnh vị trí theo nút EN */
   width: 16px;
   height: 25px;
-  background: #0b102d;
+  background: #cc4448;
   transform: rotate(45deg); /* quay vuông góc 45 độ */
-  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.1);
   z-index: -1; /* để mũi tên liền khối với hộp */
 }
 
@@ -3489,7 +3440,7 @@ body {
 
 /* Radio khi chọn */
 .lang-option input[type="radio"]:checked {
-  border-color: #60a5fa;
-  background: radial-gradient(circle at center, #60a5fa 45%, transparent 46%);
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+  border-color: #ffffff;
+  background: radial-gradient(circle at center, #ffffff 45%, transparent 46%);
+  box-shadow: 0 0 8px #60a5fa80;
 }

@@ -306,7 +306,8 @@ document.addEventListener("DOMContentLoaded", function () {
       coords: [10.731364, 106.724216],
       zoom: 20.25,
       popupText: "HCMC Office",
-      mapLink: "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216",
+      mapLink:
+        "https://www.google.com/maps/search/?api=1&query=10.731364,106.724216",
     },
     {
       id: "map-hn", // Nếu có bản đồ HN
@@ -326,10 +327,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const map = L.map(config.id).setView(config.coords, config.zoom);
 
-    const lightTile = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    const lightTile = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }
+    ).addTo(map);
 
     const customIcon = L.divIcon({
       className: "custom-div-icon",
@@ -364,7 +369,8 @@ document.addEventListener("DOMContentLoaded", function () {
   cursor.classList.add("custom-cursor");
   document.body.appendChild(cursor);
 
-  let lastX = 0, lastY = 0;
+  let lastX = 0,
+    lastY = 0;
   document.addEventListener("mousemove", (e) => {
     lastX = e.pageX;
     lastY = e.pageY;
@@ -406,22 +412,22 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".analysis-section");
 
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".analysis-section");
-
-    const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
         }
       });
-    }, { threshold: 0.3 });
+    },
+    { threshold: 0.3 }
+  );
 
-    sections.forEach((section) => observer.observe(section));
-  });
-
+  sections.forEach((section) => observer.observe(section));
+});
 
 var valuesSwiper = new Swiper("#values-swiper", {
   slidesPerView: 3,
@@ -438,7 +444,7 @@ var valuesSwiper = new Swiper("#values-swiper", {
     delay: 3000,
     disableOnInteraction: false,
   },
-  loop: true,  // Enable looping
+  loop: true, // Enable looping
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -448,30 +454,25 @@ var valuesSwiper = new Swiper("#values-swiper", {
     },
     1024: {
       slidesPerView: 3,
-    }
-  }
+    },
+  },
 });
 
-
-const contactBtn = document.querySelector('.btn-contact');
-contactBtn.addEventListener('mouseleave', () => {
-  contactBtn.classList.remove('hovering');
+const contactBtn = document.querySelector(".btn-contact");
+contactBtn.addEventListener("mouseleave", () => {
+  contactBtn.classList.remove("hovering");
   void contactBtn.offsetWidth;
-  contactBtn.classList.add('hovering');
+  contactBtn.classList.add("hovering");
 });
 
-
-const dropdown = document.getElementById('langDropdown');
-const btn = document.getElementById('langBtn');
+const dropdown = document.getElementById("langDropdown");
+const btn = document.getElementById("langBtn");
 const radios = dropdown.querySelectorAll('input[type="radio"]');
 
 radios.forEach((r) => {
-  r.addEventListener('change', () => {
+  r.addEventListener("change", () => {
     const code = r.value.toUpperCase();
     // ✅ Dùng textContent, KHÔNG nối thêm HTML
-    btn.textContent = `🌐 ${code}`;
+    btn.innerHTML = `<i class="bi bi-globe"></i> ${code}`;
   });
 });
-
-
-
