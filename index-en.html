@@ -54,11 +54,11 @@
   <body>
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div
-        class="container-fluid container-xl position-relative d-flex align-items-center"
+        class="container-fluid container-xl position-relative d-flex align-items-center" 
       >
         <a href="index-en.html" class="logo d-flex align-items-center me-auto">
-          <img src="assets/img/AIQPNG.png" alt="" />
-          <img src="assets/img/aiqlogotext.png" alt="" />
+        <img src="assets/img/AIQPNG.png" alt="" style="height: 50px; width: auto;" />
+        <img src="assets/img/aiqlogotext.png" alt="" style="height: 50px; width: auto; margin-left: 8px;" />
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -114,35 +114,24 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <div class="lang-switch-container">
-          <label class="switch">
-            <input
-              type="checkbox"
-              id="langToggle"
-              onchange="switchLanguage(this.checked)"
-            />
-            <span
-              class="slider"
-              style="background-color: #cc4448; color: white; opacity: 0.7"
-            ></span>
-          </label>
-          <span id="label-en" class="lang-label">EN</span>
-          <span id="label-vn" class="lang-label">VN</span>
-        </div>
+<div class="language-selector">
+  <button class="lang-btn" id="langBtn">🌐 EN</button>
 
-        <a
-          class="btn-getstarted"
-          href="trolltroll.html"
-          style="
-            background-color: #cc4448;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-          "
-        >
-          Contact</a
-        >
+  <div class="lang-dropdown" id="langDropdown">
+    <label class="lang-option">
+      <input type="radio" name="language" value="en" checked />
+      <span>English</span>
+    </label>
+
+    <label class="lang-option">
+      <input type="radio" name="language" value="vn" />
+      <span>Vietnamese</span>
+    </label>
+  </div>
+</div>
+
+      <a href="trolltroll.html" class="btn-contact">Contact</a>
+      
       </div>
     </header>
 
@@ -648,7 +637,7 @@
               <!-- Theme filter dropdown (nút gọn bên phải map) -->
               <div
                 id="map-vn"
-                style="height: 400px; width: 100%; border-radius: 10px"
+                style="height: 500px; width: 100%; border-radius: 10px"
               ></div>
               <div class="map-theme-toggle">
                 <label class="map-switch">
@@ -673,13 +662,13 @@
             <!-- đay là chỗ bản đồ -->
             <div
               class="col-lg-6 d-flex align-items-center"
-              style="height: 400px"
+              style="height: 500px"
             >
               <form class="w-100" data-aos="fade-up" data-aos-delay="100">
                 <p
                   style="
                     color: #cc4448;
-                    font-size: 24px;
+                    font-size: 30px;
                     text-align: center;
                     margin-bottom: 50px;
                     font-weight: bold;
@@ -789,11 +778,11 @@
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
               <li>
-                <i class="bi bi-chevron-right"></i> <a href="#">About Us</a>
+                <i class="bi bi-chevron-right"></i> <a href="about-us-en.html">About Us</a>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
-                <a href="#">Why Choose Us</a>
+                <a href="why-choose-us-en.html">Why Choose Us</a>
               </li>
             </ul>
           </div>
@@ -803,14 +792,14 @@
             <h4 style="visibility: hidden">EXPLORE</h4>
             <ul>
               <li>
-                <i class="bi bi-chevron-right"></i> <a href="#">Our Services</a>
+                <i class="bi bi-chevron-right"></i> <a href="service-details.html">Our Services</a>
               </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <a href="privacy-policy.html">Privacy Policy</a>
               </li>
               <li>
-                <i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a>
+                <i class="bi bi-chevron-right"></i> <a href="trolltroll.html">Contact Us</a>
               </li>
             </ul>
           </div>

@@ -453,6 +453,25 @@ var valuesSwiper = new Swiper("#values-swiper", {
 });
 
 
+const contactBtn = document.querySelector('.btn-contact');
+contactBtn.addEventListener('mouseleave', () => {
+  contactBtn.classList.remove('hovering');
+  void contactBtn.offsetWidth;
+  contactBtn.classList.add('hovering');
+});
+
+
+const dropdown = document.getElementById('langDropdown');
+const btn = document.getElementById('langBtn');
+const radios = dropdown.querySelectorAll('input[type="radio"]');
+
+radios.forEach((r) => {
+  r.addEventListener('change', () => {
+    const code = r.value.toUpperCase();
+    // ✅ Dùng textContent, KHÔNG nối thêm HTML
+    btn.textContent = `🌐 ${code}`;
+  });
+});
 
 
 
