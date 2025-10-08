@@ -99,7 +99,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #c94243;
+  color: #cc4448;
   font-family: var(--heading-font);
 }
 
@@ -531,67 +531,7 @@ h6 {
   }
 
   /* Sưitch */
-  .lang-switch-container {
-    padding-right: 1.23%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: sans-serif;
-  }
-
-  .lang-label {
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .lang-label.inactive {
-    display: none;
-    color: #bbb;
-    font-weight: normal;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-  }
-
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--accent-color);
-    transition: 0.4s;
-    border-radius: 34px;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(22px);
-  }
-}
+  
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -3016,7 +2956,7 @@ p {
 /* Section nền xám nhạt, padding dọc */
 #who-we-are,
 #Our-Mission {
-  background-color: #f2f2f5;
+  background-color: #ebebeb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3028,8 +2968,8 @@ p {
 
 #who-we-are {
   height: auto;
-  margin-top: 98.5px;
-  padding-top: 4%;
+  margin-top: 138px;
+  padding: 4% 0;
 }
 
 .Our-Mission__content {
@@ -3047,14 +2987,10 @@ p {
 /* Tiêu đề */
 .Our-Mission__title,
 .who-we-are__title {
-  font-size: 45px;
+  font-size: 50px;
   color: #1a1f3e;
   font-weight: bold;
   margin-bottom: 4%;
-}
-
-.Our-Mission__title {
-  font-size: 25px;
 }
 
 /* Đoạn text */
@@ -3128,12 +3064,12 @@ p {
 }
 
 .Our-Value {
-  width: 100%;
+  text-align: center;
   padding-top: 50px;
 }
 
 .Our-Value img {
-  width: 100%;
+  width: 80%;
 }
 
 .contact-section {
