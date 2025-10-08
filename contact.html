@@ -28,27 +28,22 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body>
 
-        <header id="header" class="header d-flex align-items-center fixed-top">
+            <header id="header" class="header d-flex align-items-center fixed-top">
       <div
-        class="container-fluid container-xl position-relative d-flex align-items-center"
+        class="container-fluid container-xl position-relative d-flex align-items-center" 
       >
         <a href="index-en.html" class="logo d-flex align-items-center me-auto">
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-                            <img src="assets/img/AIQPNG.png" alt="" />
-          <img src="assets/img/aiqlogotext.png" alt="" />
+        <img src="assets/img/Logo_AIQ.png" alt=""/>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li>
-              <a href="#hero" class="active">Home<br /></a>
-            </li>
             <li><a href="about-us-en.html">About Us</a></li>
             <li class="dropdown">
               <a href="service-details.html"
-                ><span>Services</span>
+                ><span>Solutions</span>
                 <i class="bi bi-chevron-down toggle-dropdown"></i
               ></a>
               <ul>
@@ -90,40 +85,32 @@
                 </li>
               </ul>
             </li>
-            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+            <li><a href="about-us-en.html">Insights</a></li>
+            <li><a href="why-choose-us-en.html">Why Us</a></li>
+            <li>
+              <div class="language-selector">
+                <button class="lang-btn" id="langBtn"><i class="bi bi-globe"></i> EN</button>
+              
+                <div class="lang-dropdown" id="langDropdown">
+                  <label class="lang-option">
+                    <input type="radio" name="language" value="en" checked />
+                    <span>English</span>
+                  </label>
+                  <label class="lang-option">
+                    <input type="radio" name="language" value="vn" />
+                    <span>Vietnamese</span>
+                  </label>
+                </div>
+              </div>
+            </li >
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <div class="lang-switch-container">
-          <label class="switch">
-            <input
-              type="checkbox"
-              id="langToggle"
-              onchange="switchLanguage(this.checked)"
-            />
-            <span
-              class="slider"
-              style="background-color: #cc4448; color: white; opacity: 0.7"
-            ></span>
-          </label>
-          <span id="label-en" class="lang-label">EN</span>
-          <span id="label-vn" class="lang-label">VN</span>
-        </div>
 
-        <a
-          class="btn-getstarted"
-          href="trolltroll.html"
-          style="
-            background-color: #cc4448;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-          "
-        >
-          Contact Us</a
-        >
+
+      <a href="trolltroll.html" class="btn-contact">Contact</a>
+      
       </div>
     </header>
 
