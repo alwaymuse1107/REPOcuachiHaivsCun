@@ -336,72 +336,6 @@ h6 {
     left: -100%;
     visibility: visible;
   }
-
-  /* Sưitch */
-
-  .lang-switch-container {
-    padding-left: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: sans-serif;
-  }
-
-  .lang-label {
-    font-family: var(--nav-font);
-    color: #0b102d;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .lang-label.inactive {
-    display: none;
-    color: #0b102d;
-    font-weight: normal;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-  }
-
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--accent-color);
-    transition: background-color 0.3s ease;
-    border-radius: 34px;
-    color: white;
-    opacity: 0.7;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(22px);
-  }
 }
 
 /* Navmenu - Mobile */
@@ -1094,6 +1028,10 @@ h3 {
 
 p {
   margin-top: 20px;
+}
+
+#our-values {
+  position: relative;
 }
 
 .swiper-button-prev,
@@ -3063,6 +3001,7 @@ p {
 }
 
 .Our-Value {
+  position: relative;
   text-align: center;
   padding-top: 50px;
 }
