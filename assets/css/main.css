@@ -168,15 +168,8 @@ h6 {
 
 .header .logo img {
   line-height: 1;
-  height: 98px;
+  height: 50px;
   width: auto;
-}
-
-.header .logo h1 {
-  font-size: 80px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
 }
 
 .header .btn-getstarted,
@@ -803,12 +796,6 @@ section,
   font-weight: 400;
 }
 
-@media (max-width: 992px) {
-  .hero {
-    margin-top: 138px;
-  }
-}
-
 .our-values-wrapper {
   position: relative;
   display: flex;
@@ -877,7 +864,10 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 770px) {
+  .hero {
+    align-items: start;
+  }
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
@@ -1303,7 +1293,27 @@ p {
   margin-right: 0;
 }
 
+@media (min-width: 575px) and (max-width: 992px) {
+  .hero {
+    margin-top: 90px;
+  }
+}
+
 @media (max-width: 575px) {
+  .hero {
+    margin-top: 10vh;
+  }
+
+  .header .logo {
+    width: 45%;
+  }
+
+  .header .logo img {
+    line-height: 1;
+    width: 100%;
+    height: auto;
+  }
+
   .portfolio .portfolio-filters li {
     font-size: 14px;
     margin: 0 5px;
