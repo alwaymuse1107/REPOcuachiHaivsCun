@@ -2022,8 +2022,8 @@ p {
 --------------------------------------------------------------*/
 /* Section nền xám nhạt, padding dọc */
 #service-details {
-  background-color: #f2f2f5;
-  height: 40vh;
+  background-color: #ebebeb;
+  height: 62vh;
   display: flex; /* Sử dụng Flexbox */
   justify-content: center; /* Căn giữa ngang */
   align-items: center; /* Căn giữa dọc */
@@ -2034,7 +2034,7 @@ p {
 
 /* Tiêu đề */
 .service-details__title {
-  font-size: 50px;
+  font-size: 60px;
   color: #1a1f3e;
   font-weight: bold;
   margin: 0; /* Bỏ margin để tránh lệch */
@@ -2277,14 +2277,14 @@ p {
 
 .services-nav .tab {
   flex: 1 1 60px;
-  max-width: 186px;
+  max-width: 188px;
   padding: 12px 24px;
   border: 2px solid #bf9000; /* Viền xanh chủ đạo */
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
   color: #000;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(191, 144, 0, 0.05);
@@ -2899,7 +2899,7 @@ p {
   justify-content: center;
   padding: 0;
   margin: 0;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
 }
 
