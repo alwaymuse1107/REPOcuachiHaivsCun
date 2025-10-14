@@ -168,8 +168,14 @@ h6 {
 
 .header .logo img {
   line-height: 1;
-  height: 50px;
+  height: 60px;
   width: auto;
+}
+
+.logo:hover {
+  transition: none;
+  transform: none; /* Phóng to */
+  filter: none; /* Làm sáng */
 }
 
 .header .btn-getstarted,
@@ -332,7 +338,7 @@ h6 {
 }
 
 /* Navmenu - Mobile */
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
     font-size: 28px;
@@ -360,6 +366,12 @@ h6 {
     transition: 0.3s;
     z-index: 9998;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  a:hover {
+    transition: all 0.3s ease;
+    transform: none; /* Phóng to */
+    filter: brightness(1.2); /* Làm sáng */
   }
 
   .navmenu a,
@@ -622,6 +634,16 @@ h6 {
 .footer .credits {
   margin-top: 6px;
   font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .footer-top .footer-links,
+  .footer-top .footer-links {
+    flex: 1 1 48%;
+    max-width: 48%;
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2913,27 +2935,62 @@ p {
   overflow: hidden;
 }
 
-#who-we-are {
-  height: auto;
-  margin-top: 138px;
-  padding: 4% 0;
-}
-
 .Our-Mission__content {
   background-color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
   width: 90%;
   height: 70%;
 }
 
 .Our-Mission__left {
   padding: 5%;
+
+  flex: 2;
 }
+
+.Our-Mission__right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.Our-Mission__img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* @media (max-width: 768px) {
+  .Our-Mission__content {
+    flex-direction: column; 
+    text-align: center;
+    height: 70vh;
+  }
+
+  .Our-Mission__left,
+  .Our-Mission__right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .Our-Mission__img {
+    margin-bottom: 20px;
+    max-width: 70%; 
+  }
+
+  .Our-Mission__text p {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+} */
 
 /* Tiêu đề */
 .Our-Mission__title,
-.who-we-are__title {
+.who-we-are__title,
+.Our-membership__title {
   font-size: 50px;
   color: #1a1f3e;
   font-weight: bold;
@@ -2943,7 +3000,7 @@ p {
 /* Đoạn text */
 .Our-Mission__text,
 .who-we-are__text {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.6;
   color: #1a1f3e;
   max-width: 1200px;
@@ -2993,7 +3050,7 @@ p {
 }
 
 .vision-content p {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.6;
 }
 
@@ -3018,6 +3075,26 @@ p {
 
 .Our-Value img {
   width: 80%;
+}
+
+#Our-membership {
+  padding-top: 0;
+  height: 50vh;
+}
+
+.Our-membership .logo {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Our-membership a:hover {
+  filter: none;
+}
+
+.Our-membership .logo:first-child {
+  width: 200px;
 }
 
 .contact-section {
