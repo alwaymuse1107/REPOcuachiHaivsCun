@@ -889,6 +889,7 @@ section,
 @media (max-width: 770px) {
   .hero {
     align-items: start;
+    height: 70vh;
   }
   .hero h1 {
     font-size: 28px;
@@ -2308,7 +2309,7 @@ p {
 }
 
 .services-nav .tab {
-  flex: 1 1 60px;
+  flex: 1 1 180px;
   max-width: 188px;
   padding: 12px 24px;
   border: 2px solid #bf9000; /* Viền xanh chủ đạo */
@@ -2948,8 +2949,7 @@ p {
 
 .Our-Mission__left {
   padding: 5%;
-
-  flex: 2;
+  flex: 1;
 }
 
 .Our-Mission__right {
@@ -2959,15 +2959,16 @@ p {
 }
 
 .Our-Mission__img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .Our-Mission__content {
-    flex-direction: column; 
+    flex-direction: column;
     text-align: center;
-    height: 70vh;
+    justify-content: start;
+    height: 80vh;
   }
 
   .Our-Mission__left,
@@ -2978,14 +2979,14 @@ p {
 
   .Our-Mission__img {
     margin-bottom: 20px;
-    max-width: 70%; 
+    width: 60%;
   }
 
   .Our-Mission__text p {
     margin: 0 auto;
     max-width: 90%;
   }
-} */
+}
 
 /* Tiêu đề */
 .Our-Mission__title,
@@ -3007,18 +3008,6 @@ p {
   margin: 0 auto;
 }
 
-.Our-Mission__right {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: auto;
-}
-
-.Our-Mission__img {
-  width: 50%;
-  height: auto;
-}
-
 .Our-Mission .inner-section {
   background-color: #fff;
   padding: auto;
@@ -3029,14 +3018,15 @@ p {
   align-items: center;
 }
 
+/* --- Vision Section --- */
 .vision-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5cm;
-  max-width: 1400px; /* tăng vùng chứa nội dung */
-  margin: 0 auto; /* căn giữa section */
-  gap: 50px; /* khoảng cách giữa chữ và ảnh */
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 50px;
 }
 
 .vision-content {
@@ -3062,9 +3052,49 @@ p {
 
 .vision-image img {
   max-width: 100%;
-  width: 500px; /* hoặc bạn tăng lên 600px, 700px theo ý */
+  width: 500px;
   height: auto;
   display: block;
+}
+
+/* --- Responsive layout (mobile & tablet) --- */
+@media (max-width: 992px) {
+  .vision-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 10px;
+  }
+
+  .vision-content {
+    flex: unset;
+    width: 100%;
+    max-width: 700px;
+    z-index: 1;
+  }
+
+  .vision-image {
+    justify-content: center;
+    width: 100%;
+    margin-top: -60px;
+    z-index: 0;
+  }
+
+  .vision-image img {
+    width: 100%; /* ảnh nhỏ lại cho mobile */
+    max-width: 400px;
+  }
+
+  .vision-content h2 {
+    font-size: 36px;
+  }
+
+  .vision-content p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
 }
 
 .Our-Value {
@@ -3078,12 +3108,12 @@ p {
 }
 
 #Our-membership {
-  padding-top: 0;
+  padding-top: 20px;
   height: 50vh;
 }
 
 .Our-membership .logo {
-  width: 250px;
+  width: 24%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3094,7 +3124,19 @@ p {
 }
 
 .Our-membership .logo:first-child {
-  width: 200px;
+  width: 20%;
+}
+
+@media (max-width: 992px) {
+  .Our-membership__title {
+    margin-bottom: 40px;
+  }
+  .Our-membership .logo {
+    width: 48%;
+  }
+  .Our-membership .logo:first-child {
+    width: 40%;
+  }
 }
 
 .contact-section {
