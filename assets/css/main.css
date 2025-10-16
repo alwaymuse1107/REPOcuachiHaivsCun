@@ -2192,6 +2192,27 @@ p {
   text-align: justify;
   align-items: flex-end;
 }
+/* nah i'm cook */
+@media (max-width: 1170px) {
+  .analysis-text-box {
+    justify-content: start;
+  }
+
+  .analysis-image-box {
+    height: 225px;
+    width: 300px;
+    z-index: 2;
+    overflow: hidden;
+    padding-top: 15px;
+  }
+
+  .analysis-section.reverse .analysis-image-box {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    transition: all 2s ease;
+  }
+}
 
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
@@ -2963,31 +2984,6 @@ p {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  .Our-Mission__content {
-    flex-direction: column;
-    text-align: center;
-    justify-content: start;
-    height: 80vh;
-  }
-
-  .Our-Mission__left,
-  .Our-Mission__right {
-    flex: unset;
-    width: 100%;
-  }
-
-  .Our-Mission__img {
-    margin-bottom: 20px;
-    width: 60%;
-  }
-
-  .Our-Mission__text p {
-    margin: 0 auto;
-    max-width: 90%;
-  }
-}
-
 /* Tiêu đề */
 .Our-Mission__title,
 .who-we-are__title,
@@ -3011,6 +3007,32 @@ p {
 .Our-Mission .inner-section {
   background-color: #fff;
   padding: auto;
+}
+
+@media (max-width: 768px) {
+  .Our-Mission__content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    height: 70vh;
+  }
+
+  .Our-Mission__left,
+  .Our-Mission__right {
+    flex: unset;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .Our-Mission__img {
+    width: 50%;
+    max-width: 246px;
+  }
+
+  .Our-Mission__text p {
+    margin: 0 auto;
+    max-width: 90%;
+  }
 }
 
 .card-container {
@@ -3091,9 +3113,9 @@ p {
     font-size: 36px;
   }
 
-  .vision-content p {
+  .vision-content p,
+  .Our-Mission__text p {
     font-size: 18px;
-    line-height: 1.7;
   }
 }
 
@@ -3112,14 +3134,20 @@ p {
   height: 50vh;
 }
 
-.Our-membership .logo {
+.Memberships {
+  display: flex;
+  justify-content: space-around;
+  flex: 2 2 24%;
+}
+
+.Memberships .logo {
   width: 24%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Our-membership a:hover {
+.Memberships a:hover {
   filter: none;
 }
 
@@ -3127,15 +3155,19 @@ p {
   width: 20%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+  #Our-membership {
+    padding-top: 20px;
+    height: 70vh;
+  }
   .Our-membership__title {
     margin-bottom: 40px;
   }
   .Our-membership .logo {
-    width: 48%;
+    width: 40%;
   }
   .Our-membership .logo:first-child {
-    width: 40%;
+    width: 36%;
   }
 }
 
