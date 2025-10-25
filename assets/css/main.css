@@ -2147,8 +2147,7 @@ p {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
 }
 
 /* ✅ REVERSE (ảnh trái, chữ phải) */
@@ -2194,16 +2193,34 @@ p {
 }
 /* nah i'm cook */
 @media (max-width: 1170px) {
-  .analysis-text-box {
+  .analysis-section {
+    height: 625px;
+  }
+  .analysis-text-box,
+  .analysis-section.reverse .analysis-text-box {
     justify-content: start;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    min-height: 400px;
+    align-items: center;
+    top: 40%;
   }
 
   .analysis-image-box {
-    height: 225px;
-    width: 300px;
-    z-index: 2;
-    overflow: hidden;
-    padding-top: 15px;
+    height: auto;
+    width: 40%;
+    min-width: 300px;
+    top: 86%;
+  }
+  .analysis-text-box p {
+    width: 95%;
+  }
+  #other-services {
+    height: 120vh;
+  }
+  #other-services .analysis-image-box {
+    top: 91%;
   }
 
   .analysis-section.reverse .analysis-image-box {
