@@ -2194,7 +2194,19 @@ p {
 /* nah i'm cook */
 @media (max-width: 1170px) {
   .analysis-section {
-    height: 625px;
+    height: 70vh;
+  }
+  .analysis-text-box,
+  .analysis-section.reverse .analysis-text-box {
+    position: relative;
+    float: right;
+  }
+  .analysis-image-box {
+    position: relative;
+    height: auto;
+    width: 40%;
+    min-width: 300px;
+    top: 72%;
   }
   .analysis-text-box,
   .analysis-section.reverse .analysis-text-box {
@@ -2202,35 +2214,45 @@ p {
     width: 100%;
     max-width: 700px;
     height: auto;
-    min-height: 400px;
     align-items: center;
-    top: 40%;
+    float: left;
+    top: 35%;
+  }
+  .analysis-section.reverse .analysis-text-box {
+    float: right;
+  }
+  .analysis-section.reverse .analysis-image-box {
+    float: left;
   }
 
   .analysis-image-box {
     height: auto;
     width: 40%;
     min-width: 300px;
-    top: 86%;
+    top: 72%;
   }
   .analysis-text-box p {
     width: 95%;
   }
-  #other-services {
-    height: 120vh;
-  }
   #other-services .analysis-image-box {
-    top: 91%;
+    top: 79%;
   }
 
   .analysis-section.reverse .analysis-image-box {
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -50%);
-    transition: all 2s ease;
+    transition: none;
   }
 }
 
+@media (max-width: 700px) {
+  .analysis-image-box,
+  .analysis-section.reverse .analysis-image-box {
+    display: none;
+  }
+  .analysis-text-box,
+  .analysis-section.reverse .analysis-text-box {
+    display: none;
+  }
+}
 .services-cta {
   background-color: #f8f9fa; /* Nền sáng */
   padding: 60px 20px;
@@ -3192,30 +3214,33 @@ p {
   background-color: #0b102d;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .contact-box {
-  background-color: white;
+  background-color: #ffffff;
   padding: 40px;
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
+  flex-wrap: wrap; /* Cho phép xuống hàng khi màn hình nhỏ */
   max-width: 1100px;
   width: 100%;
-  gap: 50px;
+  gap: 40px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== CONTACT INFO ===== */
 .contact-info {
-  flex: 1;
-  font-size: 14px;
+  flex: 1 1 45%;
+  font-size: 15px;
   color: #222;
-  align-items: center;
 }
 
 .contact-info p {
-  font-size: 14px;
+  font-size: 15px;
   color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .contact-info .label {
@@ -3226,54 +3251,74 @@ p {
 .contact-info a {
   color: #000;
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
+.contact-info a:hover {
+  color: #cc4448;
+}
+
+/* ===== CONTACT FORM ===== */
 .contact-form {
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 .contact-form label {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
+  color: #0b102d;
 }
 
 .contact-form .form-row {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 10px 14px;
   font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #cc4448;
+  box-shadow: 0 0 0 2px rgba(204, 68, 72, 0.1);
+  outline: none;
 }
 
 .contact-form textarea {
   resize: vertical;
-  height: 100px;
+  height: 120px;
 }
 
 .contact-form button {
-  width: 80px;
-  padding: 10px;
+  align-self: center;
+  min-width: 100px;
+  padding: 10px 20px;
   background-color: transparent;
-  color: #bf9000;
-  border: 2px solid #bf9000;
+  color: #cc4448;
+  border: 2px solid #cc4448;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
 }
 
 .contact-form button:hover {
-  background-color: #bf9000;
-  color: white;
+  background-color: #cc4448;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .required {
@@ -3283,6 +3328,36 @@ p {
   margin-left: 5px;
 }
 
+/* ===== RESPONSIVE MEDIA ===== */
+@media (max-width: 991px) {
+  .contact-box {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: 1 1 100%;
+  }
+
+  .contact-section {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form .form-row {
+    flex-direction: column;
+  }
+
+  .contact-box {
+    padding: 20px;
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+}
 /*--------------------------------------------------------------
 # Privacy Policy
 --------------------------------------------------------------*/
