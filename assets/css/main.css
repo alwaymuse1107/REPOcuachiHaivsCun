@@ -3247,7 +3247,7 @@ p {
 }
 
 #Our-membership {
-  padding-top: 20px;
+  padding-top: 10px;
   height: 60vh;
 }
 
@@ -3266,9 +3266,19 @@ p {
   align-items: center;
 }
 
+
+
 .Memberships a:hover {
   filter: none;
 }
+
+.Our-membership .row {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 
 .Our-membership .logo:first-child {
   width: 20%;
