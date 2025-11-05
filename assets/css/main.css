@@ -208,9 +208,6 @@ h6 {
   }
 }
 
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
 
 /* Index Page Header
 ------------------------------*/
@@ -926,11 +923,6 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .content {
-  background-color: color-mix(in srgb, #0b102d, transparent 95%);
-  border-radius: 15px;
-  padding: 40px;
-}
 
 .about .content h3 {
   font-size: 14px;
@@ -954,9 +946,8 @@ section,
   background: #0b102d;
   line-height: 0;
   padding: 10px 25px;
-  border-radius: 20px;
   transition: 0.5s;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+
 }
 
 .about .content .btn-read-more span {
@@ -1669,7 +1660,7 @@ p {
   width: auto;
   object-fit: contain;
   filter: grayscale(15%) brightness(100%);
-  opacity: 0.5;
+  opacity: 1;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -3059,7 +3050,6 @@ p {
   font-size: 50px;
   color: #1a1f3e;
   font-weight: bold;
-  margin-bottom: 4%;
 }
 
 /* Đoạn text */
