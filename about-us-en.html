@@ -217,12 +217,12 @@
               <h2 class="who-we-are__title" style="font-size: 50px">
                 Our Vision
               </h2>
-              <p>
+              <p style="text-align: left; letter-spacing: 0.4px; font-size: 22.5px" >
                 At Analytix Intelligence, we envision a future where businesses
                 thrive through the power of intelligent decision-making. We are
                 committed to being the catalyst for this transformation by
                 providing cutting-edge, data-driven tools. Together, we are
-                building a world where every business not only adapts but excels
+                building a world where every business not only adapts but excels 
                 in the face of evolving challenges, setting new benchmarks for
                 success and sustainability.
               </p>
@@ -403,50 +403,53 @@
         </div>
       </section>
 
-      <section id="contact" class="contact" style="background: #ffffff">
-        <div class="container">
-          <div class="row gy-4 align-items-start">
-            <div
-              class="col-lg-6"
-              style="position: relative"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <!-- Theme filter dropdown (nút gọn bên phải map) -->
-              <div
-                id="map-vn"
-                style="height: 400px; width: 100%; border-radius: 10px"
-              ></div>
-              <div class="map-theme-toggle">
-                <label class="map-switch">
-                  <input type="checkbox" id="themeToggle" />
-                  <span class="map-slider"></span>
-                </label>
+      <section id="contact" class="contact-section">
+                <div class="container section-title" data-aos="fade-up">
+          <p style="color: #0b102d" font-size="10px">
+            CONTACT US<br />
+          </p>
+          <hr class="divider" />
+        </div>
+  <div class="container">
+
+    <div class="row gy-4">
+      <!-- Cột trái: Thông tin liên hệ -->
+      <div class="col-lg-6">
+        <div class="contact-info">
+
+          <div class="info-box" style="height: 240px;">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Address</h4>
+            <p>The 678 Tower, 67 Hoang Van Thai Suite 1601A, <br>Tan Phu Ward, District 7</p>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="info-box small" style="height: 216px;">
+                <i class="bi bi-telephone"></i>
+                <h4>Call Us</h4>
+                <p>+1 (855) 437-7295</p>
               </div>
-              <!-- Map container -->
             </div>
 
-            <!-- Leaflet CSS -->
-            <link
-              rel="stylesheet"
-              href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-            />
-            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-            <link
-              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-              rel="stylesheet"
-            />
+            <div class="col-md-6">
+              <div class="info-box small" style="height: 216px;">
+                <i class="bi bi-envelope"></i>
+                <h4>Email Us</h4>
+                <p>info@analytixintelligence.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <!-- đay là chỗ bản đồ -->
-            <div
-              class="col-lg-6 d-flex align-items-center"
-              style="height: 400px"
-            >
-              <form class="w-100" data-aos="fade-up" data-aos-delay="100">
-                <p
+      <!-- Cột phải: Form liên hệ -->
+      <div class="col-lg-6">
+        <div class="contact-form">
+                          <p
                   style="
                     color: #cc4448;
-                    font-size: 24px;
+                    font-size: 30px;
                     text-align: center;
                     margin-bottom: 50px;
                     font-weight: bold;
@@ -454,70 +457,37 @@
                 >
                   Start your journey with us!<br />
                 </p>
-                <div class="row gy-3">
-                  <!-- Your Name và Your Email -->
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Your Name"
-                      required
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Your Email"
-                      required
-                    />
-                  </div>
+          <form>
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Your Name" required />
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control" placeholder="Your Email" required />
+              </div>
 
-                  <!-- Company -->
-                  <div class="col-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Company"
-                      required
-                    />
-                  </div>
+              <div class="col-12">
+                <input type="text" class="form-control" placeholder="Company" required />
+              </div>
 
-                  <!-- Message -->
-                  <div class="col-12">
-                    <textarea
-                      class="form-control"
-                      rows="5"
-                      placeholder="Message"
-                      required
-                    ></textarea>
-                  </div>
+              <div class="col-12">
+                <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+              </div>
 
-                  <!-- Nút Send Message -->
-                  <div class="col-12 text-center mt-3">
-                    <button
-                      type="submit"
-                      class="btn px-4 py-2 rounded-pill"
-                      style="
-                        background-color: #cc4448;
-                        color: white;
-                        border: none;
-                      "
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn-send">Send Message</button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
-        <!-- End container -->
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </main>
 
-    <footer class="footer">
-      <section class="container footer-top">
+           <footer class="footer" style="background: #0B102D;">
+      <section class="container footer-top" style="background: #0B102D;">
         <div class="row gy-4">
           <!-- Cột 1: About -->
           <div class="col-lg-4 col-md-6 footer-about">
