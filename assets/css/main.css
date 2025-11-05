@@ -12,11 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Nunito", sans-serif;
-  --nav-font: "Poppins", sans-serif;
+  --default-font: Arial;
+  --heading-font: Arial;
+  --nav-font: Arial;
 }
 
 #navmenu a {
@@ -207,7 +205,6 @@ h6 {
     order: 3;
   }
 }
-
 
 /* Index Page Header
 ------------------------------*/
@@ -466,7 +463,6 @@ h6 {
     display: block;
   }
 }
-/* Sưitch */
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -573,7 +569,6 @@ h6 {
   margin-bottom: 30px;
 }
 
-
 .footer .footer-links ul {
   list-style: none;
   padding: 0;
@@ -594,12 +589,12 @@ h6 {
 }
 
 .footer .footer-links ul li i,
-.footer .footer-links ul li a{
-  color: #fff
+.footer .footer-links ul li a {
+  color: #fff;
 }
 
-.footer .social-links a{
-  color: #fff
+.footer .social-links a {
+  color: #fff;
 }
 .footer .footer-links ul li:first-child {
   padding-top: 0;
@@ -624,7 +619,7 @@ h6 {
 
 .footer .footer-contact p {
   margin-bottom: 5px;
-   color: #fff;
+  color: #fff;
 }
 
 .footer .copyright {
@@ -696,6 +691,12 @@ h6 {
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
+
+.hero-page {
+  height: 40vh;
+  margin-top: 100px;
+}
+
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -947,7 +948,6 @@ section,
   line-height: 0;
   padding: 10px 25px;
   transition: 0.5s;
-
 }
 
 .about .content .btn-read-more span {
@@ -1049,7 +1049,7 @@ p {
 }
 
 /* Điều chỉnh vị trí nút điều hướng riêng cho OUR VALUES */
-#values-prev, 
+#values-prev,
 #values-next {
   width: 80px; /* thu hẹp vùng click */
   height: 40px;
@@ -2076,13 +2076,10 @@ p {
 /* Section nền xám nhạt, padding dọc */
 #service-details {
   background-color: #ebebeb;
-  height: 62vh;
   display: flex; /* Sử dụng Flexbox */
   justify-content: center; /* Căn giữa ngang */
   align-items: center; /* Căn giữa dọc */
-  text-align: center;
   padding: 0;
-  margin: 0;
 }
 
 /* Tiêu đề */
@@ -2091,186 +2088,142 @@ p {
   color: #1a1f3e;
   font-weight: bold;
   margin: 0; /* Bỏ margin để tránh lệch */
-  padding-top: 60px;
   text-align: center;
 }
 
+/* ==== Layout cơ bản ==== */
 .analysis-section {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
   max-width: 1200px;
-  height: 550px; /* giữ nguyên chiều cao như bạn yêu cầu */
-  margin: 50px auto 20px auto;
-  padding: 0 20px;
+  margin: 80px auto;
+  padding: 20px;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
-/* TEXT BOX */
-.analysis-text-box,
-.analysis-image-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 2s ease;
-}
-
-/* Hiệu ứng sau khi scroll tới */
-.analysis-section.active .analysis-text-box {
-  left: 0;
-  transform: translate(0%, -50%);
-  opacity: 1;
-}
-
-.analysis-section.active .analysis-image-box {
-  right: 0;
-  left: auto;
-  transform: translate(0%, -50%);
-  opacity: 1;
-}
-
-/* TEXT BOX chi tiết */
+/* Text */
 .analysis-text-box {
-  width: 700px;
-  height: 516px;
-  background-color: #f5f5f5;
-  padding: 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  z-index: 1;
+  flex: 1;
 }
 
 .analysis-text-box h2 {
-  width: 500px;
-  text-align: center;
-  padding-bottom: 20px;
+  color: #cc4448;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .analysis-text-box p {
-  width: 500px;
+  color: #0b102d;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
   text-align: justify;
 }
 
-/* IMAGE BOX */
+/* Image */
 .analysis-image-box {
-  height: 450px;
-  width: 600px;
-  z-index: 2;
+  flex: 1;
+  height: 420px;
   overflow: hidden;
-  padding-top: 15px;
+  border-radius: 15px;
 }
 
 .analysis-image-box img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
 
-/* ✅ REVERSE (ảnh trái, chữ phải) */
-
-/* ✅ TEXT BOX - Reverse (chữ phải) */
-.analysis-section.reverse .analysis-text-box {
-  right: 50%;
-  left: auto;
-  transform: translate(50%, -50%);
-  text-align: right;
-  align-items: flex-end;
-  transition: all 2s ease;
+/* Section chẵn: đảo layout */
+.analysis-section:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.analysis-section.reverse.active .analysis-text-box {
-  right: 0;
-  transform: translate(0%, -50%);
-  opacity: 1;
-}
-
-/* ✅ IMAGE BOX - Reverse (ảnh trái) */
-.analysis-section.reverse .analysis-image-box {
-  left: 50%;
-  right: auto;
-  transform: translate(-50%, -50%);
-  transition: all 2s ease;
-}
-
-.analysis-section.reverse.active .analysis-image-box {
-  left: 0;
-  transform: translate(0%, -50%);
-  opacity: 1;
-}
-
-.analysis-section.reverse .analysis-text-box h2 {
-  text-align: center;
-  align-items: justify;
-}
-
-.analysis-section.reverse .analysis-text-box p {
-  text-align: justify;
-  align-items: flex-end;
-}
-/* nah i'm cook */
-@media (max-width: 1170px) {
+/* ==== Responsive ==== */
+@media (max-width: 715px) {
   .analysis-section {
-    height: 70vh;
+    flex-direction: column; /* stack dọc */
+    align-items: stretch; /* khối con chiếm full chiều ngang */
+    gap: 24px;
+    margin: 48px auto;
+    padding: 0 16px; /* nới padding đều 2 bên */
   }
-  .analysis-text-box,
-  .analysis-section.reverse .analysis-text-box {
-    position: relative;
-    float: right;
-  }
-  .analysis-image-box {
-    position: relative;
-    height: auto;
-    width: 40%;
-    min-width: 300px;
-    top: 72%;
-  }
-  .analysis-text-box,
-  .analysis-section.reverse .analysis-text-box {
-    justify-content: start;
+
+  .analysis-text-box {
+    flex: none;
     width: 100%;
-    max-width: 700px;
-    height: auto;
-    align-items: center;
-    float: left;
-    top: 35%;
+    padding: 0; /* bỏ padding dư nếu có */
+    text-align: left; /* bỏ justify để đỡ gãy dòng */
   }
-  .analysis-section.reverse .analysis-text-box {
-    float: right;
+
+  .analysis-text-box h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
   }
-  .analysis-section.reverse .analysis-image-box {
-    float: left;
+
+  .analysis-text-box p {
+    font-size: 15px;
+    line-height: 1.65;
+    text-align: left; /* quan trọng: tránh chữ bị “răng cưa” */
+    letter-spacing: 0.2px;
+    word-break: normal;
+    overflow-wrap: anywhere; /* xử lý từ dài */
   }
 
   .analysis-image-box {
-    height: auto;
-    width: 40%;
-    min-width: 300px;
-    top: 72%;
+    flex: none;
+    width: 100%; /* ảnh full chiều ngang */
+    height: auto; /* bỏ chiều cao cố định */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .analysis-image-box img {
+    width: 100%;
+    height: auto; /* giữ tỉ lệ ảnh */
+    object-fit: cover; /* ảnh phủ đẹp khung */
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Các section chẵn từng row-reverse: trên mobile vẫn stack dọc */
+  .analysis-section:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .analysis-section {
+    margin: 40px auto;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .analysis-text-box h2 {
+    font-size: 20px;
+  }
+
+  .analysis-text-box p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 420px) {
+  .analysis-section {
+    gap: 18px;
+    margin: 36px auto;
+    padding: 0 12px;
+  }
+  .analysis-text-box h2 {
+    font-size: 20px;
   }
   .analysis-text-box p {
-    width: 95%;
+    font-size: 14px;
   }
-  #other-services .analysis-image-box {
-    top: 79%;
-  }
-
-  .analysis-section.reverse .analysis-image-box {
-    transition: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .analysis-image-box,
-  .analysis-section.reverse .analysis-image-box {
-    display: none;
-  }
-  .analysis-text-box,
-  .analysis-section.reverse .analysis-text-box {
-    display: none;
+  .analysis-image-box img {
+    border-radius: 10px;
   }
 }
 .services-cta {
@@ -3011,20 +2964,21 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 0;
-  height: 90vh;
+
   overflow: hidden;
 }
+#Our-Mission,
+.Our-Mission {
+  background-color: #fff;
+}
 
-.Our-Mission__content {
+.Our-Mission .container {
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  width: 90%;
-  height: 70%;
 }
 
 .Our-Mission__left {
@@ -3035,11 +2989,12 @@ p {
 .Our-Mission__right {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: end;
+  padding: 0 5% 0 5%;
 }
 
 .Our-Mission__img {
-  max-width: 80%;
+  width: 60%;
   height: auto;
 }
 
@@ -3068,7 +3023,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .Our-Mission__content {
+  .Our-Mission {
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
@@ -3246,57 +3201,34 @@ p {
   }
 }
 
+/* Our Membership section */
 #Our-membership {
-  padding-top: 10px;
-  height: 60vh;
+  background-color: var(--background-color);
 }
 
-.Memberships {
-  display: flex;
-  justify-content: center; /* giữ logo đều hai bên */
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px; 
-}
-
-.Memberships .logo {
-  width: 20%;
+.membership-logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-
-
-.Memberships a:hover {
-  filter: none;
+.membership-logo img {
+  max-height: 90px; /* 🔹 Giới hạn chiều cao đồng đều cho tất cả logo */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-.Our-membership .row {
-  display: flex;
-  align-items: center; /* căn giữa theo chiều dọc */
-  justify-content: space-around;
-  flex-wrap: wrap;
+.membership-logo:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.1);
 }
 
-
-.Our-membership .logo:first-child {
-  width: 20%;
-}
-
+/* Mobile responsive */
 @media (max-width: 768px) {
-  #Our-membership {
-    padding-top: 20px;
-    height: 70vh;
-  }
-  .Our-membership__title {
-    margin-bottom: 40px;
-  }
-  .Our-membership .logo {
-    width: 40%;
-  }
-  .Our-membership .logo:first-child {
-    width: 36%;
+  .membership-logo img {
+    max-height: 70px;
   }
 }
 
@@ -3326,10 +3258,10 @@ p {
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  /* canh giữa theo chiều dọc */
+  justify-content: center; /* canh giữa theo chiều dọc */
   height: 100%; /* nếu box có chiều cao cố định hoặc trong grid */
   transition: all 0.3s ease;
 }
@@ -3340,11 +3272,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;               /* 💥 cố định khung icon vuông */
+  width: 60px; /* 💥 cố định khung icon vuông */
   height: 60px;
   border: 2px dotted #cc4448;
-  border-radius: 50%;        /* 🟢 làm tròn hoàn hảo */
-  margin: 0 auto 10px;       /* căn giữa + khoảng cách dưới */
+  border-radius: 50%; /* 🟢 làm tròn hoàn hảo */
+  margin: 0 auto 10px; /* căn giữa + khoảng cách dưới */
   transition: all 0.3s ease;
 }
 
@@ -3402,8 +3334,6 @@ p {
   transform: translateY(-2px);
 }
 
-
-
 /* ===== RESPONSIVE MEDIA ===== */
 @media (max-width: 991px) {
   .contact-box {
@@ -3441,7 +3371,6 @@ p {
 /* Nền toàn trang */
 body {
   background: #f2f3f5;
-  font-family: "Poppins", Arial, sans-serif;
 }
 
 /* Khoảng trống tránh header fixed-top */
@@ -3500,7 +3429,7 @@ body {
 }
 
 .btn-contact {
-    position: relative;
+  position: relative;
   background: transparent;
   color: #cc4448;
   border: 1.9px solid #cc4448;
@@ -3514,8 +3443,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 28px; /* để linh hoạt giống nút EN */
-   margin-left: 4px;
-   width: 75px;
+  margin-left: 4px;
+  width: 75px;
 }
 
 /* lớp nền fill chạy từ trái sang phải */
@@ -3540,7 +3469,6 @@ body {
 .btn-contact:hover {
   color: #fff;
 }
-
 
 /* đảm bảo chữ nằm trên lớp fill */
 .btn-contact span,
@@ -3658,23 +3586,18 @@ body {
   color: #0a0a0a;
 }
 
-.advantages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
+/* === Advantage Cards === */
 .advantage-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 25px;
-  background-color: #ffffff;
-  border-radius: 12px; /* Bo góc mềm mại */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ */
   transition: all 0.3s ease;
 }
 
 .advantage-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Đổ bóng đậm hơn khi hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .advantage-title {
@@ -3690,17 +3613,31 @@ body {
   line-height: 1.6;
 }
 
+/* === Footer === */
 .advantage-footer {
   margin-top: 60px;
   text-align: center;
 }
 
 .advantage-footer p {
-  font-size: 22px;
+  font-size: 20px;
   color: #222;
   line-height: 1.8;
   margin-bottom: 15px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* === Responsive tweak === */
+@media (max-width: 576px) {
+  .advantage-title {
+    font-size: 20px;
+  }
+  .advantage-card p {
+    font-size: 15px;
+  }
+  .advantage-footer p {
+    font-size: 18px;
+  }
 }

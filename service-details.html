@@ -117,13 +117,22 @@
 
                 <div class="lang-dropdown" id="langDropdown">
                   <label class="lang-option">
-                    <input type="radio" name="language" value="en" checked 
-                      onclick="window.location.href='index-en.html'"/>
+                    <input
+                      type="radio"
+                      name="language"
+                      value="en"
+                      checked
+                      onclick="window.location.href='index-en.html'"
+                    />
                     <span>English</span>
                   </label>
                   <label class="lang-option">
-                    <input type="radio" name="language" value="vn" 
-                      onclick="window.location.href='index-vn.html'"/>
+                    <input
+                      type="radio"
+                      name="language"
+                      value="vn"
+                      onclick="window.location.href='index-vn.html'"
+                    />
                     <span>Vietnamese</span>
                   </label>
                 </div>
@@ -138,15 +147,8 @@
     </header>
 
     <main class="main" style="background-color: white">
-      <section
-        id="service-details"
-        class="who-we-are section"
-        style="min-height: 300px"
-      >
-        <div
-          class="container text-center"
-          style="text-align: center; margin-top: 2cm"
-        >
+      <section id="service-details" class="who-we-are section hero-page">
+        <div class="container">
           <h2 class="service-details__title">Solutions</h2>
         </div>
       </section>
@@ -182,9 +184,9 @@
       </div>
 
       <section id="data-analysis" class="analysis-section">
-        <div class="analysis-text-box">
+        <div class="analysis-text-box" data-aos="fade-left">
           <h2>Data Analysis</h2>
-          <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
+          <p>
             Uncover valuable insights buried within your data with our
             comprehensive data analysis services. Our expert analysts leverage
             cutting-edge techniques to sift through vast datasets, extracting
@@ -194,15 +196,15 @@
             unique business objectives.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-right">
           <img src="assets/img/data-analysis.jpeg" alt="Data Analysis" />
         </div>
       </section>
 
-      <section id="data-visualization" class="analysis-section reverse">
-        <div class="analysis-text-box">
+      <section id="data-visualization" class="analysis-section">
+        <div class="analysis-text-box" data-aos="fade-right">
           <h2>Data Visualization</h2>
-          <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
+          <p>
             Transform your raw data into compelling visual narratives that speak
             volumes. Our data visualization services go beyond just charts and
             graphs; we create interactive, engaging visual representations of
@@ -211,15 +213,15 @@
             and drives informed decision-making.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-left">
           <img src="assets/img/Data-Visualization.jpeg" alt="Data Analysis" />
         </div>
       </section>
 
       <section id="predictive-analytics" class="analysis-section">
-        <div class="analysis-text-box">
+        <div class="analysis-text-box" data-aos="fade-left">
           <h2>Predictive Analytics</h2>
-                    <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
+          <p>
             Stay ahead of the curve with our predictive analytics services. By
             harnessing the power of advanced algorithms and machine learning, we
             help you forecast future trends, identify potential risks, and make
@@ -228,15 +230,15 @@
             empower you to anticipate opportunities and challenges.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-right">
           <img src="assets/img/Predictive-Analysis.jpeg" alt="Data Analysis" />
         </div>
       </section>
 
-      <section id="data-integration" class="analysis-section reverse">
-        <div class="analysis-text-box">
+      <section id="data-integration" class="analysis-section">
+        <div class="analysis-text-box" data-aos="fade-right">
           <h2>Data Integration</h2>
-                    <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
+          <p>
             Seamlessly connect your data sources and unlock the true potential
             of your information. Our data integration services streamline the
             flow of data across your organization, breaking down silos and
@@ -246,15 +248,15 @@
             enhancing overall operational efficiency.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-left">
           <img src="assets/img/Data-Integration.jpeg" alt="Data Integration" />
         </div>
       </section>
 
       <section id="data-security" class="analysis-section">
-        <div class="analysis-text-box">
+        <div class="analysis-text-box" data-aos="fade-left">
           <h2>Data Security</h2>
-                    <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
+          <p>
             Safeguard your most valuable asset—your data—with our robust data
             security services. In an era of increasing cyber threats, we
             prioritize the protection of your sensitive information. From
@@ -264,29 +266,33 @@
             challenges.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-right">
           <img src="assets/img/Data-Security.jpeg" alt="Data Security" />
         </div>
       </section>
 
-      <section id="other-services" class="analysis-section reverse">
-        <div class="analysis-text-box">
+      <section id="other-services" class="analysis-section">
+        <div class="analysis-text-box" data-aos="fade-right">
           <h2>Other Services</h2>
-                    <p style="text-align: left; letter-spacing: 0.5px; font-size: 15.2px">
-                  In collaboration with our sister company,
-      <a href="https://www.programware.com" target="_blank" rel="noopener noreferrer">
-        Programware
-      </a>, we are proud to offer full-service research solutions that cover the
-            entire research lifecycle. From research design and programming to
-            fielding and in-depth analysis, our combined expertise ensures that
-            your research initiatives are executed seamlessly. Whether you're
-            conducting customer surveys, market studies, or employee feedback
-            programs, our comprehensive approach, powered by the synergy between
-            Analytix Intelligence and Programware, delivers actionable insights
-            that drive strategic decision-making.
+          <p>
+            In collaboration with our sister company,
+            <a
+              href="https://www.programware.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Programware </a
+            >, we are proud to offer full-service research solutions that cover
+            the entire research lifecycle. From research design and programming
+            to fielding and in-depth analysis, our combined expertise ensures
+            that your research initiatives are executed seamlessly. Whether
+            you're conducting customer surveys, market studies, or employee
+            feedback programs, our comprehensive approach, powered by the
+            synergy between Analytix Intelligence and Programware, delivers
+            actionable insights that drive strategic decision-making.
           </p>
         </div>
-        <div class="analysis-image-box">
+        <div class="analysis-image-box" data-aos="fade-left">
           <img src="assets/img/Other-Services.jpeg" alt="Other Services" />
         </div>
       </section>
@@ -315,27 +321,28 @@
       />
     </main>
 
-    
-       <footer class="footer" style="background: #0B102D;">
-      <section class="container footer-top" style="background: #0B102D;">
+    <footer class="footer" style="background: #0b102d">
+      <section class="container footer-top" style="background: #0b102d">
         <div class="row gy-4">
           <!-- Cột 1: About -->
           <div class="col-lg-4 col-md-6 footer-about">
-<a
-  class="d-flex align-items-center"
-  style="transform: none !important;
-         transition: none !important;
-         filter: none !important;
-         color: inherit !important;
-         text-decoration: none !important;"
->
-  <span
-    class="sitename"
-    style="color: #cc4448; font-weight: bold; margin-top: -0.3cm"
-  >
-    Analytix Intelligence
-  </span>
-</a>
+            <a
+              class="d-flex align-items-center"
+              style="
+                transform: none !important;
+                transition: none !important;
+                filter: none !important;
+                color: inherit !important;
+                text-decoration: none !important;
+              "
+            >
+              <span
+                class="sitename"
+                style="color: #cc4448; font-weight: bold; margin-top: -0.3cm"
+              >
+                Analytix Intelligence
+              </span>
+            </a>
 
             <div class="footer-contact" style="margin-top: 0cm">
               <p class="mt-3">
@@ -363,7 +370,10 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4 style="color: #cc4448">EXPLORE</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="index-en.html">Home</a></li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="index-en.html">Home</a>
+              </li>
               <li>
                 <i class="bi bi-chevron-right"></i>
                 <a href="about-us-en.html">About Us</a>
@@ -394,12 +404,17 @@
             </ul>
           </div>
 
- <!-- Cột 4: Follow Us -->
+          <!-- Cột 4: Follow Us -->
           <div class="col-lg-2 col-md-12">
             <h4 style="color: #cc4448">Follow Us</h4>
             <div class="social-links d-flex">
-              <a href="https://www.linkedin.com/company/analytix-intelligence/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-      <i class="bi bi-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/company/analytix-intelligence/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-linkedin"></i>
+              </a>
               <a href=""><i class="bi bi-instagram"></i></a>
               <a href=""><i class="bi bi-facebook"></i></a>
             </div>
