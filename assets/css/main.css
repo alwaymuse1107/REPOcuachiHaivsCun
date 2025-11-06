@@ -3641,3 +3641,227 @@ body {
     font-size: 18px;
   }
 }
+
+/* =============== OUR VALUES ORBIT =============== */
+.our-values-orbit {
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.values-title {
+  color: #cc4448;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* Orbit container */
+.orbit-container {
+  position: relative;
+  width: 900px;
+  height: 850px;
+  margin: 0 auto;
+  max-width: 95vw;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    rgba(204, 68, 72, 0.08) 0%,   /* đỏ nhạt ở giữa */
+    rgba(11, 16, 45, 0.03) 70%,   /* xanh navy mờ dần */
+    transparent 100%
+  );
+  box-shadow: 0 0 60px rgba(204, 68, 72, 0.05);
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 80px rgba(204, 68, 72, 0.05); }
+  50% { box-shadow: 0 0 120px rgba(204, 68, 72, 0.15); }
+}
+
+/* Orbit background SVG */
+.orbit-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.orbit-svg circle {
+  stroke: url(#orbitGrad);
+}
+
+/* Gradient definition */
+svg defs linearGradient stop:first-child {
+  stop-color: #cc4448;
+}
+svg defs linearGradient stop:last-child {
+  stop-color: #BF9000;
+}
+
+/* Center content */
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 45%;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.center-content h4 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  color: #CC4448;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.center-content h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+    border-radius: 2px;
+  background: linear-gradient(90deg, #cc4448, #0B102D);
+    background-size: 200% auto; 
+  border-radius: 2px;
+  animation: gradient-move 4s linear infinite;
+}
+
+
+.center-content p {
+  color: #0B102D;
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  max-width: 420px;
+  margin: 0.5 auto;
+}
+
+/* Gradient animation */
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+/* =============== NODE =============== */
+.node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  height: 170px;
+  border: 2.5px solid rgba(204, 68, 72, 0.35);
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #cc4448;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(11, 16, 45, 0.05);
+  z-index: 3;
+}
+
+
+.node img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.node span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Hover state */
+.node:hover {
+  background:#cc4448;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3), 0 0 40px rgba(11, 16, 45, 0.2);
+  transform: scale(1.1);
+  border-color: transparent;
+}
+
+.node:hover img {
+  filter: brightness(100%) invert(1);
+  transform: scale(1.15);
+}
+
+/* Active (highlighted node) */
+.node.active {
+  background: radial-gradient(circle at center, #cc4448 60%, rgba(204, 68, 72, 0.1) 100%);
+    color: #fff;
+  border: 3px solid transparent;
+  transform: scale(1.15);
+  animation: pulseActive 2.5s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(204, 68, 72, 0.25), 0 0 40px rgba(11, 16, 45, 0.25);
+}
+
+.node.active img {
+  filter: brightness(100%) invert(1);
+  transform: scale(1.15);
+}
+
+/* Pulse animation */
+@keyframes pulseActive {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(204, 68, 72, 0.25), 0 0 30px rgba(11, 16, 45, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(204, 68, 72, 0.4), 0 0 50px rgba(11, 16, 45, 0.3);
+  }
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width: 1024px) {
+  .orbit-container {
+    width: 700px;
+    height: 700px;
+  }
+  .node {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .orbit-container {
+    width: 450px;
+    height: 450px;
+  }
+  .node {
+    width: 90px;
+    height: 90px;
+  }
+  .node img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .center-content p {
+    font-size: 16px;
+  }
+}

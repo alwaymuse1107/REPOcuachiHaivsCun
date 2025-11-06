@@ -478,3 +478,74 @@ radios.forEach((r) => {
 });
 
 
+const nodes = document.querySelectorAll(".node");
+const center = document.getElementById("centerContent");
+const orbit = document.querySelector(".orbit-container");
+
+// === 1️⃣ Đặt node theo elip ===
+const cx = orbit.offsetWidth / 2;
+const cy = orbit.offsetHeight / 2;
+const rx = 320;
+const ry = 250;
+const tilt = 15 * Math.PI / 180;
+const total = nodes.length;
+
+nodes.forEach((node, i) => {
+  const angle = (i / total) * 2 * Math.PI;
+  const x = cx + rx * Math.cos(angle) * Math.cos(tilt) - ry * Math.sin(angle) * Math.sin(tilt);
+  const y = cy + rx * Math.cos(angle) * Math.sin(tilt) + ry * Math.sin(angle) * Math.cos(tilt);
+
+  node.style.left = `${x - node.offsetWidth / 2}px`;
+  node.style.top = `${y - node.offsetHeight / 2}px`;
+});
+
+// === 2️⃣ Lấy data của từng value ===
+const values = Array.from(nodes).map(node => ({
+  title: node.dataset.title,
+  desc: node.dataset.desc
+}));
+
+let currentIndex = 0;
+let slideshowInterval;
+
+// === 3️⃣ Hiển thị nội dung trung tâm ===
+function showContent(index) {
+  const { title, desc } = values[index];
+  center.style.opacity = 0;
+  setTimeout(() => {
+    center.innerHTML = `<h4>${title}</h4><p>${desc}</p>`;
+    center.style.opacity = 1;
+  }, 300);
+
+  // Highlight node đang active
+  nodes.forEach(n => n.classList.remove("active"));
+  nodes[index].classList.add("active");
+}
+
+// === 4️⃣ Auto slideshow ===
+function startSlideshow() {
+  slideshowInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % values.length;
+    showContent(currentIndex);
+  }, 4000);
+}
+
+// === 5️⃣ Hover để tạm dừng / chạy lại ===
+nodes.forEach(node => {
+  node.addEventListener("mouseenter", () => clearInterval(slideshowInterval));
+  node.addEventListener("mouseleave", () => startSlideshow());
+});
+
+center.innerHTML = `
+  <h4>OUR VALUES</h4>
+`;
+
+// Sau 3 giây, mới bắt đầu slideshow
+setTimeout(() => {
+  showContent(currentIndex);
+  startSlideshow();
+}, 1000);
+
+center.querySelector("h4").style.animation = "none";
+void center.querySelector("h4").offsetWidth; // force reflow
+center.querySelector("h4").style.animation = "";
