@@ -65,7 +65,6 @@ button:hover,
 a:hover {
   transition: all 0.3s ease;
   transform: scale(1.1); /* Phóng to */
-  filter: brightness(1.2); /* Làm sáng */
 }
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
@@ -464,6 +463,17 @@ h6 {
   }
 }
 
+.btn {
+  background-color: #cc4448;
+  border: none;
+  border-radius: 0px;
+}
+
+.btn:hover {
+  background-color: #cc4448;
+  transform: scale(1.1);
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -623,19 +633,15 @@ h6 {
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  padding-bottom: 25px;
   border-top: 1px solid
-  color-mix(in srgb, var(--contrast-color), transparent 90%);
+    color-mix(in srgb, var(--contrast-color), transparent 90%);
+  background-color: #fff;
+  width: 100%;
+  color: #000;
 }
 
 .footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 6px;
-  font-size: 13px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -800,7 +806,8 @@ section,
 
 .hero {
   width: 100%;
-  height: 90vh;
+  height: 45vh;
+  margin-top: 105px;
   position: relative;
   min-height: unset;
 
@@ -1081,6 +1088,24 @@ p {
 
 .swiper-button-next {
   right: 10px; /* Adjust as needed */
+}
+
+/* why choose us */
+#why-choose-us {
+  height: 50vh;
+  background: url("../img/Why Choose Us Background.jpeg") center / cover
+    no-repeat;
+}
+
+.why-choose-us p {
+  margin-top: 0;
+}
+.why-choose-us .content {
+  width: 80%;
+  color: #444;
+  font-size: 24px;
+  font-weight: normal;
+  margin: auto;
 }
 
 /*--------------------------------------------------------------
@@ -2921,25 +2946,6 @@ p {
   font-size: 14px;
 }
 
-#MVV {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0;
-}
-
-.MVV div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.MVV .container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .key {
   display: inline-flex;
   margin: 0 5px;
@@ -2953,6 +2959,51 @@ p {
   z-index: 10;
   height: 40px;
   width: 60px;
+}
+
+/* ==== MVV Section ==== */
+#MVV {
+  background-color: #fff; /* nhẹ nhàng, trung tính */
+}
+
+.MVV .row {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Card wrapper */
+.mvv-card {
+  display: block;
+  max-width: 280px;
+  transition: transform 0.4s ease;
+}
+
+.mvv-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Hover effect */
+.mvv-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+  #MVV {
+    padding: 40px 0;
+  }
+  .mvv-card {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mvv-card {
+    max-width: 180px;
+  }
 }
 
 /* Section nền xám nhạt, padding dọc */
@@ -2988,7 +3039,7 @@ p {
 .Our-Mission__right {
   flex: 1;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   padding: 0 5% 0 5%;
 }
 
@@ -3002,7 +3053,7 @@ p {
 .who-we-are__title,
 .Our-membership__title {
   font-size: 50px;
-  color: #ffffff;
+  color: #0b102d;
   font-weight: bold;
 }
 
@@ -3011,9 +3062,14 @@ p {
 .who-we-are__text {
   font-size: 24px;
   line-height: 1.6;
-  color: #ffffff;
+  color: #0b102d;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.who-we-are__title,
+.who-we-are__text {
+  color: #fff;
 }
 
 .Our-Mission .inner-section {
@@ -3663,18 +3719,24 @@ body {
   margin: 0 auto;
   max-width: 95vw;
   border-radius: 50%;
-  background: radial-gradient(circle at center,
-    rgba(204, 68, 72, 0.08) 0%,   /* đỏ nhạt ở giữa */
-    rgba(11, 16, 45, 0.03) 70%,   /* xanh navy mờ dần */
-    transparent 100%
+  background: radial-gradient(
+    circle at center,
+    rgba(204, 68, 72, 0.08) 0%,
+    /* đỏ nhạt ở giữa */ rgba(11, 16, 45, 0.03) 70%,
+    /* xanh navy mờ dần */ transparent 100%
   );
   box-shadow: 0 0 60px rgba(204, 68, 72, 0.05);
   animation: glowPulse 6s ease-in-out infinite;
 }
 
 @keyframes glowPulse {
-  0%,100% { box-shadow: 0 0 80px rgba(204, 68, 72, 0.05); }
-  50% { box-shadow: 0 0 120px rgba(204, 68, 72, 0.15); }
+  0%,
+  100% {
+    box-shadow: 0 0 80px rgba(204, 68, 72, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 120px rgba(204, 68, 72, 0.15);
+  }
 }
 
 /* Orbit background SVG */
@@ -3696,7 +3758,7 @@ svg defs linearGradient stop:first-child {
   stop-color: #cc4448;
 }
 svg defs linearGradient stop:last-child {
-  stop-color: #BF9000;
+  stop-color: #bf9000;
 }
 
 /* Center content */
@@ -3715,7 +3777,7 @@ svg defs linearGradient stop:last-child {
   font-weight: 700;
   font-size: 2.3rem;
   letter-spacing: 1px;
-  color: #CC4448;
+  color: #cc4448;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   position: relative;
@@ -3729,16 +3791,15 @@ svg defs linearGradient stop:last-child {
   bottom: -6px;
   width: 100%;
   height: 2px;
-    border-radius: 2px;
-  background: linear-gradient(90deg, #cc4448, #0B102D);
-    background-size: 200% auto; 
+  border-radius: 2px;
+  background: linear-gradient(90deg, #cc4448, #0b102d);
+  background-size: 200% auto;
   border-radius: 2px;
   animation: gradient-move 4s linear infinite;
 }
 
-
 .center-content p {
-  color: #0B102D;
+  color: #0b102d;
   font-weight: 600;
   font-size: 1.15rem;
   line-height: 1.6;
@@ -3756,7 +3817,6 @@ svg defs linearGradient stop:last-child {
     background-position: 100% 50%;
   }
 }
-
 
 /* =============== NODE =============== */
 .node {
@@ -3781,7 +3841,6 @@ svg defs linearGradient stop:last-child {
   z-index: 3;
 }
 
-
 .node img {
   width: 80px;
   height: 80px;
@@ -3797,7 +3856,7 @@ svg defs linearGradient stop:last-child {
 
 /* Hover state */
 .node:hover {
-  background:#cc4448;
+  background: #cc4448;
   color: #fff;
   box-shadow: 0 0 25px rgba(204, 68, 72, 0.3), 0 0 40px rgba(11, 16, 45, 0.2);
   transform: scale(1.1);
@@ -3811,8 +3870,12 @@ svg defs linearGradient stop:last-child {
 
 /* Active (highlighted node) */
 .node.active {
-  background: radial-gradient(circle at center, #cc4448 60%, rgba(204, 68, 72, 0.1) 100%);
-    color: #fff;
+  background: radial-gradient(
+    circle at center,
+    #cc4448 60%,
+    rgba(204, 68, 72, 0.1) 100%
+  );
+  color: #fff;
   border: 3px solid transparent;
   transform: scale(1.15);
   animation: pulseActive 2.5s ease-in-out infinite;
@@ -3826,8 +3889,10 @@ svg defs linearGradient stop:last-child {
 
 /* Pulse animation */
 @keyframes pulseActive {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(204, 68, 72, 0.25), 0 0 30px rgba(11, 16, 45, 0.15);
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(204, 68, 72, 0.25),
+      0 0 30px rgba(11, 16, 45, 0.15);
   }
   50% {
     box-shadow: 0 0 35px rgba(204, 68, 72, 0.4), 0 0 50px rgba(11, 16, 45, 0.3);
