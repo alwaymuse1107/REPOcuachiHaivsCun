@@ -26,7 +26,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #012970; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #4154f1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #cc4448; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -703,6 +703,21 @@ h6 {
   margin-top: 100px;
 }
 
+@media (max-width: 768px) {
+  .hero-page {
+    height: 30vh;
+  }
+  #who-we-are.hero-page {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-page {
+    margin-top: calc(40px + (210.71 / 60) * 3.1vw);
+  }
+}
+
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -1377,7 +1392,6 @@ p {
   }
 
   .header .logo img {
-    line-height: 1;
     width: 100%;
     height: auto;
   }
