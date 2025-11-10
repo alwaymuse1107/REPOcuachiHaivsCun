@@ -880,6 +880,16 @@ section,
   object-fit: contain;
 }
 
+.value-card h3 {
+  font-size: 30px;
+}
+
+.value-card p {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
 .hero .btn-get-started {
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -1341,6 +1351,14 @@ p {
   padding: 20px;
 }
 
+#services .flip-back p {
+  font-size: 17px;
+}
+
+#services .flip-front img {
+  width: 70px;
+  height: 70px;
+}
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
