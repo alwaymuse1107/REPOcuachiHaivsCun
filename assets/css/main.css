@@ -2524,7 +2524,6 @@ p {
 .blog-pagination {
   padding-top: 0;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
-  background-color: ;
 }
 
 .blog-pagination ul {
