@@ -3600,3 +3600,122 @@ svg defs linearGradient stop:last-child {
     font-size: 16px;
   }
 }
+
+
+/* === Floating Filter Position === */
+.floating-filter-wrapper {
+  position: fixed;            /* Cố định theo màn hình */
+  bottom: 70px;              /* Cách mép dưới ~20px trên nút mũi tên */
+  right: 20px;                /* Căn lề phải giống nút mũi tên đỏ */
+  z-index: 99999 !important;            /* Đảm bảo nằm trên cùng */
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;      /* Căn nút về bên phải */
+}
+
+/* === Nút tròn filter === */
+.floating-toggle {
+  width: 41px;
+  height: 41px;
+  background: #cc4448;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floating-toggle:hover {
+  transform: scale(1.1);
+}
+
+.floating-toggle i {
+  color: white;
+  font-size: 18px;
+}
+
+/* === Bảng filter (ẩn khi chưa hover) === */
+.floating-filter {
+  display: flex;
+  align-items: flex-end;
+    flex-direction: column; 
+  justify-content: center;
+  gap: 10px;
+  background: #fff;
+  border-radius: 0px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 10px 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+  transition: all 0.35s ease;
+}
+
+
+.floating-filter.active {
+  opacity: 1;                 /* Hiện rõ */
+  visibility: visible;        /* Có thể click */
+  transform: translateY(0); 
+}
+
+.floating-filter-wrapper:hover .floating-filter,
+.floating-filter-wrapper.active .floating-filter {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+.arrow-btn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #cc4448, #0b102d);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(11, 16, 45, 0.25);
+  transition: all 0.3s ease;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.1);
+}
+
+/* === Các mục liền mạch === */
+.circle-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.circle-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(191, 144, 0, 0.25);
+  color: #0b102d;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.circle-btn:hover,
+.circle-btn.active {
+  background: linear-gradient(135deg, #bf9000, #f5d46a);
+  color: #fff;
+  box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.analysis-section {
+  scroll-margin-top: 120px; /* tránh bị header che mất phần đầu */
+}

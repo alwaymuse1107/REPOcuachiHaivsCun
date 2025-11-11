@@ -546,6 +546,55 @@ setTimeout(() => {
   startSlideshow();
 }, 1000);
 
-center.querySelector("h4").style.animation = "none";
-void center.querySelector("h4").offsetWidth; // force reflow
-center.querySelector("h4").style.animation = "";
+
+if (center) {
+  const h4 = center.querySelector("h4");
+  if (h4) {
+    h4.style.animation = "none";
+    void h4.offsetWidth;
+    h4.style.animation = "";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("filterToggle");
+  const filter = document.getElementById("floatingFilter");
+
+  if (!toggle || !filter) return;
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    filter.classList.toggle("active");
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".circle-btn");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Xóa trạng thái active cũ
+      buttons.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      // Lấy section đích
+      const targetId = this.getAttribute("data-target");
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        console.log("🔍 Cuộn tới:", targetId);
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        console.warn("⚠️ Không tìm thấy section có id:", targetId);
+      }
+    });
+  });
+});
