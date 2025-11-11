@@ -3718,3 +3718,19 @@ svg defs linearGradient stop:last-child {
 .analysis-section {
   scroll-margin-top: 120px; /* tránh bị header che mất phần đầu */
 }
+
+.diagonal-section {
+  background-color: #191919; /* màu nền đen */
+  padding: 120px 0;
+  position: relative;
+  clip-path: polygon(0 15%, 100% 0, 100% 95%, 0 100%);
+  /* tạo góc chéo trên & dưới */
+  overflow: hidden;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
