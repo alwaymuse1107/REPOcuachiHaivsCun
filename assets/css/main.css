@@ -3720,7 +3720,7 @@ svg defs linearGradient stop:last-child {
 }
 
 .diagonal-section {
-  background-color: #191919; /* màu nền đen */
+  background-color: #0b102d;
   padding: 120px 0;
   position: relative;
   clip-path: polygon(0 15%, 100% 0, 100% 95%, 0 100%);
