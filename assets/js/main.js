@@ -598,3 +598,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+ (function () {
+        const filterToggle = document.getElementById('filterToggle');
+        const floatingFilter = document.getElementById('floatingFilter');
+        const links = document.querySelectorAll('.circle-filter .circle-btn');
+
+        filterToggle?.addEventListener('click', () => {
+          floatingFilter?.classList.toggle('open');
+        });
+
+        function setActive(el) {
+          links.forEach(l => l.classList.remove('active'));
+          el.classList.add('active');
+        }
+
+        links.forEach(link => {
+          link.addEventListener('click', function (e) {
+            const targetId = this.dataset.target;
+            const targetEl = document.getElementById(targetId);
+
+            // If target section exists on this page, smooth-scroll and prevent full navigation
+            if (targetEl && location.pathname.endsWith('service-details.html')) {
+              e.preventDefault();
+              const header = document.querySelector('.header');
+              const offset = header ? header.offsetHeight + 12 : 80;
+              const top = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+              window.scrollTo({ top, behavior: 'smooth' });
+              setActive(this);
+              floatingFilter?.classList.remove('open');
+              history.replaceState(null, '', `#${targetId}`);
+            }
+            // otherwise link will navigate to service-details.html#target (works from other pages)
+          });
+        });
+
+        // On load, set active based on hash
+        window.addEventListener('load', () => {
+          const hash = location.hash.replace('#', '');
+          if (hash) {
+            const active = document.querySelector(`.circle-btn[data-target="${hash}"]`);
+            if (active) setActive(active);
+          }
+        });
+      })();
