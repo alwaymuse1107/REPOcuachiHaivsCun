@@ -3724,7 +3724,6 @@ svg defs linearGradient stop:last-child {
   padding: 120px 0;
   position: relative;
   clip-path: polygon(0 15%, 100% 0, 100% 95%, 0 100%);
-  /* tạo góc chéo trên & dưới */
   overflow: hidden;
 }
 
