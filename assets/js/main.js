@@ -651,10 +651,10 @@ function recalcOrbit() {
   const container = document.querySelector(".orbit-container");
 
   const w = container.offsetWidth;
-  const h = container.offsetHeight;
+  const h = w;   // FIX: bắt buộc orbit luôn vuông để không bị méo trên iPhone
 
-  const rx = w * 0.42;   // xa hơn 1 chút
-  const ry = h * 0.36;   // đảm bảo ellipse đẹp
+  const rx = w * 0.42;
+  const ry = h * 0.36;
   const tilt = 15 * Math.PI / 180;
 
   const cx = w / 2;
@@ -663,85 +663,17 @@ function recalcOrbit() {
   nodes.forEach((node, i) => {
     const angle = (i / total) * Math.PI * 2;
 
-    const x = cx + rx * Math.cos(angle) * Math.cos(tilt)
-              - ry * Math.sin(angle) * Math.sin(tilt);
+    const x =
+      cx +
+      rx * Math.cos(angle) * Math.cos(tilt) -
+      ry * Math.sin(angle) * Math.sin(tilt);
 
-    const y = cy + rx * Math.cos(angle) * Math.sin(tilt)
-              + ry * Math.sin(angle) * Math.cos(tilt);
+    const y =
+      cy +
+      rx * Math.cos(angle) * Math.sin(tilt) +
+      ry * Math.sin(angle) * Math.cos(tilt);
 
     node.style.left = `${x - node.offsetWidth / 2}px`;
     node.style.top = `${y - node.offsetHeight / 2}px`;
   });
 }
-
-// Dynamically scale node sizes based on container width so nodes remain
-// touch-friendly and don't overlap on very small screens.
-function adjustNodeSizes() {
-  const container = document.querySelector('.orbit-container');
-  if (!container) return;
-
-  const w = container.offsetWidth;
-
-  // Compute node size relative to container width with sensible clamps
-  // Larger screens: ~18% of container width (so 900px -> 162px)
-  // Small phones: scale down to keep nodes readable and non-overlapping
-  const computed = Math.round(w * 0.18);
-  const nodeSize = Math.max(48, Math.min(170, computed));
-
-  // image scale inside node — use a fraction of node size
-  const imgSize = Math.max(20, Math.round(nodeSize * 0.5));
-
-  nodes.forEach((node) => {
-    node.style.width = nodeSize + 'px';
-    node.style.height = nodeSize + 'px';
-    node.style.lineHeight = nodeSize + 'px';
-
-    const img = node.querySelector('img');
-    if (img) {
-      img.style.width = imgSize + 'px';
-      img.style.height = imgSize + 'px';
-    }
-
-    const label = node.querySelector('span');
-    if (label) {
-      // label font size proportional to node size
-      label.style.fontSize = Math.max(10, Math.round(nodeSize * 0.12)) + 'px';
-      label.style.padding = '0 6px';
-    }
-  });
-
-  // After resizing nodes, recompute orbit positions
-  recalcOrbit();
-}
-
-// Initialize orbit positioning on load and keep it responsive.
-(function () {
-  // Debounced resize handler
-  let resizeTimer = null;
-
-  function initAndRecalc() {
-    const container = document.querySelector('.orbit-container');
-    if (!container) return;
-    // remove no-js fallback so CSS fallback positions are disabled
-    container.classList.remove('no-js');
-    // adjust node sizes then re-calc positions
-    adjustNodeSizes();
-  }
-
-  window.addEventListener('load', function () {
-    initAndRecalc();
-    // run again a bit later in case fonts/images changed sizes
-    setTimeout(initAndRecalc, 250);
-  });
-
-  window.addEventListener('orientationchange', function () {
-    // allow orientation change to settle
-    setTimeout(adjustNodeSizes, 240);
-  });
-
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(adjustNodeSizes, 120);
-  });
-})();
-
