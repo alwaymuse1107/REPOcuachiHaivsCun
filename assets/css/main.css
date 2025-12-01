@@ -1045,6 +1045,7 @@ section,
   align-items: center; /* Centers cards vertically */
 }
 
+
 .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -3358,6 +3359,7 @@ s
   text-align: center;
   padding: 100px 0;
   position: relative;
+    min-height: calc(var(--orbit-size) + 350px);
 }
 
 .values-title {
@@ -3371,10 +3373,9 @@ s
 /* Orbit container */
 .orbit-container {
   position: relative;
-  width: 900px;
-  height: 850px;
+    width: min(900px, 100vw);
   margin: 0 auto;
-  max-width: 95vw;
+    aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
@@ -3383,7 +3384,20 @@ s
     /* xanh navy mờ dần */ transparent 100%
   );
   box-shadow: 0 0 60px rgba(204, 68, 72, 0.05);
-  animation: glowPulse 6s ease-in-out infinite;
+  animation: none !important; /* Ngưng nhịp đập */
+}
+
+/* Title */
+.our-values-orbit h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  line-height: 1.2;
+}
+
+/* Description text */
+.our-values-orbit p.lead {
+  font-size: clamp(14px, 2.7vw, 20px);
+  line-height: 1.55;
+  padding: 0 10px;
 }
 
 @keyframes glowPulse {
@@ -3425,14 +3439,14 @@ svg defs linearGradient stop:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 45%;
+    width: clamp(160px, 40vw, 350px);
   z-index: 2;
   transition: opacity 0.4s ease;
 }
 
 .center-content h4 {
   font-weight: 700;
-  font-size: 2.3rem;
+    font-size: clamp(18px, 4vw, 32px);
   letter-spacing: 1px;
   color: #cc4448;
   margin-bottom: 0.5rem;
@@ -3458,7 +3472,7 @@ svg defs linearGradient stop:last-child {
 .center-content p {
   color: #0b102d;
   font-weight: 600;
-  font-size: 1.15rem;
+    font-size: clamp(12px, 2.5vw, 18px);
   line-height: 1.6;
   letter-spacing: 0.3px;
   max-width: 420px;
@@ -3480,9 +3494,8 @@ svg defs linearGradient stop:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 170px;
-  height: 170px;
-  border: 2.5px solid rgba(204, 68, 72, 0.35);
+   width: clamp(55px, 18vw, 160px);
+  height: clamp(55px, 18vw, 160px);
   border-radius: 50%;
   background: #fff;
   display: flex;
@@ -3490,17 +3503,17 @@ svg defs linearGradient stop:last-child {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #cc4448;
+  color: #0b102d;  /* chữ mặc định NAVY */
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(11, 16, 45, 0.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   z-index: 3;
 }
 
 .node img {
-  width: 80px;
-  height: 80px;
+  width: 50%;
+  height: 50%;
   object-fit: contain;
   margin-bottom: 8px;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -3511,13 +3524,13 @@ svg defs linearGradient stop:last-child {
   font-weight: 700;
 }
 
-/* Hover state */
 .node:hover {
   background: #cc4448;
   color: #fff;
-  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3), 0 0 40px rgba(11, 16, 45, 0.2);
-  transform: scale(1.1);
   border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3),
+              0 0 40px rgba(11, 16, 45, 0.2);
 }
 
 .node:hover img {
@@ -3527,16 +3540,12 @@ svg defs linearGradient stop:last-child {
 
 /* Active (highlighted node) */
 .node.active {
-  background: radial-gradient(
-    circle at center,
-    #cc4448 60%,
-    rgba(204, 68, 72, 0.1) 100%
-  );
+  background: #cc4448;
   color: #fff;
-  border: 3px solid transparent;
+  border-color: transparent;
   transform: scale(1.15);
-  animation: pulseActive 2.5s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(204, 68, 72, 0.25), 0 0 40px rgba(11, 16, 45, 0.25);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.4),
+              0 0 40px rgba(11, 16, 45, 0.25);
 }
 
 .node.active img {
@@ -3544,45 +3553,69 @@ svg defs linearGradient stop:last-child {
   transform: scale(1.15);
 }
 
-/* Pulse animation */
-@keyframes pulseActive {
-  0%,
-  100% {
-    box-shadow: 0 0 15px rgba(204, 68, 72, 0.25),
-      0 0 30px rgba(11, 16, 45, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(204, 68, 72, 0.4), 0 0 50px rgba(11, 16, 45, 0.3);
+
+.our-values-orbit h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  line-height: 1.2;
+}
+
+.our-values-orbit p.lead {
+  font-size: clamp(14px, 2.7vw, 20px);
+  line-height: 1.55;
+  padding: 0 10px;
+}
+
+.center-content {
+  width: clamp(160px, 40vw, 350px);
+}
+
+.center-content h4 {
+  font-size: clamp(18px, 4vw, 32px);
+}
+
+.center-content p {
+  font-size: clamp(12px, 2.5vw, 18px);
+  line-height: 1.45;
+  margin-top: 8px;
+}
+
+.node span {
+  font-size: clamp(10px, 2.4vw, 16px);
+}
+
+@media (max-width: 480px) {
+  .our-values-orbit {
+    padding: 60px 0;
   }
 }
 
 /* =============== RESPONSIVE =============== */
-@media (max-width: 1024px) {
-  .orbit-container {
-    width: 700px;
-    height: 700px;
-  }
-  .node {
-    width: 120px;
-    height: 120px;
+
+@media (max-width: 480px) {
+  .our-values-orbit {
+    padding: 60px 0;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 430px) {
   .orbit-container {
-    width: 450px;
-    height: 450px;
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-top: -40px;
   }
-  .node {
-    width: 90px;
-    height: 90px;
+}
+
+@media (max-width: 380px) {
+  .orbit-container {
+    transform: scale(0.75);
+    margin-top: -60px;
   }
-  .node img {
-    width: 30px !important;
-    height: 30px !important;
-  }
-  .center-content p {
-    font-size: 16px;
+}
+
+@media (max-width: 350px) {
+  .orbit-container {
+    transform: scale(0.65);
+    margin-top: -80px;
   }
 }
 
