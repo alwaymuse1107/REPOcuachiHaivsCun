@@ -2176,7 +2176,7 @@ p {
   color: #0b102d;
   line-height: 1.6;
   letter-spacing: 0.3px;
-  text-align: justify;
+  text-align: left;
 }
 
 /* Image */
@@ -2951,10 +2951,10 @@ p {
 }
 
 .contact-section {
-  background: #fff;
-  padding: 80px 0;
+    background: #fff;
+    padding: 0 0 80px 0;
 }
-
+s
 .section-title h2 {
   font-weight: 700;
   color: #111;
