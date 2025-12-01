@@ -3545,32 +3545,19 @@ svg defs linearGradient stop:last-child {
 
 
 /* =============== RESPONSIVE =============== */
-@media (max-width: 1024px) {
+@media (max-width: 500px) {
   .orbit-container {
-    width: 700px;
-    height: 700px;
-  }
-  .node {
-    width: 120px;
-    height: 120px;
+    transform: scale(0.70);  /* thu nhỏ 70% */
+    transform-origin: top center;
+    height: 0; /* tránh đẩy layout dài */
+    margin-top: -100px; /* kéo lại cho cân đẹp */
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 380px) {
   .orbit-container {
-    width: 450px;
-    height: 450px;
-  }
-  .node {
-    width: 90px;
-    height: 90px;
-  }
-  .node img {
-    width: 30px !important;
-    height: 30px !important;
-  }
-  .center-content p {
-    font-size: 16px;
+    transform: scale(0.60);
+    margin-top: -120px;
   }
 }
 
