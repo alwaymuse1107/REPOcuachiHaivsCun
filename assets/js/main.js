@@ -649,12 +649,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function recalcOrbit() {
   const container = document.querySelector(".orbit-container");
+  if (!container) return;
 
   const w = container.offsetWidth;
-  const h = w;   // FIX: bắt buộc orbit luôn vuông để không bị méo trên iPhone
+  const h = w; // square orbit
 
-  const rx = w * 0.42;
-  const ry = h * 0.36;
+  const rx = w * 0.38;  // tuned for mobile
+  const ry = h * 0.32;  // tuned for mobile
   const tilt = 15 * Math.PI / 180;
 
   const cx = w / 2;
@@ -677,3 +678,9 @@ function recalcOrbit() {
     node.style.top = `${y - node.offsetHeight / 2}px`;
   });
 }
+
+// RUN
+window.addEventListener("load", recalcOrbit);
+window.addEventListener("resize", recalcOrbit);
+window.addEventListener("orientationchange", () => setTimeout(recalcOrbit, 200));
+

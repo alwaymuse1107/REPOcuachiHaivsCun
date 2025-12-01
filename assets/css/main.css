@@ -3374,10 +3374,8 @@ p {
 /* Orbit container */
 .orbit-container {
   position: relative;
-  width: 900px;
-  height: 850px;
+    width: min(900px, 100vw);
   margin: 0 auto;
-  max-width: 95vw;
     aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: radial-gradient(
@@ -3484,8 +3482,8 @@ svg defs linearGradient stop:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 170px;
-  height: 170px;
+   width: clamp(55px, 18vw, 160px);
+  height: clamp(55px, 18vw, 160px);
   border-radius: 50%;
   background: #fff;
   display: flex;
@@ -3502,8 +3500,8 @@ svg defs linearGradient stop:last-child {
 }
 
 .node img {
-  width: 80px;
-  height: 80px;
+  width: 50%;
+  height: 50%;
   object-fit: contain;
   margin-bottom: 8px;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -3545,19 +3543,25 @@ svg defs linearGradient stop:last-child {
 
 
 /* =============== RESPONSIVE =============== */
-@media (max-width: 500px) {
+@media (max-width: 430px) {
   .orbit-container {
-    transform: scale(0.70);  /* thu nhỏ 70% */
+    transform: scale(0.85);
     transform-origin: top center;
-    height: 0; /* tránh đẩy layout dài */
-    margin-top: -100px; /* kéo lại cho cân đẹp */
+    margin-top: -40px;
   }
 }
 
 @media (max-width: 380px) {
   .orbit-container {
-    transform: scale(0.60);
-    margin-top: -120px;
+    transform: scale(0.75);
+    margin-top: -60px;
+  }
+}
+
+@media (max-width: 350px) {
+  .orbit-container {
+    transform: scale(0.65);
+    margin-top: -80px;
   }
 }
 
