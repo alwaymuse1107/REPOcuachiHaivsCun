@@ -1045,7 +1045,6 @@ section,
   align-items: center; /* Centers cards vertically */
 }
 
-
 .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -2171,6 +2170,7 @@ p {
   color: #cc4448;
   font-weight: 700;
   margin-bottom: 15px;
+  font-size: 50px;
 }
 
 .analysis-text-box p {
@@ -2178,6 +2178,7 @@ p {
   line-height: 1.6;
   letter-spacing: 0.3px;
   text-align: left;
+  font-size: 22.5px;
 }
 
 /* Image */
@@ -2218,12 +2219,11 @@ p {
   }
 
   .analysis-text-box h2 {
-    font-size: 22px;
+    text-align: center;
     margin-bottom: 10px;
   }
 
   .analysis-text-box p {
-    font-size: 15px;
     line-height: 1.65;
     text-align: left; /* quan trọng: tránh chữ bị “răng cưa” */
     letter-spacing: 0.2px;
@@ -2259,14 +2259,6 @@ p {
     padding: 10px;
     gap: 20px;
   }
-
-  .analysis-text-box h2 {
-    font-size: 20px;
-  }
-
-  .analysis-text-box p {
-    font-size: 14px;
-  }
 }
 @media (max-width: 420px) {
   .analysis-section {
@@ -2274,12 +2266,7 @@ p {
     margin: 36px auto;
     padding: 0 12px;
   }
-  .analysis-text-box h2 {
-    font-size: 20px;
-  }
-  .analysis-text-box p {
-    font-size: 14px;
-  }
+
   .analysis-image-box img {
     border-radius: 10px;
   }
@@ -2746,7 +2733,7 @@ p {
     flex-direction: column;
     text-align: center;
     justify-content: space-around;
-    height: 70vh;
+    height: auto;
   }
 
   .Our-Mission__left,
@@ -2762,6 +2749,7 @@ p {
   }
 
   .Our-Mission__text p {
+    text-align: left;
     margin: 0 auto;
     max-width: 90%;
   }
@@ -2805,6 +2793,7 @@ p {
 }
 
 .vision-image img {
+  margin-top: 50px;
   max-width: 100%;
   width: 500px;
   height: auto;
@@ -2839,15 +2828,6 @@ p {
   .vision-image img {
     width: 100%; /* ảnh nhỏ lại cho mobile */
     max-width: 400px;
-  }
-
-  .vision-content h2 {
-    font-size: 36px;
-  }
-
-  .vision-content p,
-  .Our-Mission__text p {
-    font-size: 18px;
   }
 }
 
@@ -2952,11 +2932,10 @@ p {
 }
 
 .contact-section {
-    background: #fff;
-    padding: 0 0 80px 0;
+  background: #fff;
+  padding: 0 0 80px 0;
 }
-s
-.section-title h2 {
+s .section-title h2 {
   font-weight: 700;
   color: #111;
   letter-spacing: 1px;
@@ -3359,7 +3338,7 @@ s
   text-align: center;
   padding: 100px 0;
   position: relative;
-    min-height: calc(var(--orbit-size) + 350px);
+  min-height: calc(var(--orbit-size) + 350px);
 }
 
 .values-title {
@@ -3373,9 +3352,9 @@ s
 /* Orbit container */
 .orbit-container {
   position: relative;
-    width: min(900px, 100vw);
+  width: min(900px, 100vw);
   margin: 0 auto;
-    aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: radial-gradient(
     circle at center,
@@ -3385,19 +3364,6 @@ s
   );
   box-shadow: 0 0 60px rgba(204, 68, 72, 0.05);
   animation: none !important; /* Ngưng nhịp đập */
-}
-
-/* Title */
-.our-values-orbit h2 {
-  font-size: clamp(22px, 4vw, 36px);
-  line-height: 1.2;
-}
-
-/* Description text */
-.our-values-orbit p.lead {
-  font-size: clamp(14px, 2.7vw, 20px);
-  line-height: 1.55;
-  padding: 0 10px;
 }
 
 @keyframes glowPulse {
@@ -3439,14 +3405,14 @@ svg defs linearGradient stop:last-child {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-    width: clamp(160px, 40vw, 350px);
+  width: clamp(160px, 40vw, 350px);
   z-index: 2;
   transition: opacity 0.4s ease;
 }
 
 .center-content h4 {
   font-weight: 700;
-    font-size: clamp(18px, 4vw, 32px);
+  font-size: clamp(18px, 4vw, 32px);
   letter-spacing: 1px;
   color: #cc4448;
   margin-bottom: 0.5rem;
@@ -3472,7 +3438,7 @@ svg defs linearGradient stop:last-child {
 .center-content p {
   color: #0b102d;
   font-weight: 600;
-    font-size: clamp(12px, 2.5vw, 18px);
+  font-size: clamp(12px, 2.5vw, 18px);
   line-height: 1.6;
   letter-spacing: 0.3px;
   max-width: 420px;
@@ -3494,7 +3460,7 @@ svg defs linearGradient stop:last-child {
   position: absolute;
   top: 50%;
   left: 50%;
-   width: clamp(55px, 18vw, 160px);
+  width: clamp(55px, 18vw, 160px);
   height: clamp(55px, 18vw, 160px);
   border-radius: 50%;
   background: #fff;
@@ -3503,7 +3469,7 @@ svg defs linearGradient stop:last-child {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #0b102d;  /* chữ mặc định NAVY */
+  color: #0b102d; /* chữ mặc định NAVY */
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -3529,8 +3495,7 @@ svg defs linearGradient stop:last-child {
   color: #fff;
   border-color: transparent;
   transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3),
-              0 0 40px rgba(11, 16, 45, 0.2);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3), 0 0 40px rgba(11, 16, 45, 0.2);
 }
 
 .node:hover img {
@@ -3544,8 +3509,7 @@ svg defs linearGradient stop:last-child {
   color: #fff;
   border-color: transparent;
   transform: scale(1.15);
-  box-shadow: 0 0 25px rgba(204, 68, 72, 0.4),
-              0 0 40px rgba(11, 16, 45, 0.25);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.4), 0 0 40px rgba(11, 16, 45, 0.25);
 }
 
 .node.active img {
@@ -3553,16 +3517,16 @@ svg defs linearGradient stop:last-child {
   transform: scale(1.15);
 }
 
-
 .our-values-orbit h2 {
-  font-size: clamp(22px, 4vw, 36px);
+  font-size: 50px;
   line-height: 1.2;
 }
 
 .our-values-orbit p.lead {
-  font-size: clamp(14px, 2.7vw, 20px);
+  font-size: 22.5px;
   line-height: 1.55;
   padding: 0 10px;
+  text-align: left;
 }
 
 .center-content {
@@ -3738,7 +3702,7 @@ svg defs linearGradient stop:last-child {
   background-color: #0b102d;
   padding: 120px 0;
   position: relative;
-  clip-path: polygon(0 15%, 100% 0, 100% 95%, 0 100%);
+  clip-path: polygon(0 10%, 100% 0, 100% 95%, 0 100%);
   overflow: hidden;
 }
 
@@ -3747,4 +3711,10 @@ svg defs linearGradient stop:last-child {
   margin: 0 auto;
   text-align: center;
   color: white;
+}
+
+@media (max-width: 821px) {
+  .diagonal-section {
+    clip-path: polygon(0 5%, 100% 0, 100% 97%, 0 100%);
+  }
 }
