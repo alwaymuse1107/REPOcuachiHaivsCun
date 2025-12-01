@@ -2177,7 +2177,8 @@ p {
   color: #0b102d;
   line-height: 1.6;
   letter-spacing: 0.3px;
-  text-align: justify;
+  text-align: left;
+  font-size: 17px;
 }
 
 /* Image */
@@ -3359,6 +3360,7 @@ p {
   text-align: center;
   padding: 100px 0;
   position: relative;
+    min-height: calc(var(--orbit-size) + 350px);
 }
 
 .values-title {
