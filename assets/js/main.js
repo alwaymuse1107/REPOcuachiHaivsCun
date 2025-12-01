@@ -482,7 +482,7 @@ const nodes = document.querySelectorAll(".node");
 const center = document.getElementById("centerContent");
 const orbit = document.querySelector(".orbit-container");
 
-// === 1️⃣ Đặt node theo elip ===
+// ======= Position nodes on ellipse =======
 const cx = orbit.offsetWidth / 2;
 const cy = orbit.offsetHeight / 2;
 const rx = 320;
@@ -499,74 +499,76 @@ nodes.forEach((node, i) => {
   node.style.top = `${y - node.offsetHeight / 2}px`;
 });
 
-// === 2️⃣ Lấy data của từng value ===
+// ======= Values data =======
 const values = Array.from(nodes).map(node => ({
   title: node.dataset.title,
   desc: node.dataset.desc
 }));
 
-let currentIndex = 0;
-let slideshowInterval;
+// ======= Center slideshow =======
+let centerIndex = 0;
+let centerSlideInterval = null;
+let restartTimeout = null;
+let hoverDelay = 2000; // thời gian pause khi hover
 
-// === 3️⃣ Hiển thị nội dung trung tâm ===
-function showContent(index) {
+// ==== CẬP NHẬT CENTER ====
+function updateCenter(index) {
   const { title, desc } = values[index];
+
   center.style.opacity = 0;
   setTimeout(() => {
     center.innerHTML = `<h4>${title}</h4><p>${desc}</p>`;
     center.style.opacity = 1;
-  }, 300);
-
-  // Highlight node đang active
-  nodes.forEach(n => n.classList.remove("active"));
-  nodes[index].classList.add("active");
+  }, 200);
 }
 
-// === 4️⃣ Auto slideshow ===
-function startSlideshow() {
-  slideshowInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % values.length;
-    showContent(currentIndex);
-  }, 4000);
+// ==== BẮT ĐẦU SLIDESHOW ====
+function startCenterSlideshow() {
+  // ⭐ LUÔN clear interval cũ trước khi tạo cái mới
+  clearInterval(centerSlideInterval);
+
+  centerSlideInterval = setInterval(() => {
+    centerIndex = (centerIndex + 1) % values.length;
+    updateCenter(centerIndex);
+  }, 3500);
 }
 
-// === 5️⃣ Hover để tạm dừng / chạy lại ===
-nodes.forEach(node => {
-  node.addEventListener("mouseenter", () => clearInterval(slideshowInterval));
-  node.addEventListener("mouseleave", () => startSlideshow());
-});
-
-center.innerHTML = `
-  <h4>OUR VALUES</h4>
-`;
-
-// Sau 3 giây, mới bắt đầu slideshow
-setTimeout(() => {
-  showContent(currentIndex);
-  startSlideshow();
-}, 1000);
-
-
-if (center) {
-  const h4 = center.querySelector("h4");
-  if (h4) {
-    h4.style.animation = "none";
-    void h4.offsetWidth;
-    h4.style.animation = "";
-  }
+// ==== DỪNG SLIDESHOW ====
+function stopCenterSlideshow() {
+  clearInterval(centerSlideInterval);
+  centerSlideInterval = null;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("filterToggle");
-  const filter = document.getElementById("floatingFilter");
+// ==== HOVER NODE ====
+nodes.forEach((node, index) => {
+  node.addEventListener("mouseenter", () => {
 
-  if (!toggle || !filter) return;
+    stopCenterSlideshow();
+    updateCenter(index);
+    centerIndex = index;
 
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    filter.classList.toggle("active");
+    // ⭐ Clear timeout restart cũ để không bị queue nhiều cái
+    if (restartTimeout) clearTimeout(restartTimeout);
+
+    restartTimeout = setTimeout(() => {
+      startCenterSlideshow();
+      restartTimeout = null;
+    }, hoverDelay);
   });
 });
+
+// ==== CLICK NODE ====
+nodes.forEach((node, index) => {
+  node.addEventListener("click", () => {
+    updateCenter(index);
+    centerIndex = index;
+  });
+});
+
+// ==== DEFAULT ====
+center.innerHTML = `<h4>OUR VALUES</h4>`;
+setTimeout(startCenterSlideshow, 500);
+
 
 
 
@@ -643,3 +645,4 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       })();
+      

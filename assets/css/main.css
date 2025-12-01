@@ -1045,6 +1045,7 @@ section,
   align-items: center; /* Centers cards vertically */
 }
 
+
 .swiper-slide {
   display: flex;
   flex-direction: column;
@@ -3383,7 +3384,7 @@ p {
     /* xanh navy mờ dần */ transparent 100%
   );
   box-shadow: 0 0 60px rgba(204, 68, 72, 0.05);
-  animation: glowPulse 6s ease-in-out infinite;
+  animation: none !important; /* Ngưng nhịp đập */
 }
 
 @keyframes glowPulse {
@@ -3482,7 +3483,6 @@ svg defs linearGradient stop:last-child {
   left: 50%;
   width: 170px;
   height: 170px;
-  border: 2.5px solid rgba(204, 68, 72, 0.35);
   border-radius: 50%;
   background: #fff;
   display: flex;
@@ -3490,11 +3490,11 @@ svg defs linearGradient stop:last-child {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #cc4448;
+  color: #0b102d;  /* chữ mặc định NAVY */
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(11, 16, 45, 0.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
   z-index: 3;
 }
 
@@ -3511,13 +3511,13 @@ svg defs linearGradient stop:last-child {
   font-weight: 700;
 }
 
-/* Hover state */
 .node:hover {
   background: #cc4448;
   color: #fff;
-  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3), 0 0 40px rgba(11, 16, 45, 0.2);
-  transform: scale(1.1);
   border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.3),
+              0 0 40px rgba(11, 16, 45, 0.2);
 }
 
 .node:hover img {
@@ -3527,16 +3527,12 @@ svg defs linearGradient stop:last-child {
 
 /* Active (highlighted node) */
 .node.active {
-  background: radial-gradient(
-    circle at center,
-    #cc4448 60%,
-    rgba(204, 68, 72, 0.1) 100%
-  );
+  background: #cc4448;
   color: #fff;
-  border: 3px solid transparent;
+  border-color: transparent;
   transform: scale(1.15);
-  animation: pulseActive 2.5s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(204, 68, 72, 0.25), 0 0 40px rgba(11, 16, 45, 0.25);
+  box-shadow: 0 0 25px rgba(204, 68, 72, 0.4),
+              0 0 40px rgba(11, 16, 45, 0.25);
 }
 
 .node.active img {
@@ -3544,17 +3540,6 @@ svg defs linearGradient stop:last-child {
   transform: scale(1.15);
 }
 
-/* Pulse animation */
-@keyframes pulseActive {
-  0%,
-  100% {
-    box-shadow: 0 0 15px rgba(204, 68, 72, 0.25),
-      0 0 30px rgba(11, 16, 45, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 35px rgba(204, 68, 72, 0.4), 0 0 50px rgba(11, 16, 45, 0.3);
-  }
-}
 
 /* =============== RESPONSIVE =============== */
 @media (max-width: 1024px) {
