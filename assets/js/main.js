@@ -679,8 +679,6 @@ function recalcOrbit() {
   });
 }
 
-// RUN
 window.addEventListener("load", recalcOrbit);
 window.addEventListener("resize", recalcOrbit);
 window.addEventListener("orientationchange", () => setTimeout(recalcOrbit, 200));
-
