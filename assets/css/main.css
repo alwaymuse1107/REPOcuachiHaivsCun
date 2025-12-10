@@ -336,7 +336,7 @@ h6 {
     color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
-    margin-right: 10px;
+    margin-left: 10px;
     cursor: pointer;
     transition: color 0.3s;
   }
@@ -3442,7 +3442,7 @@ svg defs linearGradient stop:last-child {
   color: #0b102d;
   font-weight: 600;
   font-size: clamp(12px, 2.5vw, 18px);
-    line-height: 1.45;
+  line-height: 1.45;
   letter-spacing: 0.3px;
   max-width: 420px;
   margin: 0.5 auto;
@@ -3489,7 +3489,7 @@ svg defs linearGradient stop:last-child {
 }
 
 .node span {
-  font-size: clamp(10px, 2.5vw, 16px);  /* Điều chỉnh kích thước chữ động */
+  font-size: clamp(10px, 2.5vw, 16px); /* Điều chỉnh kích thước chữ động */
   font-weight: 700;
 }
 
@@ -3535,7 +3535,6 @@ svg defs linearGradient stop:last-child {
 .center-content {
   width: clamp(160px, 40vw, 350px);
 }
-
 
 @media (max-width: 480px) {
   .our-values-orbit {
@@ -3584,7 +3583,6 @@ svg defs linearGradient stop:last-child {
     height: 75vw;
   }
 }
-
 
 /* === Floating Filter Position === */
 .floating-filter-wrapper {
@@ -3797,48 +3795,47 @@ svg defs linearGradient stop:last-child {
   }
 }
 
-
 /* Đối với màn hình nhỏ (dưới 768px) */
 @media (max-width: 768px) {
   .node {
-    width: clamp(55px, 65vw, 160px);  /* Thu nhỏ các node trên màn hình nhỏ */
+    width: clamp(55px, 65vw, 160px); /* Thu nhỏ các node trên màn hình nhỏ */
     height: clamp(55px, 65vw, 160px);
-    font-size: 13px;  /* Thu nhỏ font-size để vừa với màn hình */
+    font-size: 13px; /* Thu nhỏ font-size để vừa với màn hình */
   }
 }
 
 /* Đối với màn hình rất nhỏ (dưới 480px) */
 @media (max-width: 540px) {
   .node {
-    width: clamp(62px, 100vw, 100px);  /* Tiếp tục thu nhỏ thêm */
+    width: clamp(62px, 100vw, 100px); /* Tiếp tục thu nhỏ thêm */
     height: clamp(62px, 100vw, 100px);
-    font-size: 10px;  /* Giảm thêm kích thước font-size */
+    font-size: 10px; /* Giảm thêm kích thước font-size */
   }
 }
 
 /* Đối với màn hình rất nhỏ (dưới 480px) */
 @media (max-width: 480px) {
   .node {
-    width: clamp(42px, 30vw, 78px);  /* Tiếp tục thu nhỏ thêm */
+    width: clamp(42px, 30vw, 78px); /* Tiếp tục thu nhỏ thêm */
     height: clamp(42px, 30vw, 78px);
-    font-size: 10px;  /* Giảm thêm kích thước font-size */
+    font-size: 10px; /* Giảm thêm kích thước font-size */
   }
 }
 
 /* Đối với màn hình cực nhỏ (dưới 380px) */
 @media (max-width: 380px) {
   .node {
-    width: clamp(32px, 50vw, 55px);  /* Cực nhỏ cho màn hình nhỏ hơn */
+    width: clamp(32px, 50vw, 55px); /* Cực nhỏ cho màn hình nhỏ hơn */
     height: clamp(32px, 50vw, 55px);
-    font-size: 8px;  /* Cực nhỏ cho font-size */
+    font-size: 8px; /* Cực nhỏ cho font-size */
   }
 }
 
 /* Đối với màn hình cực nhỏ (dưới 380px) */
 @media (max-width: 344px) {
   .node {
-    width: clamp(32px, 20vw, 45px);  /* Cực nhỏ cho màn hình nhỏ hơn */
+    width: clamp(32px, 20vw, 45px); /* Cực nhỏ cho màn hình nhỏ hơn */
     height: clamp(32px, 20vw, 45px);
-    font-size: 4px;  /* Cực nhỏ cho font-size */
+    font-size: 4px; /* Cực nhỏ cho font-size */
   }
 }
