@@ -2728,6 +2728,64 @@ p {
   padding: auto;
 }
 
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .who-we-are__title {
+    font-size: 42px; /* Reduce title size on tablets and smaller screens */
+  }
+
+  .who-we-are__text {
+    font-size: 23px; /* Reduce text size */
+    padding: 0 20px; /* Add some padding on smaller devices */
+  }
+  .key img {
+    width: 60px; /* Tăng kích thước ảnh cho máy tính bảng */
+    height: 44px;
+  }
+}
+
+/* Mobile adjustments for very small screens (less than 480px) */
+@media (max-width: 496px) {
+  .who-we-are__title {
+    font-size: 40px; /* Further reduce title size */
+  }
+
+  .who-we-are__text {
+    font-size: 21px; /* Further reduce text size */
+    padding: 0 15px; /* Adjust padding to make content fit */
+  }
+
+  .container {
+    padding-left: 15px; /* Ensure content doesn't touch the screen edge */
+    padding-right: 15px;
+  }
+
+      .key img {
+    width: 54px; /* Tăng kích thước ảnh cho màn hình rất nhỏ */
+    height: 34px;
+  }
+}
+
+/* Extra small devices (320px or smaller) */
+@media (max-width: 360px) {
+  .who-we-are__title {
+    font-size: 36px; /* Keep title size small */
+  }
+
+  .who-we-are__text {
+    font-size: 18px; /* Keep text size small */
+    line-height: 1.5; /* Adjust line-height for readability */
+  }
+    .container {
+    padding-left: 5px; /* Ensure content doesn't touch the screen edge */
+    padding-right: 5px;
+  }
+    .key img {
+    width: 48px; /* Tăng kích thước ảnh cho màn hình rất nhỏ */
+    height: 32px;
+  }
+}
+
 @media (max-width: 768px) {
   .Our-Mission {
     flex-direction: column;
@@ -3415,7 +3473,7 @@ svg defs linearGradient stop:last-child {
 
 .center-content h4 {
   font-weight: 700;
-  font-size: clamp(18px, 4vw, 32px);
+  font-size: clamp(18px, 4vw, 36px);
   letter-spacing: 1px;
   color: #cc4448;
   margin-bottom: 0.5rem;
@@ -3441,7 +3499,7 @@ svg defs linearGradient stop:last-child {
 .center-content p {
   color: #0b102d;
   font-weight: 600;
-  font-size: clamp(12px, 2.5vw, 18px);
+  font-size: clamp(12px, 2.5vw, 21px);
   line-height: 1.45;
   letter-spacing: 0.3px;
   max-width: 420px;
@@ -3477,7 +3535,7 @@ svg defs linearGradient stop:last-child {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-  z-index: 3;
+  z-index: 2;
 }
 
 .node img {
@@ -3563,6 +3621,14 @@ svg defs linearGradient stop:last-child {
     padding: 60px 0;
   }
 }
+
+@media (max-width: 853px) {
+  .orbit-container {
+    width: 90vw;
+    height: 90vw;
+  }
+} 
+
 @media (max-width: 576px) {
   .orbit-container {
     width: 80vw;
@@ -3584,6 +3650,12 @@ svg defs linearGradient stop:last-child {
   }
 }
 
+@media (max-width: 320px) {
+  .orbit-container {
+    width: 90vw;
+    height: 90vw;
+  }
+}
 /* === Floating Filter Position === */
 .floating-filter-wrapper {
   position: fixed; /* Cố định theo màn hình */
@@ -3720,12 +3792,50 @@ svg defs linearGradient stop:last-child {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .center-content h4 {
-    font-size: 32px;
+    font-size: 40px;
+  }
+  .center-content p {
+    font-size: 28px;
+  }
+  .node span {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .center-content h4 {
+    font-size: 40px;
+  }
+  .center-content p {
+    font-size: 25px;
+  }
+  .node span {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 853px) {
+  .center-content h4 {
+    font-size: 35px;
   }
   .center-content p {
     font-size: 24px;
+  }
+  .node span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .center-content h4 {
+    font-size: 30px;
+  }
+  .center-content p {
+    font-size: 22px;
   }
   .node span {
     font-size: 14px;
@@ -3747,35 +3857,54 @@ svg defs linearGradient stop:last-child {
 /* Khi chiều rộng màn hình nhỏ hơn 375px */
 @media (max-width: 540px) {
   .center-content h4 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .center-content p {
-    font-size: 12px;
+    font-size: 11px;
   }
   .node span {
-    font-size: 9.5px;
+    font-size: 8px;
   }
 }
 
 /* Khi chiều rộng màn hình nhỏ hơn 375px */
 @media (max-width: 480px) {
   .center-content h4 {
-    font-size: 25px;
+    font-size: 16px;
   }
   .center-content p {
     font-size: 12px;
   }
   .node span {
-    font-size: 8px;
+    font-size: 7px;
   }
 }
+
+@media (max-width: 414px) {
+  .center-content h4 {
+    font-size: 13px;
+  }
+  .center-content p {
+    font-size: 10px;
+  }
+  .node span {
+    font-size: 7px;
+  }
+}
+
 /* Khi chiều rộng màn hình nhỏ hơn 375px */
 @media (max-width: 375px) {
   .center-content h4 {
-    font-size: 22px;
+    font-size: 10px;
   }
   .center-content p {
-    font-size: 12px;
+     font-size: 7px;
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    word-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    overflow-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    max-width: 80%; /* Giới hạn chiều rộng */
+    text-align: center; /* Căn giữa chữ */
+    margin: 0 auto; /* Căn giữa phần tử */
   }
   .node span {
     font-size: 5px;
@@ -3786,20 +3915,35 @@ svg defs linearGradient stop:last-child {
 @media (max-width: 344px) {
   .center-content h4 {
     font-size: 14px;
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    word-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    overflow-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
   }
+
   .center-content p {
-    font-size: 8px;
+    font-size: 7px;
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    word-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    overflow-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    max-width: 80%; /* Giới hạn chiều rộng */
+    text-align: center; /* Căn giữa chữ */
+    margin: 0 auto; /* Căn giữa phần tử */
   }
+
   .node span {
-    font-size: 4px;
+    font-size: 5px;
+    white-space: normal; /* Cho phép xuống dòng nếu cần */
+    word-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    overflow-wrap: break-word; /* Đảm bảo chữ dài sẽ xuống dòng */
+    max-width: 90%; /* Giới hạn chiều rộng */
   }
 }
 
 /* Đối với màn hình nhỏ (dưới 768px) */
 @media (max-width: 768px) {
   .node {
-    width: clamp(55px, 65vw, 160px); /* Thu nhỏ các node trên màn hình nhỏ */
-    height: clamp(55px, 65vw, 160px);
+    width: clamp(55px, 65vw, 150px); /* Thu nhỏ các node trên màn hình nhỏ */
+    height: clamp(55px, 65vw, 150px);
     font-size: 13px; /* Thu nhỏ font-size để vừa với màn hình */
   }
 }
@@ -3807,8 +3951,8 @@ svg defs linearGradient stop:last-child {
 /* Đối với màn hình rất nhỏ (dưới 480px) */
 @media (max-width: 540px) {
   .node {
-    width: clamp(62px, 100vw, 100px); /* Tiếp tục thu nhỏ thêm */
-    height: clamp(62px, 100vw, 100px);
+    width: clamp(62px, 100vw, 90px); /* Tiếp tục thu nhỏ thêm */
+    height: clamp(62px, 100vw, 90px);
     font-size: 10px; /* Giảm thêm kích thước font-size */
   }
 }
@@ -3818,7 +3962,7 @@ svg defs linearGradient stop:last-child {
   .node {
     width: clamp(42px, 30vw, 78px); /* Tiếp tục thu nhỏ thêm */
     height: clamp(42px, 30vw, 78px);
-    font-size: 10px; /* Giảm thêm kích thước font-size */
+    font-size: 8px; /* Giảm thêm kích thước font-size */
   }
 }
 
@@ -3834,8 +3978,18 @@ svg defs linearGradient stop:last-child {
 /* Đối với màn hình cực nhỏ (dưới 380px) */
 @media (max-width: 344px) {
   .node {
-    width: clamp(32px, 20vw, 45px); /* Cực nhỏ cho màn hình nhỏ hơn */
-    height: clamp(32px, 20vw, 45px);
+    width: clamp(32px, 20vw, 55px); /* Cực nhỏ cho màn hình nhỏ hơn */
+    height: clamp(32px, 20vw, 55px);
     font-size: 4px; /* Cực nhỏ cho font-size */
   }
 }
+
+@media (max-width: 320px) {
+  .node {
+    width: clamp(32px, 20vw, 70px); /* Cực nhỏ cho màn hình nhỏ hơn */
+    height: clamp(32px, 20vw, 70px);
+    font-size: 4px; /* Cực nhỏ cho font-size */
+  }
+}
+
+
